@@ -107,10 +107,9 @@
   <Layout noPadding>
     <Body size="S">
       {#if !filters?.length}
-        Add your first filter expression.
+        添加第一个筛选条件。
       {:else}
-        Results are filtered to only those which match all of the following
-        constraints.
+        结果显示为匹配所有筛选条件的记录。
       {/if}
     </Body>
     {#if filters?.length}
@@ -120,7 +119,7 @@
             bind:value={filter.field}
             options={fieldOptions}
             on:change={e => onFieldChange(filter, e.detail)}
-            placeholder="Column"
+            placeholder="选择字段"
           />
           <Select
             disabled={!filter.field}
@@ -179,7 +178,7 @@
     {/if}
     <div>
       <Button icon="AddCircle" size="M" secondary on:click={addFilter}>
-        Add filter
+        添加筛选器
       </Button>
     </div>
   </Layout>

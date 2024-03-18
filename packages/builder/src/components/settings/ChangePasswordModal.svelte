@@ -17,8 +17,8 @@
 </script>
 
 <ModalContent
-  title="Update password"
-  confirmText="Update password"
+  title="更新密码"
+  confirmText="更新密码"
   onConfirm={updatePassword}
   disabled={error || !password}
 >

@@ -184,7 +184,7 @@
   />
   <Layout noPadding>
     <Layout gap="XS" noPadding>
-      <Heading size="M">Upgrade</Heading>
+      <Heading size="M">升级</Heading>
       <Body size="M">
         {#if license.plan.type === "free"}
           Upgrade your Budibase installation to unlock additional features. To

@@ -11,13 +11,13 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
   // Determine user sub pages
   let userSubPages = [
     {
-      title: "Users",
+      title: "用户",
       href: "/builder/portal/users/users",
     },
   ]
   if (isEnabled(TENANT_FEATURE_FLAGS.USER_GROUPS)) {
     userSubPages.push({
-      title: "Groups",
+      title: "组",
       href: "/builder/portal/users/groups",
     })
   }
@@ -25,18 +25,18 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
   // Pages that all devs and admins can access
   let menu = [
     {
-      title: "Apps",
+      title: "应用",
       href: "/builder/portal/apps",
     },
   ]
   if (sdk.users.isGlobalBuilder(user)) {
     menu.push({
-      title: "Users",
+      title: "用户",
       href: "/builder/portal/users",
       subPages: userSubPages,
     })
     menu.push({
-      title: "Plugins",
+      title: "插件",
       href: "/builder/portal/plugins",
     })
   }
@@ -45,38 +45,38 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
   if (isAdmin) {
     let settingsSubPages = [
       {
-        title: "Auth",
+        title: "认证",
         href: "/builder/portal/settings/auth",
       },
       {
-        title: "Email",
+        title: "电子邮箱",
         href: "/builder/portal/settings/email",
       },
       {
-        title: "Organisation",
+        title: "组织",
         href: "/builder/portal/settings/organisation",
       },
       {
-        title: "Branding",
+        title: "品牌",
         href: "/builder/portal/settings/branding",
       },
       {
-        title: "Environment",
+        title: "环境",
         href: "/builder/portal/settings/environment",
       },
     ]
     if (!cloud) {
       settingsSubPages.push({
-        title: "Version",
+        title: "版本",
         href: "/builder/portal/settings/version",
       })
       settingsSubPages.push({
-        title: "Diagnostics",
+        title: "诊断",
         href: "/builder/portal/settings/diagnostics",
       })
     }
     menu.push({
-      title: "Settings",
+      title: "设置",
       href: "/builder/portal/settings",
       subPages: settingsSubPages,
     })
@@ -86,31 +86,31 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
   if (isEnabled(TENANT_FEATURE_FLAGS.LICENSING)) {
     let accountSubPages = [
       {
-        title: "Usage",
+        title: "使用",
         href: "/builder/portal/account/usage",
       },
     ]
     if (isAdmin) {
       accountSubPages.push({
-        title: "Audit Logs",
+        title: "审计日志",
         href: "/builder/portal/account/auditLogs",
       })
 
       if (!cloud) {
         accountSubPages.push({
-          title: "System Logs",
+          title: "系统日志",
           href: "/builder/portal/account/systemLogs",
         })
       }
     }
     if (cloud && user?.accountPortalAccess) {
       accountSubPages.push({
-        title: "Upgrade",
+        title: "升级",
         href: $admin?.accountPortalUrl + "/portal/upgrade",
       })
     } else if (!cloud && isAdmin) {
       accountSubPages.push({
-        title: "Upgrade",
+        title: "升级",
         href: "/builder/portal/account/upgrade",
       })
     }
@@ -122,7 +122,7 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
       })
     }
     menu.push({
-      title: "Account",
+      title: "账户",
       href: "/builder/portal/account",
       subPages: accountSubPages,
     })

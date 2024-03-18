@@ -134,7 +134,7 @@ const getTours = () => {
         },
         {
           id: TOUR_STEP_KEYS.BUILDER_USER_MANAGEMENT,
-          title: "Users",
+          title: "用户",
           query: ".toprightnav #builder-app-users-button",
           body: "Add users to your app and control what level of access they have.",
           onLoad: () => {
@@ -162,7 +162,7 @@ const getTours = () => {
       steps: [
         {
           id: TOUR_STEP_KEYS.FEATURE_USER_MANAGEMENT,
-          title: "Users",
+          title: "用户",
           query: ".toprightnav #builder-app-users-button",
           body: "Add users to your app and control what level of access they have.",
           onLoad: () => {

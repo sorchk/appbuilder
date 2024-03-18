@@ -63,8 +63,8 @@
 
     <div class="data">
       <Layout noPadding gap="XS">
-        <Tabs selected="Settings">
-          <Tab title="Settings">
+        <Tabs selected="设置">
+          <Tab title="设置">
             <div class="tab-content">
               <DevToolsComponentSettingsTab />
             </div>

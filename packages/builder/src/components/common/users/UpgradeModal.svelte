@@ -10,7 +10,7 @@
     isOwner
       ? $licensing.goToUpgradePage()
       : window.open("https://budibase.com/pricing/", "_blank")}
-  confirmText={isOwner ? "Upgrade" : "View plans"}
+  confirmText={isOwner ? "升级" : "查看计划"}
   title="Upgrade to add more users"
 >
   <div>

@@ -3,51 +3,51 @@ export * from "./api"
 export const OperatorOptions = {
   Equals: {
     value: "equal",
-    label: "Equals",
+    label: "等于",
   },
   NotEquals: {
     value: "notEqual",
-    label: "Not equals",
+    label: "不等于",
   },
   Empty: {
     value: "empty",
-    label: "Is empty",
+    label: "是空",
   },
   NotEmpty: {
     value: "notEmpty",
-    label: "Is not empty",
+    label: "不是空",
   },
   StartsWith: {
     value: "string",
-    label: "Starts with",
+    label: "以...开始",
   },
   Like: {
     value: "fuzzy",
-    label: "Like",
+    label: "模糊匹配",
   },
   MoreThan: {
     value: "rangeLow",
-    label: "More than or equal to",
+    label: "大于等于",
   },
   LessThan: {
     value: "rangeHigh",
-    label: "Less than or equal to",
+    label: "小于等于",
   },
   Contains: {
     value: "contains",
-    label: "Contains",
+    label: "包含",
   },
   NotContains: {
     value: "notContains",
-    label: "Does not contain",
+    label: "不包含",
   },
   In: {
     value: "oneOf",
-    label: "Is in",
+    label: "在其中",
   },
   ContainsAny: {
     value: "containsAny",
-    label: "Has any",
+    label: "包含其中一个",
   },
 }
 

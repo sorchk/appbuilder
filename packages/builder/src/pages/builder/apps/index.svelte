@@ -107,23 +107,23 @@
                 <Icon size="XL" name="ChevronDown" />
               </div>
               <MenuItem icon="UserEdit" on:click={() => userInfoModal.show()}>
-                My profile
+                个人信息
               </MenuItem>
               <MenuItem
                 icon="LockClosed"
                 on:click={() => changePasswordModal.show()}
               >
-                Update password
+              修改密码
               </MenuItem>
               {#if sdk.users.hasBuilderPermissions($auth.user)}
                 <MenuItem
                   icon="UserDeveloper"
                   on:click={() => $goto("../portal")}
                 >
-                  Open developer mode
+                  打开开发者模式
                 </MenuItem>
               {/if}
-              <MenuItem icon="LogOut" on:click={logout}>Log out</MenuItem>
+              <MenuItem icon="LogOut" on:click={logout}>退出登录</MenuItem>
             </ActionMenu>
           </div>
           <Layout noPadding gap="XS">
@@ -147,7 +147,7 @@
               </Layout>
             </div>
           {:else if userApps.length}
-            <Heading>Apps</Heading>
+            <Heading>应用</Heading>
             <div class="group">
               <Layout gap="S" noPadding>
                 {#each userApps as app (app.appId)}

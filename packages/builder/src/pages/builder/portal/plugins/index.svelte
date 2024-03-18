@@ -27,7 +27,7 @@
     },
     "schema.type": {
       width: "1fr",
-      displayName: "Type",
+      displayName: "类型",
       capitalise: true,
       minWidth: "120px",
     },
@@ -46,12 +46,12 @@
   let searchTerm = ""
   let filter = "all"
   let filterOptions = [
-    { label: "All plugins", value: "all" },
-    { label: "Components", value: "component" },
+    { label: "所有插件", value: "all" },
+    { label: "组件", value: "component" },
   ]
 
   if (!$admin.cloud) {
-    filterOptions.push({ label: "Datasources", value: "datasource" })
+    filterOptions.push({ label: "数据源", value: "datasource" })
   }
 
   $: filteredPlugins = $plugins
@@ -73,14 +73,14 @@
 <Page narrow>
   <Layout noPadding>
     <Layout gap="XS" noPadding>
-      <Heading size="M">Plugins</Heading>
-      <Body>Add your own custom datasources and components</Body>
+      <Heading size="M">插件</Heading>
+      <Body>添加您自己的自定义数据源和组件</Body>
     </Layout>
     <Divider />
 
     <div class="controls">
       <div>
-        <Button on:click={modal.show} cta>Add plugin</Button>
+        <Button on:click={modal.show} cta>添加插件</Button>
         <div class="secondaryButton">
           <Button
             on:click={() =>
@@ -103,7 +103,7 @@
               autoWidth
             />
           </div>
-          <Search bind:value={searchTerm} placeholder="Search" />
+          <Search bind:value={searchTerm} placeholder="搜索" />
         </div>
       {/if}
     </div>

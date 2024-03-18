@@ -40,7 +40,7 @@
         disabled={!$auth.accountPortalAccess && $admin.cloud}
         on:click={async () => upgradeButtonClick()}
       >
-        Upgrade
+      升级
       </Button>
       <!--Show the view plans button-->
       <Button
@@ -49,7 +49,7 @@
           window.open("https://budibase.com/pricing/", "_blank")
         }}
       >
-        View Plans
+        查看计划
       </Button>
     </div>
   {/if}

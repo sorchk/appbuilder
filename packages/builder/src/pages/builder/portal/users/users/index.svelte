@@ -283,8 +283,8 @@
 
 <Layout noPadding gap="M">
   <Layout gap="XS" noPadding>
-    <Heading>Users</Heading>
-    <Body>Add users and control who gets access to your published apps</Body>
+    <Heading>用户列表</Heading>
+    <Body>添加用户并控制谁可以访问您发布的应用程序</Body>
   </Layout>
   <Divider />
   {#if $licensing.errUserLimit}
@@ -297,7 +297,7 @@
           window.open("https://budibase.com/pricing/", "_blank")
         }
       }}
-      buttonText={isOwner ? "Upgrade" : "View plans"}
+      buttonText={isOwner ? "升级" : "查看计划"}
       cta
       header="Account de-activated"
       message="Due to the free plan user limit being exceeded, your account has been de-activated.

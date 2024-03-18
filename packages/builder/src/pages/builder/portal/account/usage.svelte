@@ -149,14 +149,14 @@
 
   const setPrimaryActionText = () => {
     if (license?.plan.type === Constants.PlanType.FREE) {
-      primaryActionText = "Upgrade"
+      primaryActionText = "升级"
       return
     }
 
     if (cancelAt) {
-      primaryActionText = "Renew"
+      primaryActionText = "更新"
     } else {
-      primaryActionText = "Manage"
+      primaryActionText = "管理"
     }
   }
 

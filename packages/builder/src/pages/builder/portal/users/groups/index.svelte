@@ -119,7 +119,7 @@
           disabled={!$auth.accountPortalAccess && $admin.cloud}
           on:click={$licensing.goToUpgradePage()}
         >
-          Upgrade
+        升级
         </Button>
         <!--Show the view plans button-->
         <Button

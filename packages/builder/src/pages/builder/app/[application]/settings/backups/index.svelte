@@ -195,7 +195,7 @@
           disabled={!$auth.accountPortalAccess && $admin.cloud}
           on:click={$licensing.goToUpgradePage()}
         >
-          Upgrade
+          升级
         </Button>
       {/if}
       <Button
@@ -204,7 +204,7 @@
           window.open("https://budibase.com/pricing/", "_blank")
         }}
       >
-        View plans
+        查看计划
       </Button>
     </div>
   {:else if !backupData?.length && !loading && !filterOpt && !startDate}

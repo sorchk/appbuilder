@@ -21,8 +21,8 @@
 <div class="side-bar" class:collapsed={$sideBarCollapsed}>
   <div class="side-bar-controls">
     <NavHeader
-      title="Apps"
-      placeholder="Search for apps"
+      title="应用"
+      placeholder="搜索应用"
       bind:value={searchString}
       onAdd={() => $goto("./create")}
     />
@@ -30,7 +30,7 @@
   <div class="side-bar-nav">
     <NavItem
       icon="WebPages"
-      text="All apps"
+      text="所有应用"
       on:click={() => $goto("./")}
       selected={!$params.appId}
     />

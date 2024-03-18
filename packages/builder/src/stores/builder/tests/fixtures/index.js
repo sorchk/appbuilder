@@ -232,7 +232,7 @@ export const clientFeaturesResp = {
 export const userTableDoc = {
   _id: "ta_users",
   type: "table",
-  name: "Users",
+  name: "用户",
   schema: {},
 }
 

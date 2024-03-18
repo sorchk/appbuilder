@@ -5,7 +5,7 @@
   import { menu } from "stores/portal"
 
   $: wide = $isActive("./auditLogs")
-  $: pages = $menu.find(x => x.title === "Account")?.subPages || []
+  $: pages = $menu.find(x => x.title === "账户")?.subPages || []
   $: !pages.length && $goto("../")
 </script>
 

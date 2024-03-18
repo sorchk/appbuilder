@@ -39,7 +39,7 @@
     <ModalContent
       title={dayPassesTitle}
       size="M"
-      confirmText="Upgrade"
+      confirmText="升级"
       onConfirm={() => {
         window.location.href = upgradeUrl
       }}

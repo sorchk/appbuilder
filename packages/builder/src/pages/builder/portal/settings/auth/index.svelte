@@ -256,8 +256,8 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <Layout noPadding>
   <Layout gap="XS" noPadding>
-    <Heading size="M">Authentication</Heading>
-    <Body>Add additional authentication methods from the options below</Body>
+    <Heading size="M">身份认证</Heading>
+    <Body>从以下选项中添加其他身份验证方法</Body>
   </Layout>
   <Divider />
   <Layout noPadding gap="XS">

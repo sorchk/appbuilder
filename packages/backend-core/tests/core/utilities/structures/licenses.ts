@@ -63,12 +63,12 @@ export function quotas(): Quotas {
           triggers: [],
         },
         apps: {
-          name: "Apps",
+          name: "应用",
           value: 1,
           triggers: [],
         },
         users: {
-          name: "Users",
+          name: "用户",
           value: 1,
           triggers: [],
         },
@@ -83,7 +83,7 @@ export function quotas(): Quotas {
           triggers: [],
         },
         plugins: {
-          name: "Plugins",
+          name: "插件",
           value: 1,
           triggers: [],
         },

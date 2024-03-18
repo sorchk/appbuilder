@@ -13,11 +13,11 @@
 </script>
 
 <div bind:this={popoverAnchor} class="help">
-  <button class="openMenu" on:click={show}>Help</button>
+  <button class="openMenu" on:click={show}>帮助</button>
   <Popover maxHeight={1000} bind:show bind:hide anchor={popoverAnchor}>
     <nav class="helpMenu">
       <div class="header">
-        <Heading size="XS">Help resources</Heading>
+        <Heading size="XS">帮助资源</Heading>
         <button on:click={hide} class="closeButton">
           <FontAwesomeIcon name="fa-solid fa-xmark" />
         </button>
@@ -27,7 +27,7 @@
         <div class="icon">
           <FontAwesomeIcon name="fa-solid fa-book" />
         </div>
-        <Body size="S">Help docs</Body>
+        <Body size="S">帮助文档</Body>
       </a>
       <div class="divider" />
       <a
@@ -37,7 +37,7 @@
         <div class="icon">
           <FontAwesomeIcon name="fa-brands fa-github" />
         </div>
-        <Body size="S">Discussions</Body>
+        <Body size="S">讨论</Body>
       </a>
       <div class="divider" />
       <a target="_blank" href="https://discord.com/invite/ZepTmGbtfF">
@@ -51,7 +51,7 @@
         <div class="icon">
           <FontAwesomeIcon name="fa-solid fa-play" />
         </div>
-        <Body size="S">Budibase University</Body>
+        <Body size="S">学习</Body>
       </a>
       <div class="divider" />
       {#if isEnabled(TENANT_FEATURE_FLAGS.LICENSING)}
@@ -67,14 +67,14 @@
             <div class="icon">
               <FontAwesomeIcon name="fa-solid fa-envelope" />
             </div>
-            <Body size="S">Email support</Body>
+            <Body size="S">电子邮件支持</Body>
           </div>
           {#if !premiumOrAboveLicense}
             <div class="premiumBadge">
               <div class="icon">
                 <FontAwesomeIcon name="fa-solid fa-lock" />
               </div>
-              <Body size="XS">Premium</Body>
+              <Body size="XS">高级版</Body>
             </div>
           {/if}
         </a>

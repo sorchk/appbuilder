@@ -28,21 +28,21 @@
     <Icon size="XL" name="ChevronDown" />
   </div>
   <MenuItem icon="UserEdit" on:click={() => profileModal.show()}>
-    My profile
+    个人信息
   </MenuItem>
-  <MenuItem icon="Moon" on:click={() => themeModal.show()}>Theme</MenuItem>
+  <MenuItem icon="Moon" on:click={() => themeModal.show()}>主题</MenuItem>
   {#if !$auth.isSSO}
     <MenuItem icon="LockClosed" on:click={() => updatePasswordModal.show()}>
-      Update password
+      修改密码
     </MenuItem>
   {/if}
   <MenuItem icon="Key" on:click={() => apiKeyModal.show()}>
-    View API key
+    查看API key
   </MenuItem>
   <MenuItem icon="UserDeveloper" on:click={() => $goto("../apps")}>
-    Close developer mode
+    关闭开发者模式
   </MenuItem>
-  <MenuItem icon="LogOut" on:click={logout}>Log out</MenuItem>
+  <MenuItem icon="LogOut" on:click={logout}>退出登录</MenuItem>
 </ActionMenu>
 
 <Modal bind:this={themeModal}>

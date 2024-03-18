@@ -23,7 +23,7 @@
     title="Upgrade to get more apps "
     size="M"
     showCancelButton={false}
-    confirmText={$auth.user.accountPortalAccess ? "Upgrade" : "Confirm"}
+    confirmText={$auth.user.accountPortalAccess ? "升级" : "确认"}
     onConfirm={$auth.user.accountPortalAccess
       ? () => {
           window.location.href = upgradeUrl

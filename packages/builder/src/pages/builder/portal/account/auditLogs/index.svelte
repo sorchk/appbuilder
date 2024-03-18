@@ -268,8 +268,8 @@
     <div class="select">
       <Multiselect
         bind:searchTerm={userSearchTerm}
-        placeholder="All users"
-        label="Users"
+        placeholder="所有用户"
+        label="用户"
         autocomplete
         bind:value={selectedUsers}
         getOptionValue={user => user._id}
@@ -280,8 +280,8 @@
     <div class="select">
       <Multiselect
         autocomplete
-        placeholder="All apps"
-        label="Apps"
+        placeholder="所有应用"
+        label="应用"
         getOptionValue={app => app.instance._id}
         getOptionLabel={app => app.name}
         options={sortedApps}
@@ -295,8 +295,8 @@
         getOptionValue={event => event.id}
         getOptionLabel={event => event.label}
         options={sortedEvents}
-        placeholder="All events"
-        label="Events"
+        placeholder="所有事件"
+        label="事件"
         bind:value={selectedEvents}
       />
     </div>
@@ -304,7 +304,7 @@
     <div class="date-picker">
       <DatePicker
         value={[startDate, endDate]}
-        placeholder="Choose date range"
+        placeholder="请选择日期范围"
         range={true}
         on:change={e => {
           if (e.detail[0]?.length === 1) {
@@ -321,7 +321,7 @@
       />
     </div>
     <div class="freeSearch">
-      <Search placeholder="Search" on:change={e => debounce(e.detail)} />
+      <Search placeholder="搜索" on:change={e => debounce(e.detail)} />
     </div>
 
     <div class="">

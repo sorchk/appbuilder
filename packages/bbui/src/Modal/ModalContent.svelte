@@ -13,8 +13,8 @@
 
   export let title = undefined
   export let size = "S"
-  export let cancelText = "Cancel"
-  export let confirmText = "Confirm"
+  export let cancelText = "取消"
+  export let confirmText = "确定"
   export let showCancelButton = true
   export let showConfirmButton = true
   export let showCloseIcon = true

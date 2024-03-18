@@ -93,7 +93,7 @@
   <Button
     onClick={openEditor}
     icon="ri-filter-3-line"
-    text="Filter"
+    text="筛选"
     size="XL"
     type="secondary"
     quiet
@@ -101,7 +101,7 @@
   />
 
   <Modal bind:this={modal}>
-    <ModalContent title="Edit filters" size="XL" onConfirm={updateQuery}>
+    <ModalContent title="设置筛选条件" size="XL" onConfirm={updateQuery}>
       <FilterModal bind:filters={tmpFilters} {schemaFields} {datasource} />
     </ModalContent>
   </Modal>

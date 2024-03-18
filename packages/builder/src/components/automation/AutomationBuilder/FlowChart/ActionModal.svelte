@@ -120,7 +120,7 @@
   onConfirm={addBlockToAutomation}
 >
   <Layout noPadding gap="XS">
-    <Detail size="S">Apps</Detail>
+    <Detail size="S">应用</Detail>
     <div class="item-list">
       {#each Object.entries(external) as [idx, action]}
         <div

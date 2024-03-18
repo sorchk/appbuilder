@@ -5,7 +5,7 @@
   import { menu } from "stores/portal"
 
   $: wide = $isActive("./email/:template")
-  $: pages = $menu.find(x => x.title === "Settings")?.subPages || []
+  $: pages = $menu.find(x => x.title === "设置")?.subPages || []
   $: !pages.length && $goto("../")
 </script>
 

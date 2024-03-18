@@ -101,9 +101,9 @@ bin/
 hosting/.generated*
 stats.html
 
-
 # plugins
 budibase-component
 budibase-datasource
 
 *.iml
+.history

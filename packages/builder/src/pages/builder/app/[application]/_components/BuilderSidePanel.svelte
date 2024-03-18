@@ -563,7 +563,7 @@
       {#if invitingFlow}
         <Icon name="BackAndroid" />
       {/if}
-      <Heading size="S">{invitingFlow ? "Invite new user" : "Users"}</Heading>
+      <Heading size="S">{invitingFlow ? "Invite new user" : "用户"}</Heading>
     </div>
     <div class="header">
       {#if !invitingFlow}

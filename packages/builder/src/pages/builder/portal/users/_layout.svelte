@@ -6,7 +6,7 @@
   import { menu, features } from "stores/portal"
 
   $: wide = $isActive("./users/index") || $isActive("./groups/index")
-  $: pages = $menu.find(x => x.title === "Users")?.subPages || []
+  $: pages = $menu.find(x => x.title === "用户")?.subPages || []
   $: !pages.length && $goto("../")
 
   onMount(async () => {

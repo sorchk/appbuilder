@@ -16,7 +16,7 @@
         window.open($admin.accountPortalUrl + "/portal/upgrade", "_blank")
       }}
     >
-      Upgrade
+      升级
     </Button>
   {:else if !$admin.cloud && sdk.users.isAdmin($auth.user)}
     <Button
@@ -25,7 +25,7 @@
       on:click={() => $goto("/builder/portal/account/upgrade")}
       on:click
     >
-      Upgrade
+    升级
     </Button>
   {/if}
 {/if}

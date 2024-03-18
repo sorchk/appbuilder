@@ -243,7 +243,7 @@
 {#if loaded}
   <Layout gap="L" noPadding>
     <Breadcrumbs>
-      <Breadcrumb url={$url("./")} text="Users" />
+      <Breadcrumb url={$url("./")} text="用户" />
       <Breadcrumb text={user?.email} />
     </Breadcrumbs>
 

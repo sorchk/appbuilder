@@ -408,7 +408,7 @@
           secondary
           disabled={saving}
         >
-          Upgrade
+        升级
         </Button>
       {/if}
       <Button

@@ -84,15 +84,15 @@
 <ModalContent
   {onConfirm}
   size="M"
-  title="Add new users"
-  confirmText="Add users"
+  title="添加新用户"
+  confirmText="添加用户"
   confirmDisabled={disabled}
   cancelText="Cancel"
   showCloseIcon={false}
   disabled={hasError || !userData.length || exceeded}
 >
   <Layout noPadding gap="XS">
-    <Label>Email address</Label>
+    <Label>电子邮箱</Label>
     {#each userData as input, index}
       <div
         style="display: flex;

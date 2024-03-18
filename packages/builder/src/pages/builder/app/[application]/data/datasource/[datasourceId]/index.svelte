@@ -50,7 +50,7 @@
         // it requires pg_dump to work and we don't want to enable shell injection
         // attacks.
       } else {
-        panelOptions.push("Settings")
+        panelOptions.push("设置")
       }
     }
   }
@@ -96,7 +96,7 @@
       <RestAuthenticationPanel {datasource} />
     {:else if selectedPanel === "Variables"}
       <RestVariablesPanel {datasource} />
-    {:else if selectedPanel === "Settings"}
+    {:else if selectedPanel === "设置"}
       <SettingsPanel {datasource} />
     {:else}
       <Body>Something went wrong</Body>

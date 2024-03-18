@@ -55,7 +55,7 @@
       value: `${FIELDS.USER.type}${FIELDS.USER.subtype}`,
     },
     {
-      label: "Users",
+      label: "用户",
       value: `${FIELDS.USERS.type}${FIELDS.USERS.subtype}`,
     },
   ]

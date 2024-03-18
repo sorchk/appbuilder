@@ -78,7 +78,7 @@
       },
     },
     users: {
-      label: "Users",
+      label: "用户",
       value: "users",
       config: {
         type: FIELDS.USERS.type,
