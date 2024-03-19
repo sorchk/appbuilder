@@ -40,13 +40,12 @@
   </span>
   <span class="subtext">
     {#if !timedOut}
-      Please wait and we will be back in a second!
+    请稍候，我们马上回来！
     {:else}
-      An error occurred, please try again later.
+    出现错误，请稍后再试。
       <br />
-      Contact
-      <a href="https://budibase.com/support/" target="_blank">support</a> if the
-      issue persists.
+      如果问题依然存在。
+      联系<a href="https://budibase.com/support/" target="_blank">支持</a> 
     {/if}</span
   >
 </div>

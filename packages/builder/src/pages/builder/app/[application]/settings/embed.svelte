@@ -23,8 +23,8 @@
 
 <Layout noPadding>
   <Layout gap="XS" noPadding>
-    <Heading>Embed</Heading>
-    <Body>Embed your app into your other tools of choice</Body>
+    <Heading>嵌入</Heading>
+    <Body>将您的应用嵌入到您选择的其他工具中</Body>
   </Layout>
   <Divider />
   <div class="embed-body">
@@ -39,12 +39,12 @@
             notifications.success("Copied")
           }}
         >
-          Copy code
+        复制代码
         </Button>
       </div>
     {:else}
       <div class="embed-info">
-        <Icon size="S" name="Info" /> Embeds will only work with a published app
+        <Icon size="S" name="Info" /> 嵌入仅适用于已发布的应用
       </div>
     {/if}
   </div>

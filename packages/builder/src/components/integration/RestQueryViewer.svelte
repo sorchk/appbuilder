@@ -498,12 +498,12 @@
           <EditableLabel
             type="heading"
             bind:value={query.name}
-            defaultValue="Untitled"
+            defaultValue="无标题"
             on:change={() => (query.flags.urlName = false)}
             on:save={saveQuery}
           />
           <div class="access">
-            <Label>Access level</Label>
+            <Label>访问级别</Label>
             <AccessLevelSelect {query} {saveId} />
           </div>
         </div>
@@ -524,26 +524,26 @@
               placeholder="http://www.api.com/endpoint"
             />
           </div>
-          <Button primary disabled={!url} on:click={runQuery}>Send</Button>
+          <Button primary disabled={!url} on:click={runQuery}>发生</Button>
           <Button
             disabled={!query.name}
             cta
             on:click={saveQuery}
             tooltip={!hasSchema
-              ? "Saving a query before sending will mean no schema is generated"
+              ? "在发送之前保存查询意味着不会生成架构"
               : null}
-            >Save
+            >保存
           </Button>
         </div>
         <Tabs selected="Bindings" quiet noPadding noHorizPadding onTop>
-          <Tab title="Bindings">
+          <Tab title="绑定">
             <KeyValueBuilder
               bind:object={requestBindings}
-              tooltip="Set the name of the binding which can be used in Handlebars statements throughout your query"
+              tooltip="设置可在整个查询的Handlebars语句中使用的绑定的名称"
               name="binding"
               headings
-              keyPlaceholder="Binding name"
-              valuePlaceholder="Default"
+              keyPlaceholder="绑定名称"
+              valuePlaceholder="默认"
               bindings={[
                 ...restBindings,
                 ...globalDynamicRequestBindings,
@@ -552,7 +552,7 @@
               bindingDrawerLeft="260px"
             />
           </Tab>
-          <Tab title="Params">
+          <Tab title="参数">
             {#key breakQs}
               <KeyValueBuilder
                 on:change={paramsChanged}
@@ -564,7 +564,7 @@
               />
             {/key}
           </Tab>
-          <Tab title="Headers">
+          <Tab title="请求头">
             <KeyValueBuilder
               bind:object={query.fields.headers}
               bind:activity={enabledHeaders}
@@ -575,7 +575,7 @@
               bindingDrawerLeft="260px"
             />
           </Tab>
-          <Tab title="Body">
+          <Tab title="消息体">
             <RadioGroup
               bind:value={query.fields.bodyType}
               options={isGet ? [bodyTypes[0]] : bodyTypes}
@@ -585,43 +585,43 @@
             />
             <RestBodyInput bind:bodyType={query.fields.bodyType} bind:query />
           </Tab>
-          <Tab title="Pagination">
+          <Tab title="分页">
             <div class="pagination">
               <Select
-                label="Pagination type"
+                label="分页类型"
                 bind:value={query.fields.pagination.type}
                 options={PaginationTypes}
-                placeholder="None"
+                placeholder="无"
               />
               {#if query.fields.pagination.type}
                 <Select
-                  label="Pagination parameters location"
+                  label="分页参数位置"
                   bind:value={query.fields.pagination.location}
                   options={PaginationLocations}
-                  placeholer="Choose where to send pagination parameters"
+                  placeholer="选择发送分页参数的位置"
                 />
                 <Input
                   label={query.fields.pagination.type === "page"
-                    ? "Page number parameter name "
-                    : "Request cursor parameter name"}
+                    ? "页码参数名称 "
+                    : "请求游标参数名称"}
                   bind:value={query.fields.pagination.pageParam}
                 />
                 <Input
                   label={query.fields.pagination.type === "page"
-                    ? "Page size parameter name"
-                    : "Request limit parameter name"}
+                    ? "页面大小参数名称"
+                    : "请求限制参数名称"}
                   bind:value={query.fields.pagination.sizeParam}
                 />
                 {#if query.fields.pagination.type === "cursor"}
                   <Input
-                    label="Response body parameter name for cursor"
+                    label="游标的响应体参数名称"
                     bind:value={query.fields.pagination.responseParam}
                   />
                 {/if}
               {/if}
             </div>
           </Tab>
-          <Tab title="Transformer">
+          <Tab title="转换">
             <Layout noPadding>
               {#if !$flags.queryTransformerBanner}
                 <Banner
@@ -647,9 +647,9 @@
             <!-- spacer -->
             <div class="auth-select">
               <Select
-                label="Auth"
+                label="认证"
                 labelPosition="left"
-                placeholder="None"
+                placeholder="无"
                 bind:value={authConfigId}
                 options={authConfigs}
               />
@@ -662,12 +662,12 @@
       <Layout paddingY="S" gap="S">
         <Divider />
         {#if !response && Object.keys(schema || {}).length === 0}
-          <Heading size="M">Response</Heading>
+          <Heading size="M">响应</Heading>
           <div class="placeholder">
             <div class="placeholder-internal">
               <img alt="placeholder" src={Placeholder} />
               <Body size="XS" textAlign="center"
-                >{"enter a url in the textbox above and click send to get a response".toUpperCase()}</Body
+                >{"在上面的文本框中输入url，然后单击“发送”以获得响应".toUpperCase()}</Body
               >
             </div>
           </div>
@@ -700,10 +700,10 @@
               </Tab>
             {/if}
             {#if response}
-              <Tab title="Raw">
+              <Tab title="原始数据">
                 <TextArea disabled value={response.extra?.raw} height="300" />
               </Tab>
-              <Tab title="Headers">
+              <Tab title="响应头">
                 <KeyValueBuilder
                   object={response.extra?.headers}
                   readOnly
@@ -711,7 +711,7 @@
                   showMenu={true}
                 />
               </Tab>
-              <Tab title="Preview">
+              <Tab title="预览">
                 <div class="table">
                   {#if response}
                     <Table
@@ -726,18 +726,17 @@
               </Tab>
             {/if}
             {#if showVariablesTab}
-              <Tab title="Dynamic Variables">
+              <Tab title="动态变量">
                 <Layout noPadding gap="S">
                   <Body size="S">
-                    Create dynamic variables based on response body or headers
-                    from this query.
+                    基于响应正文或标头创建动态变量来自此查询。
                   </Body>
                   <KeyValueBuilder
                     bind:object={dynamicVariables}
                     name="Variable"
                     headings
                     keyHeading="Name"
-                    keyPlaceholder="Variable name"
+                    keyPlaceholder="变量名"
                     valueHeading={`Value`}
                     valuePlaceholder={`{{ value }}`}
                     readOnly={variablesReadOnly}
@@ -748,17 +747,17 @@
             {#if response}
               <div class="stats">
                 <Label size="L">
-                  Status: <span class={responseSuccess ? "green" : "red"}
+                  状态: <span class={responseSuccess ? "green" : "red"}
                     >{response?.info.code}</span
                   >
                 </Label>
                 <Label size="L">
-                  Time: <span class={responseSuccess ? "green" : "red"}
+                  时间: <span class={responseSuccess ? "green" : "red"}
                     >{response?.info.time}</span
                   >
                 </Label>
                 <Label size="L">
-                  Size: <span class={responseSuccess ? "green" : "red"}
+                  大小: <span class={responseSuccess ? "green" : "red"}
                     >{response?.info.size}</span
                   >
                 </Label>

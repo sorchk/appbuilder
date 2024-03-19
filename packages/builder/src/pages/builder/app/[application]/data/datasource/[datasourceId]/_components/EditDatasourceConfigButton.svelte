@@ -61,7 +61,7 @@
     {#if datasource.source !== IntegrationTypes.REST}
       <div class="connected">
         <FontAwesomeIcon name="fa-solid fa-circle-check" />
-        <Body size="S">Connected</Body>
+        <Body size="S">已连接</Body>
       </div>
     {/if}
     <div class="truncate">

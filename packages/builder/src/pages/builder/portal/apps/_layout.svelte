@@ -30,7 +30,7 @@
       await Promise.all(promises)
 
       if (!$admin.offlineMode && $templates?.length === 0) {
-        notifications.error("There was a problem loading quick start templates")
+        notifications.error("加载快速启动模板时出现问题")
       }
 
       // Go to new app page if no apps exists
@@ -41,7 +41,7 @@
         $redirect("./onboarding")
       }
     } catch (error) {
-      notifications.error("Error loading apps and templates")
+      notifications.error("加载应用程序和模板时出错")
     }
     loaded = true
   })

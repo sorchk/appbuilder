@@ -13,7 +13,7 @@
   name={app?.favourite ? "Star" : "StarOutline"}
   hoverable
   color={app?.favourite ? "var(--spectrum-global-color-yellow-1000)" : null}
-  tooltip={app?.favourite ? "Remove from favourites" : "Add to favourites"}
+  tooltip={app?.favourite ? "从收藏夹中删除" : "添加到收藏夹"}
   tooltipType={TooltipType.Info}
   tooltipPosition={position}
   tooltipWrap={noWrap}

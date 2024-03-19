@@ -15,12 +15,12 @@
     try {
       const isSelected = datasource.selected || datasource.containsSelected
       await datasources.delete(datasource)
-      notifications.success("Datasource deleted")
+      notifications.success("数据源已删除")
       if (isSelected) {
         $goto("./datasource")
       }
     } catch (error) {
-      notifications.error("Error deleting datasource")
+      notifications.error("删除数据源时出错")
     }
   }
 </script>
@@ -30,20 +30,20 @@
     <Icon size="S" hoverable name="MoreSmallList" />
   </div>
   {#if datasource.type !== BUDIBASE_DATASOURCE_TYPE}
-    <MenuItem icon="Edit" on:click={updateDatasourceDialog.show}>Edit</MenuItem>
+    <MenuItem icon="Edit" on:click={updateDatasourceDialog.show}>编辑</MenuItem>
   {/if}
-  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>Delete</MenuItem>
+  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>删除</MenuItem>
 </ActionMenu>
 
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Datasource"
+  okText="删除数据源"
   onOk={deleteDatasource}
-  title="Confirm Deletion"
+  title="确认删除"
 >
-  Are you sure you wish to delete the datasource
+  是否确实要删除数据源
   <i>{datasource.name}?</i>
-  This action cannot be undone.
+  此操作无法撤消。
 </ConfirmDialog>
 <UpdateDatasourceModal {datasource} bind:this={updateDatasourceDialog} />
 

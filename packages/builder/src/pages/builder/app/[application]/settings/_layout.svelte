@@ -11,36 +11,36 @@
 <!-- routify:options index=4 -->
 <div class="settings">
   <Page>
-    <Layout noPadding gap="L">
+    <Layout title="自动化" noPadding gap="L">
       <Content showMobileNav>
         <SideNav slot="side-nav">
           <SideNavItem
-            text="Automations"
+            text="自动化"
             url={$url("./automations")}
             active={$isActive("./automations")}
           />
           <SideNavItem
-            text="Backups"
+            text="备份"
             url={$url("./backups")}
             active={$isActive("./backups")}
           />
           <SideNavItem
-            text="Embed"
+            text="嵌入"
             url={$url("./embed")}
             active={$isActive("./embed")}
           />
           <SideNavItem
-            text="Export/Import"
+            text="导出/导入"
             url={$url("./exportImport")}
             active={$isActive("./exportImport")}
           />
           <SideNavItem
-            text="Name and URL"
+            text="名称和URL"
             url={$url("./name-and-url")}
             active={$isActive("./name-and-url")}
           />
           <SideNavItem
-            text="Version"
+            text="版本"
             url={$url("./version")}
             active={$isActive("./version")}
           />
@@ -49,10 +49,10 @@
               position={TooltipPosition.Bottom}
               text={$isOnlyUser
                 ? null
-                : "Unavailable - another user is editing this app"}
+                : "不可用-其他用户正在编辑此应用"}
             >
               <SideNavItem
-                text="Delete app"
+                text="删除应用"
                 disabled={!$isOnlyUser}
                 on:click={() => {
                   deleteModal.show()

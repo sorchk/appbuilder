@@ -49,5 +49,5 @@
     ]}
   />
 {:else}
-  <Body size="S"><i>No dynamic variables specified.</i></Body>
+  <Body size="S"><i>未指定动态变量。</i></Body>
 {/if}

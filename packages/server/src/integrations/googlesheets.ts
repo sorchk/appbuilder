@@ -74,7 +74,7 @@ const SCHEMA: Integration = {
   description:
     "Create and collaborate on online spreadsheets in real-time and from any device.",
   friendlyName: "Google Sheets",
-  type: "Spreadsheet",
+  type: "电子表格",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
     [DatasourceFeature.FETCH_TABLE_NAMES]: true,

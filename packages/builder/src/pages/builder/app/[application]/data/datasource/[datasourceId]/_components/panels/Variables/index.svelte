@@ -33,16 +33,16 @@
   <SaveDatasourceButton slot="controls" {datasource} {updatedDatasource} />
   <Tooltip
     slot="tooltip"
-    title="REST variables"
+    title="REST 变量"
     href="https://docs.budibase.com/docs/rest-variables"
   />
 
   <Layout>
     <Layout noPadding gap="XS">
-      <Heading size="S">Static</Heading>
+      <Heading size="S">静态</Heading>
       <KeyValueBuilder
-        name="Variable"
-        keyPlaceholder="Name"
+        name="变量"
+        keyPlaceholder="名"
         headings
         object={updatedDatasource.config.staticVariables}
         on:change={({ detail }) => handleChange(detail)}
@@ -52,7 +52,7 @@
       />
     </Layout>
     <Layout noPadding gap="XS">
-      <Heading size="S">Dynamic</Heading>
+      <Heading size="S">动态</Heading>
       <ViewDynamicVariables queries={queriesForDatasource} {datasource} />
     </Layout>
   </Layout>

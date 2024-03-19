@@ -10,7 +10,7 @@
 
   let tableSchema = {
     name: {},
-    primary: { displayName: "Primary Key" },
+    primary: { displayName: "主键" },
   }
 </script>
 
@@ -18,7 +18,7 @@
   <Controls slot="controls" {datasource} />
   <Tooltip
     slot="tooltip"
-    title="Using data in your app"
+    title="在应用中使用数据"
     href="https://docs.budibase.com/docs/data"
   />
   <Table

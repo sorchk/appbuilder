@@ -24,8 +24,8 @@
     <Panel borderRight borderBottomHeader={false}>
       <span class="panel-title-content" slot="panel-title-content">
         <NavHeader
-          title="Sources"
-          placeholder="Search for sources"
+          title="数据源"
+          placeholder="搜索数据源"
           bind:value={searchValue}
           onAdd={() => $goto("./new")}
         />

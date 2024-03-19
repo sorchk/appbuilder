@@ -20,7 +20,7 @@ const SCHEMA: Integration = {
   description:
     "Redis is a caching tool, providing powerful key-value store capabilities.",
   friendlyName: "Redis",
-  type: "Non-relational",
+  type: "非关系型",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
   },

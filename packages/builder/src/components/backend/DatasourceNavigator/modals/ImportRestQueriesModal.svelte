@@ -49,7 +49,7 @@
       const dataString = await getData()
 
       if (!datasourceId && !createDatasource) {
-        throw new Error("No datasource id")
+        throw new Error("没有数据源id")
       }
 
       const body = {
@@ -70,9 +70,9 @@
         $goto(`./datasource/${datasourceId}`)
       }
 
-      notifications.success(`Imported successfully.`)
+      notifications.success(`导入成功。`)
     } catch (error) {
-      notifications.error("Error importing queries")
+      notifications.error("导入查询时出错")
       return keepOpen
     }
   }
@@ -81,14 +81,14 @@
 <ModalContent
   onConfirm={() => importQueries()}
   {onCancel}
-  confirmText={"Import"}
-  cancelText="Back"
+  confirmText={"导入"}
+  cancelText="返回"
   size="L"
 >
   <Layout noPadding>
-    <Heading size="S">Import</Heading>
+    <Heading size="S">导入</Heading>
     <Body size="XS"
-      >Import your rest collection using one of the options below</Body
+      >使用以下选项之一导入休息集合</Body
     >
     <Tabs selected="File">
       <!-- Commenting until nginx csp issue resolved -->
@@ -100,7 +100,7 @@
           placeholder="e.g. https://petstore.swagger.io/v2/swagger.json"
         />
       </Tab> -->
-      <Tab title="File">
+      <Tab title="文件">
         <Dropzone
           gallery={false}
           value={$data.file ? [$data.file] : []}
@@ -119,11 +119,11 @@
           maximum={1}
         />
       </Tab>
-      <Tab title="Raw Text">
+      <Tab title="原始文本">
         <TextArea
           bind:value={$data.raw}
           on:change={() => (lastTouched = "raw")}
-          label={"Paste raw text"}
+          label={"粘贴原始文本"}
           placeholder={'e.g. curl --location --request GET "https://example.com"'}
         />
       </Tab>

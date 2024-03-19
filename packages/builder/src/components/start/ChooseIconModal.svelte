@@ -53,17 +53,17 @@
         icon: { name, color },
       })
     } catch (error) {
-      notifications.error("Error updating app")
+      notifications.error("更新应用程序时出错")
     }
   }
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<ModalContent title="Edit Icon" confirmText="Save" onConfirm={save}>
+<ModalContent title="编辑图标" confirmText="保存" onConfirm={save}>
   <div class="scrollable-icons">
     <div class="title-spacing">
-      <Label>Select an icon</Label>
+      <Label>选择一个图标</Label>
     </div>
     <div class="grid">
       {#each iconsList as item}
@@ -79,7 +79,7 @@
   </div>
   <div class="color-selection">
     <div>
-      <Label>Select a color</Label>
+      <Label>选择一种颜色</Label>
     </div>
     <div class="color-selection-item">
       <ColorPicker bind:value={color} on:change={e => (color = e.detail)} />

@@ -75,7 +75,7 @@
       }
     } catch (error) {
       console.error(error)
-      notifications.error("Error updating app")
+      notifications.error("更新应用程序时出错")
     }
   }
 
@@ -116,8 +116,8 @@
 </script>
 
 <ModalContent
-  title="Edit name and URL"
-  confirmText="Save"
+  title="编辑名称和URL"
+  confirmText="保存"
   onConfirm={updateApp}
   disabled={!$validation.valid}
 >
@@ -126,10 +126,10 @@
     error={$validation.touched.name && $validation.errors.name}
     on:blur={() => ($validation.touched.name = true)}
     on:change={nameToUrl($values.name)}
-    label="Name"
+    label="名称"
   />
   <Layout noPadding gap="XS">
-    <Label>Icon</Label>
+    <Label>图标</Label>
     <EditableIcon
       {app}
       size="XL"

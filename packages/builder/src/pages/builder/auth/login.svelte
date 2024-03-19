@@ -25,7 +25,7 @@
   let errors = {}
   let formData = {}
 
-  $: company = $organisation.company || "Budibase"
+  $: company = $organisation.company || ""
   $: cloud = $admin.cloud
 
   async function login() {
@@ -42,11 +42,11 @@
       if ($auth?.user?.forceResetPassword) {
         $goto("./reset")
       } else {
-        notifications.success("Logged in successfully")
+        notifications.success("登录成功")
         $goto("../portal")
       }
     } catch (err) {
-      notifications.error(err.message ? err.message : "Invalid credentials")
+      notifications.error(err.message ? err.message : "无效凭据")
     }
   }
 
@@ -58,7 +58,7 @@
     try {
       await organisation.init()
     } catch (error) {
-      notifications.error("Error getting org config")
+      notifications.error("获取组织配置时出错")
     }
     loaded = true
   })
@@ -73,7 +73,7 @@
           <img alt="logo" src={$organisation.logoUrl || Logo} />
         {/if}
         <Heading size="M">
-          {$organisation.loginHeading || "Log in to Budibase"}
+          {$organisation.loginHeading || "登录"}
         </Heading>
       </Layout>
       <Layout gap="S" noPadding>
@@ -87,7 +87,7 @@
           <Divider />
           <FancyForm bind:this={form}>
             <FancyInput
-              label="Your work email"
+              label="电子邮箱"
               value={formData.username}
               on:change={e => {
                 formData = {
@@ -98,7 +98,7 @@
               validate={() => {
                 let fieldError = {
                   username: !formData.username
-                    ? "Please enter a valid email"
+                    ? "请输入有效的电子邮箱"
                     : undefined,
                 }
                 errors = handleError({ ...errors, ...fieldError })
@@ -106,7 +106,7 @@
               error={errors.username}
             />
             <FancyInput
-              label="Password"
+              label="密码"
               value={formData.password}
               type="password"
               on:change={e => {
@@ -118,7 +118,7 @@
               validate={() => {
                 let fieldError = {
                   password: !formData.password
-                    ? "Please enter your password"
+                    ? "请输入您的密码"
                     : undefined,
                 }
                 errors = handleError({ ...errors, ...fieldError })
@@ -136,13 +136,13 @@
             disabled={Object.keys(errors).length > 0}
             on:click={login}
           >
-            {$organisation.loginButton || `Log in to ${company}`}
+            {$organisation.loginButton || `登录`}
           </Button>
         </Layout>
         <Layout gap="XS" noPadding justifyItems="center">
           <div class="user-actions">
             <ActionButton size="L" quiet on:click={() => $goto("./forgot")}>
-              Forgot password?
+              忘记密码?
             </ActionButton>
           </div>
         </Layout>
@@ -150,15 +150,15 @@
 
       {#if cloud}
         <Body size="xs" textAlign="center">
-          By using Budibase Cloud
+          使用云
           <br />
-          you are agreeing to our
+          你同意我们的
           <Link
             href="https://budibase.com/eula"
             target="_blank"
             secondary={true}
           >
-            License Agreement
+          许可协议
           </Link>
         </Body>
       {/if}

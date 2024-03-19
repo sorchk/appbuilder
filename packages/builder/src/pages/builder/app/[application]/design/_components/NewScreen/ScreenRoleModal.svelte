@@ -9,14 +9,14 @@
   export let onCancel
   export let screenUrl
   export let screenAccessRole
-  export let confirmText = "Done"
+  export let confirmText = "完成"
 
   let error
 
   const onChangeRole = e => {
     const roleId = e.detail
     if (routeExists(screenUrl, roleId)) {
-      error = "This URL is already taken for this access role"
+      error = "此URL已用于此访问角色"
     } else {
       error = null
     }
@@ -42,16 +42,16 @@
 <ModalContent
   title="Access"
   {confirmText}
-  cancelText="Back"
+  cancelText="返回"
   {onConfirm}
   {onCancel}
   disabled={!!error}
 >
-  Select the level of access required to see these screens
+选择查看这些屏幕所需的访问级别
   <Select
     bind:value={screenAccessRole}
     on:change={onChangeRole}
-    label="Access"
+    label="访问角色"
     {error}
     getOptionLabel={role => role.name}
     getOptionValue={role => role._id}

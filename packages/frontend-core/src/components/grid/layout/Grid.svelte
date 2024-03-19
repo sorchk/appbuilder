@@ -146,7 +146,7 @@
   {/if}
   {#if $error}
     <div class="grid-error">
-      <div class="grid-error-title">There was a problem loading your grid</div>
+      <div class="grid-error-title">加载网格时出现问题</div>
       <div class="grid-error-subtitle">
         {$error}
       </div>

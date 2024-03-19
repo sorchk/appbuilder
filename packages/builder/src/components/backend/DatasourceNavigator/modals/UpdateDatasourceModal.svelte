@@ -22,7 +22,7 @@
   function checkValid(evt) {
     const datasourceName = evt.target.value
     if ($datasources?.list.some(ds => ds.name === datasourceName)) {
-      error = `Datasource with name ${datasourceName} already exists. Please choose another name.`
+      error = `名为 ${datasourceName} 的数据源已存在。请选择其他名称。`
       return
     }
     error = ""
@@ -37,21 +37,21 @@
       datasource: updatedDatasource,
       integration: integrationForDatasource(get(integrations), datasource),
     })
-    notifications.success(`Datasource ${name} updated successfully.`)
+    notifications.success(`数据源 ${name} 更新成功。`)
     hide()
   }
 </script>
 
 <Modal bind:this={modal} on:hide={onCancel}>
   <ModalContent
-    title="Edit Datasource"
+    title="编辑数据源"
     size="L"
-    confirmText="Save"
+    confirmText="保存"
     onConfirm={updateDatasource}
     disabled={error || !name || !datasource?.type}
   >
     <Input
-      label="Datasource Name"
+      label="数据源名称"
       on:input={checkValid}
       bind:value={name}
       {error}

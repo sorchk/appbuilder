@@ -11,7 +11,7 @@
   $: valid = name && name.length > 0 && !datasource?.entities?.[name]
   $: error =
     !submitted && name && datasource?.entities?.[name]
-      ? "Table name already in use."
+      ? "表名称已在使用中。"
       : null
 
   function buildDefaultTable(tableName, datasourceId) {
@@ -38,20 +38,20 @@
       $goto(`../../table/${table._id}`)
     } catch (error) {
       notifications.error(
-        `Error saving table - ${error?.message || "unknown error"}`
+        `Error saving table - ${error?.message || "未知错误"}`
       )
     }
   }
 </script>
 
 <ModalContent
-  title="Create new table"
-  confirmText="Create"
+  title="创建新表"
+  confirmText="创建"
   onConfirm={saveTable}
   disabled={!valid}
 >
   <Body
-    >Provide a name for your new table; you can add columns once it is created.</Body
+    >为新表提供一个名称；创建后可以添加列。</Body
   >
-  <Input label="Table Name" bind:error bind:value={name} />
+  <Input label="表名" bind:error bind:value={name} />
 </ModalContent>

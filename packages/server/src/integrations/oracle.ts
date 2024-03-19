@@ -53,7 +53,7 @@ const SCHEMA: Integration = {
   docs: "https://github.com/oracle/node-oracledb",
   plus: true,
   friendlyName: "Oracle",
-  type: "Relational",
+  type: "关系型",
   description:
     "Oracle Database is an object-relational database management system developed by Oracle Corporation",
   features: {

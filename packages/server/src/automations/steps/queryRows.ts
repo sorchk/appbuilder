@@ -45,27 +45,27 @@ export const definition: AutomationStepSchema = {
         tableId: {
           type: AutomationIOType.STRING,
           customType: AutomationCustomIOType.TABLE,
-          title: "Table",
+          title: "表",
         },
         filters: {
           type: AutomationIOType.OBJECT,
           customType: AutomationCustomIOType.FILTERS,
-          title: "Filtering",
+          title: "过滤",
         },
         sortColumn: {
           type: AutomationIOType.STRING,
-          title: "Sort Column",
+          title: "排序列",
           customType: AutomationCustomIOType.COLUMN,
         },
         sortOrder: {
           type: AutomationIOType.STRING,
-          title: "Sort Order",
+          title: "排序顺序",
           enum: Object.values(SortOrder),
           pretty: Object.values(SortOrderPretty),
         },
         limit: {
           type: AutomationIOType.NUMBER,
-          title: "Limit",
+          title: "限制范围",
           customType: AutomationCustomIOType.QUERY_LIMIT,
         },
       },
@@ -76,11 +76,11 @@ export const definition: AutomationStepSchema = {
         rows: {
           type: AutomationIOType.ARRAY,
           customType: AutomationCustomIOType.ROWS,
-          description: "The rows that were found",
+          description: "找到的行",
         },
         success: {
           type: AutomationIOType.BOOLEAN,
-          description: "Whether the query was successful",
+          description: "查询是否成功",
         },
       },
       required: ["rows", "success"],

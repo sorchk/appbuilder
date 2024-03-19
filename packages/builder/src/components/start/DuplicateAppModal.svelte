@@ -107,7 +107,7 @@
 </script>
 
 <ModalContent
-  title={"Duplicate App"}
+  title={"复制应用"}
   onConfirm={async () => {
     validation.check({
       ...$values,
@@ -127,7 +127,7 @@
       error={$validation.touched.name && $validation.errors.name}
       on:blur={() => ($validation.touched.name = true)}
       on:change={nameToUrl($values.name)}
-      label="Name"
+      label="名称"
       placeholder={defaultAppName}
     />
     <span>

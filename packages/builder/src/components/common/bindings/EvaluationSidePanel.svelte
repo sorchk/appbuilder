@@ -48,7 +48,7 @@
     <div class="header-content">
       {#if error}
         <Icon name="Alert" color="var(--spectrum-global-color-red-600)" />
-        <div>Error</div>
+        <div>错误</div>
         {#if evaluating}
           <div transition:fade|local={{ duration: 130 }}>
             <ProgressCircle size="S" />
@@ -57,7 +57,7 @@
         <span />
         <Icon name="Copy" size="S" hoverable on:click={copy} />
       {:else}
-        <div>Preview</div>
+        <div>预览</div>
         {#if evaluating}
           <div transition:fade|local={{ duration: 130 }}>
             <ProgressCircle size="S" />
@@ -72,7 +72,7 @@
   </div>
   <div class="body">
     {#if empty}
-      Your expression will be evaluated here
+    您的表达式将在此处进行评估
     {:else}
       <!-- eslint-disable-next-line svelte/no-at-html-tags-->
       {@html highlightedResult}

@@ -49,11 +49,11 @@
 <CreationPage
   showClose={hasData($datasources, $tables)}
   onClose={() => $goto("./table")}
-  heading="Add new data source"
+  heading="添加新数据源"
 >
   <div class="subHeading">
-    <Body>Get started with our Budibase DB</Body>
-    <AbsTooltip text="Budibase DB is built with CouchDB">
+    <Body>开始使用我们的Budibase数据库</Body>
+    <AbsTooltip text="Budibase DB是用CouchDB构建的">
       <Icon name="Info" size="S" />
     </AbsTooltip>
   </div>
@@ -61,24 +61,24 @@
   <div class="options">
     <DatasourceOption
       on:click={internalTableModal.show}
-      title="Create new table"
-      description="Non-relational"
+      title="创建新表"
+      description="非关系型"
       {disabled}
     >
       <svelte:component this={ICONS.BUDIBASE} height="20" width="20" />
     </DatasourceOption>
     <DatasourceOption
       on:click={createSampleData}
-      title="Use sample data"
-      description="Non-relational"
+      title="使用示例数据"
+      description="非关系型"
       disabled={disabled || $datasources.hasDefaultData}
     >
       <svelte:component this={ICONS.BUDIBASE} height="20" width="20" />
     </DatasourceOption>
     <DatasourceOption
       on:click={() => internalTableModal.show({ promptUpload: true })}
-      title="Upload CSV / JSON"
-      description="Non-relational"
+      title="上传CSV/JSON"
+      description="非关系型"
       {disabled}
     >
       <svelte:component this={ICONS.BUDIBASE} height="20" width="20" />
@@ -86,7 +86,7 @@
   </div>
 
   <div class="subHeading">
-    <Body>Or connect to an external datasource</Body>
+    <Body>或者连接到外部数据源</Body>
   </div>
 
   <div class="options">

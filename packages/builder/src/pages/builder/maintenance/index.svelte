@@ -20,21 +20,17 @@
       {#each $admin.maintenance as maintenance}
         {#if maintenance.type === MaintenanceType.SQS_MISSING}
           <Layout>
-            <Heading>Please upgrade your Budibase installation</Heading>
+            <Heading>请升级您的安装</Heading>
             <Body>
-              We've detected that the version of Budibase you're using depends
-              on a more recent version of the CouchDB database than what you
-              have installed.
+              我们检测到您使用的Budibase版本取决于在CouchDB数据库的最新版本上已安装。
             </Body>
             <Body>
-              To resolve this, you can either rollback to a previous version of
-              Budibase, or follow the migration guide to update to a later
-              version of CouchDB.
+              要解决此问题，您可以回滚到的早期版本Budibase，或按照迁移指南更新到更高版本CouchDB的版本。
             </Body>
           </Layout>
           <Button
             on:click={() => (window.location = "https://docs.budibase.com")}
-            >Migration guide</Button
+            >迁移指南</Button
           >
         {/if}
       {/each}

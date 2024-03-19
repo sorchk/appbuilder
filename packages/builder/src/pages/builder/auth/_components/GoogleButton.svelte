@@ -22,6 +22,6 @@
       }
     }}
   >
-    Log in with Google
+  使用谷歌登录
   </FancyButton>
 {/if}

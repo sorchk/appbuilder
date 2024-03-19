@@ -7,7 +7,46 @@ import { TENANT_FEATURE_FLAGS, isEnabled } from "helpers/featureFlags"
 import { PlanModel } from "@budibase/types"
 
 const UNLIMITED = -1
-
+// const deflicense = {
+//   plan: {
+//     type: Constants.PlanType.ENTERPRIS,
+//     model: PlanModel.PER_USER,
+//   },
+//   features: [
+//     Constants.Features.SCIM,
+//     Constants.Features.USER_GROUPS,
+//     Constants.Features.APP_BACKUPS,
+//     Constants.Features.BRANDING,
+//     Constants.Features.ENVIRONMENT_VARIABLES,
+//     Constants.Features.ENFORCEABLE_SSO,
+//     Constants.Features.VIEW_PERMISSIONS,
+//     Constants.Features.APP_BUILDERS,
+//     Constants.Features.TRIGGER_AUTOMATION_RUN,
+//     Constants.Features.SYNC_AUTOMATIONS,
+//     Constants.Features.AUDIT_LOGS,
+//   ],
+//   quotas: {
+//     billing: {
+//       subscription: {
+//         downgradeAt: new Date().getTime() + 10000000,
+//         pastDueAt:  new Date().getTime() + 11000000,
+//         status: "active",
+//       },
+//     },
+//     usage: {
+//       static: {
+//         apps: -1,
+//         rows: -1,
+//         users: -1,
+//       },
+//       monthly: {
+//         dayPasses: -1,
+//         queries: -1,
+//         automations: -1,
+//       },
+//     },
+//   },
+// }
 export const createLicensingStore = () => {
   const DEFAULT = {
     // navigation
@@ -98,6 +137,7 @@ export const createLicensingStore = () => {
       })
     },
     setLicense: () => {
+      // const license = deflicense
       const license = get(auth).user.license
       const planType = license?.plan.type
       const isEnterprisePlan = planType === Constants.PlanType.ENTERPRISE
@@ -176,6 +216,7 @@ export const createLicensingStore = () => {
     setUsageMetrics: async () => {
       if (isEnabled(TENANT_FEATURE_FLAGS.LICENSING)) {
         const usage = get(store).quotaUsage
+        // const license = deflicense
         const license = get(auth).user.license
         const now = new Date()
 

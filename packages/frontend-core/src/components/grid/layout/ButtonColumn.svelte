@@ -49,7 +49,7 @@
     <div class="buttons">
       {#each buttons as button}
         <Button size="S">
-          {button.text || "Button"}
+          {button.text || "按钮"}
         </Button>
       {/each}
     </div>
@@ -91,7 +91,7 @@
                   overBackground={button.type === "overBackground"}
                   on:click={() => handleClick(button, row)}
                 >
-                  {button.text || "Button"}
+                  {button.text || "按钮"}
                 </Button>
               {/each}
             </div>

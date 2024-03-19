@@ -22,7 +22,7 @@
   {#if $config.canEditColumns}
     {#key $datasource}
       <TempTooltip
-        text="Click here to create your first column"
+        text="单击此处创建您的第一列"
         type={TooltipType.Info}
         condition={!$hasNonAutoColumn && !$loading}
       >

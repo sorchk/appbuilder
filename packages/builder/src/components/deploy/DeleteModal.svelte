@@ -30,17 +30,17 @@
 
   const deleteApp = async () => {
     if (!appId) {
-      console.error("No app id provided")
+      console.error("未提供应用程序id")
       return
     }
     deleting = true
     try {
       await API.deleteApp(appId)
       appsStore.load()
-      notifications.success("App deleted successfully")
+      notifications.success("应用程序删除成功")
       onDeleteSuccess()
     } catch (err) {
-      notifications.error("Error deleting app")
+      notifications.error("删除应用程序时出错")
       deleting = false
     }
   }
@@ -49,19 +49,18 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <ConfirmDialog
   bind:this={deletionModal}
-  title="Delete app"
-  okText="Delete"
+  title="删除应用"
+  okText="删除"
   onOk={deleteApp}
   onCancel={() => (deletionConfirmationAppName = null)}
   disabled={deletionConfirmationAppName !== appName || deleting}
 >
-  Are you sure you want to delete
+您确定要删除吗
   <span class="app-name" role="button" tabindex={-1} on:click={copyName}>
     {appName}
   </span>?
-
   <br />
-  Please enter the app name below to confirm.
+  请在下面输入应用程序名称进行确认。
   <br /><br />
   <Input bind:value={deletionConfirmationAppName} placeholder={appName} />
 </ConfirmDialog>

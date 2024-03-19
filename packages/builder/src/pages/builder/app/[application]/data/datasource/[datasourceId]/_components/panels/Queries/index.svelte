@@ -17,7 +17,7 @@
 <Panel>
   <div slot="controls">
     <Button cta on:click={() => $goto(`../../query/new/${datasource._id}`)}>
-      Create new query
+      创建新查询
     </Button>
     {#if datasource.source === "REST"}
       <RestImportButton datasourceId={datasource._id} />

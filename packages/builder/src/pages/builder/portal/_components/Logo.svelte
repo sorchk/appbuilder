@@ -8,7 +8,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <img
   src={$organisation.logoUrl || Logo}
-  alt="Budibase Logo"
+  alt="Logo"
   on:click={() => $goto("./apps")}
 />
 

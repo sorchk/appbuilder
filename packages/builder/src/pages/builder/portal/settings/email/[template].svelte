@@ -81,8 +81,7 @@
     <Body>
       {description}
       <br />
-      Change the email template here. Add dynamic content by using the bindings menu
-      on the right.
+      在此处更改电子邮件模板。使用绑定菜单添加动态内容右边。
     </Body>
   </Layout>
 
@@ -102,19 +101,19 @@
             />
           </div>
           <div class="bindings-editor">
-            <Heading size="XS">Bindings</Heading>
+            <Heading size="XS">绑定</Heading>
             {#if mounted}
               <Tabs noHorizPadding selected="Template">
                 <Tab title="Template">
                   <TemplateBindings
-                    title="Template Bindings"
+                    title="模板绑定"
                     bindings={templateBindings}
                     onBindingClick={setTemplateBinding}
                   />
                 </Tab>
                 <Tab title="Common">
                   <TemplateBindings
-                    title="Common Bindings"
+                    title="公共绑定"
                     bindings={$email?.definitions?.bindings?.common}
                     onBindingClick={setTemplateBinding}
                   />
@@ -126,7 +125,7 @@
       </Tab>
       <Tab title="Preview">
         <div class="preview">
-          <iframe title="preview" srcdoc={previewContent} />
+          <iframe title="预览" srcdoc={previewContent} />
         </div>
       </Tab>
     </Tabs>

@@ -13,22 +13,21 @@
 
 <div bind:this={anchor}>
   <ActionButton on:click={() => (open = true)} icon="Help" quiet>
-    Why can't I edit this table?
+    为什么我不能编辑此表？
   </ActionButton>
 </div>
 
 <Popover bind:open {anchor} align="left">
   <div class="content">
-    <Heading size="XS">The app users table is read only</Heading>
+    <Heading size="XS">应用程序用户表是只读的</Heading>
     <Body size="S">
-      You can continue to view the users that have access to your application.
+      您可以继续查看有权访问您的应用程序的用户。
     </Body>
     <Body size="S">
-      Manage and invite more application users using the user side panel in the
-      top right of your screen.
+      使用中的用户侧面板管理和邀请更多应用程序用户屏幕右上角。
     </Body>
     <div class="button">
-      <Button cta on:click={openSidePanel}>Open users panel</Button>
+      <Button cta on:click={openSidePanel}>打开用户面板</Button>
     </div>
   </div>
 </Popover>

@@ -13,7 +13,7 @@
 
   const typeOptions = {
     [FIELDS.STRING.type]: {
-      label: "Text",
+      label: "文本",
       value: FIELDS.STRING.type,
       config: {
         type: FIELDS.STRING.type,
@@ -21,7 +21,7 @@
       },
     },
     [FIELDS.NUMBER.type]: {
-      label: "Number",
+      label: "数字",
       value: FIELDS.NUMBER.type,
       config: {
         type: FIELDS.NUMBER.type,
@@ -29,7 +29,7 @@
       },
     },
     [FIELDS.DATETIME.type]: {
-      label: "Date",
+      label: "日期",
       value: FIELDS.DATETIME.type,
       config: {
         type: FIELDS.DATETIME.type,
@@ -37,7 +37,7 @@
       },
     },
     [FIELDS.OPTIONS.type]: {
-      label: "Options",
+      label: "选项",
       value: FIELDS.OPTIONS.type,
       config: {
         type: FIELDS.OPTIONS.type,
@@ -45,7 +45,7 @@
       },
     },
     [FIELDS.ARRAY.type]: {
-      label: "Multi-select",
+      label: "多项选择",
       value: FIELDS.ARRAY.type,
       config: {
         type: FIELDS.ARRAY.type,
@@ -53,7 +53,7 @@
       },
     },
     [FIELDS.BARCODEQR.type]: {
-      label: "Barcode/QR",
+      label: "条形码/二维码",
       value: FIELDS.BARCODEQR.type,
       config: {
         type: FIELDS.BARCODEQR.type,
@@ -61,7 +61,7 @@
       },
     },
     [FIELDS.LONGFORM.type]: {
-      label: "Long Form Text",
+      label: "长格式文本",
       value: FIELDS.LONGFORM.type,
       config: {
         type: FIELDS.LONGFORM.type,
@@ -69,7 +69,7 @@
       },
     },
     user: {
-      label: "User",
+      label: "用户",
       value: "user",
       config: {
         type: FIELDS.USER.type,
@@ -78,7 +78,7 @@
       },
     },
     users: {
-      label: "用户",
+      label: "多用户",
       value: "users",
       config: {
         type: FIELDS.USERS.type,
@@ -194,7 +194,7 @@
     {:else if fileName}
       {fileName}
     {:else}
-      Upload
+      上传
     {/if}
   </label>
 </div>
@@ -217,9 +217,9 @@
             : "fieldStatusFailure"}
         >
           {#if validation[column.name]}
-            Success
+            成功
           {:else}
-            Failure
+            失败
             {#if errors[column.name]}
               <Icon name="Help" tooltip={errors[column.name]} />
             {/if}
@@ -236,7 +236,7 @@
   </div>
   <div class="display-column">
     <Select
-      label="Display Column"
+      label="显示列"
       bind:value={displayColumn}
       options={displayColumnOptions}
       sort

@@ -6,7 +6,7 @@
 </script>
 
 <ActionButton icon="UsersLock" quiet on:click={modal.show}>
-  Edit roles
+  编辑角色
 </ActionButton>
 <Modal bind:this={modal}>
   <EditRolesModal />

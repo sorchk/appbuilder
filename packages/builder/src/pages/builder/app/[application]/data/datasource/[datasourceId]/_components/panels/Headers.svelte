@@ -35,7 +35,7 @@
   <SaveDatasourceButton slot="controls" {datasource} {updatedDatasource} />
   <Tooltip
     slot="tooltip"
-    title="REST Headers"
+    title="REST 请求头"
     href="https://docs.budibase.com/docs/rest-queries#headers"
   />
   <KeyValueBuilder
@@ -47,7 +47,7 @@
   />
   <div>
     <ActionButton icon="Add" on:click={() => addHeader.addEntry()}>
-      Add header
+    添加请求头
     </ActionButton>
   </div>
 </Panel>

@@ -11,7 +11,7 @@
 </Modal>
 
 <div class="button">
-  <Button secondary on:click={() => importQueriesModal.show()}>Import</Button>
+  <Button secondary on:click={() => importQueriesModal.show()}>导入</Button>
 </div>
 
 <style>

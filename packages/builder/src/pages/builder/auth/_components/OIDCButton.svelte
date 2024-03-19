@@ -45,6 +45,6 @@
       }
     }}
   >
-    {`Log in with ${$oidc.name || "OIDC"}`}
+    {`使用 ${$oidc.name || "OIDC"} 登录`}
   </FancyButton>
 {/if}

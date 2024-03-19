@@ -29,22 +29,22 @@
 
 <Layout noPadding>
   <Layout gap="XS" noPadding>
-    <Heading>Name and URL</Heading>
-    <Body>Edit your app's name and URL</Body>
+    <Heading>名称和URL</Heading>
+    <Body>编辑应用的名称和URL</Body>
   </Layout>
   <Divider />
 
   <Layout noPadding gap="XXS">
-    <Label size="L">Name</Label>
+    <Label size="L">名称</Label>
     <Body>{$appStore?.name}</Body>
   </Layout>
 
   <Layout noPadding gap="XS">
-    <Label size="L">Icon</Label>
+    <Label size="L">图标</Label>
     <div class="icon">
       <Icon
         size="L"
-        name={$appStore?.icon?.name || "Apps"}
+        name={$appStore?.icon?.name || "应用"}
         color={$appStore?.icon?.color}
       />
     </div>
@@ -63,10 +63,10 @@
       }}
       disabled={appDeployed}
       tooltip={appDeployed
-        ? "You must unpublish your app to make changes"
+        ? "您必须取消发布应用程序才能进行更改"
         : null}
     >
-      Edit
+      编辑
     </Button>
   </div>
 </Layout>

@@ -14,7 +14,7 @@
   active={!!view.groupBy}
   on:click={modal.show}
 >
-  Group by
+分组
 </Button>
 <Modal bind:this={modal}>
   <GroupByModal {view} />

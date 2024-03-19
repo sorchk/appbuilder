@@ -59,7 +59,7 @@
     toggledDatasources[datasource._id] = !datasource.open
   }
 
-  const appUsersTableName = "App users"
+  const appUsersTableName = "应用用户"
   $: showAppUsersTable =
     !searchTerm ||
     appUsersTableName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
@@ -130,7 +130,7 @@
   {#if showNoResults}
     <Layout paddingY="none" paddingX="L">
       <div class="no-results">
-        There aren't any datasources matching that name
+        没有任何与该名称匹配的数据源
       </div>
     </Layout>
   {/if}

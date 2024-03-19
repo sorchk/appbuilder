@@ -25,7 +25,7 @@
 
   const getText = filters => {
     const count = filters?.filter(filter => filter.field)?.length
-    return count ? `Filter (${count})` : "Filter"
+    return count ? `筛选器 (${count})` : "筛选器"
   }
 </script>
 
@@ -34,8 +34,8 @@
 </ActionButton>
 <Modal bind:this={modal}>
   <ModalContent
-    title="Filter"
-    confirmText="Save"
+    title="筛选器"
+    confirmText="保存"
     size="XL"
     onConfirm={() => dispatch("change", tempValue)}
   >

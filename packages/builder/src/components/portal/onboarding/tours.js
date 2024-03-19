@@ -101,7 +101,7 @@ const getTours = () => {
       steps: [
         {
           id: TOUR_STEP_KEYS.BUILDER_DATA_SECTION,
-          title: "Data",
+          title: "数据",
           route: "/builder/app/:application/data",
           layout: OnboardingData,
           query: ".topleftnav .spectrum-Tabs-item#builder-data-tab",
@@ -112,7 +112,7 @@ const getTours = () => {
         },
         {
           id: TOUR_STEP_KEYS.BUILDER_DESIGN_SECTION,
-          title: "Design",
+          title: "设计",
           route: "/builder/app/:application/design",
           layout: OnboardingDesign,
           query: ".topleftnav .spectrum-Tabs-item#builder-design-tab",
@@ -123,10 +123,10 @@ const getTours = () => {
         },
         {
           id: TOUR_STEP_KEYS.BUILDER_AUTOMATION_SECTION,
-          title: "Automations",
+          title: "自动化",
           route: "/builder/app/:application/automation",
           query: ".topleftnav .spectrum-Tabs-item#builder-automation-tab",
-          body: "Once you have your app screens made, you can set up automations to fit in with your current workflow",
+          body: "一旦你制作了应用程序屏幕，你就可以设置自动化功能以适应当前的工作流程",
           onLoad: () => {
             tourEvent(TOUR_STEP_KEYS.BUILDER_AUTOMATION_SECTION)
           },
@@ -136,14 +136,14 @@ const getTours = () => {
           id: TOUR_STEP_KEYS.BUILDER_USER_MANAGEMENT,
           title: "用户",
           query: ".toprightnav #builder-app-users-button",
-          body: "Add users to your app and control what level of access they have.",
+          body: "将用户添加到您的应用程序并控制他们的访问级别。",
           onLoad: () => {
             tourEvent(TOUR_STEP_KEYS.BUILDER_USER_MANAGEMENT)
           },
         },
         {
           id: TOUR_STEP_KEYS.BUILDER_APP_PUBLISH,
-          title: "Publish",
+          title: "发布",
           layout: OnboardingPublish,
           route: "/builder/app/:application/design",
           query: ".toprightnav #builder-app-publish-button",
@@ -164,7 +164,7 @@ const getTours = () => {
           id: TOUR_STEP_KEYS.FEATURE_USER_MANAGEMENT,
           title: "用户",
           query: ".toprightnav #builder-app-users-button",
-          body: "Add users to your app and control what level of access they have.",
+          body: "将用户添加到您的应用程序并控制他们的访问级别。",
           onLoad: () => {
             tourEvent(TOUR_STEP_KEYS.FEATURE_USER_MANAGEMENT)
           },
@@ -176,7 +176,7 @@ const getTours = () => {
       steps: [
         {
           id: TOUR_STEP_KEYS.BUILDER_FORM_CREATE_STEPS,
-          title: "Add multiple steps",
+          title: "添加多个步骤",
           layout: NewFormSteps,
           query: "#steps-prop-control-wrap",
           onComplete: () => {
@@ -196,7 +196,7 @@ const getTours = () => {
       steps: [
         {
           id: TOUR_STEP_KEYS.BUILDER_FORM_ROW_ID,
-          title: "Add row ID to update a row",
+          title: "添加行ID以更新行",
           layout: NewViewUpdateFormRowId,
           query: "#rowId-prop-control-wrap",
           onLoad: () => {
@@ -208,7 +208,7 @@ const getTours = () => {
         },
         {
           id: TOUR_STEP_KEYS.BUILDER_FORM_VIEW_UPDATE_STEPS,
-          title: "Add multiple steps",
+          title: "添加多个步骤",
           layout: NewFormSteps,
           query: "#steps-prop-control-wrap",
           onComplete: () => {

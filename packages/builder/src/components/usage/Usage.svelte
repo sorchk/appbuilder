@@ -75,11 +75,11 @@
     {/if}
     {#if showWarning}
       <Body size="S">
-        To get more {usage.name.toLowerCase()}
+        获取更多 {usage.name.toLowerCase()}
         {#if accountPortalAccess}
-          <Link href={upgradeUrl}>upgrade your plan</Link>
+          <Link href={upgradeUrl}>升级您的计划</Link>
         {:else}
-          contact your account holder
+        联系您的账户持有人
         {/if}
       </Body>
     {/if}

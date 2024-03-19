@@ -41,7 +41,7 @@ const getSchema = () => {
   let schema = {
     docs: "https://github.com/mongodb/node-mongodb-native",
     friendlyName: "MongoDB",
-    type: "Non-relational",
+    type: "非关系型",
     description:
       "MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.",
     features: {

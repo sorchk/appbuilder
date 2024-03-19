@@ -41,16 +41,16 @@
   <Page>
     <Layout noPadding gap="L">
       <Breadcrumbs>
-        <Breadcrumb url={$url("./")} text="Apps" />
-        <Breadcrumb text="Create new app" />
+        <Breadcrumb url={$url("./")} text="应用" />
+        <Breadcrumb text="创建新应用" />
       </Breadcrumbs>
-      <Header title={"Create new app"}>
+      <Header title={"创建新应用"}>
         <div slot="buttons">
           <Button size="M" secondary on:click={initiateAppImport}>
-            Import app
+            导入应用
           </Button>
           <Button size="M" cta on:click={initiateAppCreation}>
-            Start from scratch
+            创建新应用
           </Button>
         </div>
       </Header>

@@ -122,7 +122,7 @@
       await fetchBackups(filterOpt, page)
       notifications.success(response.message)
     } catch {
-      notifications.error("Unable to create backup")
+      notifications.error("无法创建备份")
     }
   }
 
@@ -173,14 +173,14 @@
 <Layout noPadding>
   <Layout gap="XS" noPadding>
     <div class="title">
-      <Heading>Backups</Heading>
+      <Heading>备份</Heading>
       {#if !$licensing.backupsEnabled}
         <Tags>
-          <Tag icon="LockClosed">Premium</Tag>
+          <Tag icon="LockClosed">高级</Tag>
         </Tags>
       {/if}
     </div>
-    <Body>Back up your apps and restore them to their previous state</Body>
+    <Body>备份应用程序并将其恢复到以前的状态</Body>
   </Layout>
   <Divider />
 
@@ -212,12 +212,12 @@
       <Layout noPadding gap="S" justifyItems="center">
         <img height="130px" src={BackupsDefault} alt="BackupsDefault" />
         <Layout noPadding gap="XS">
-          <Heading>You have no backups yet</Heading>
-          <Body>You can manually back up your app any time</Body>
+          <Heading>您还没有备份</Heading>
+          <Body>您可以随时手动备份应用程序</Body>
         </Layout>
         <div>
           <Button cta disabled={loading} on:click={createManualBackup}>
-            Create backup
+            创建备份
           </Button>
         </div>
       </Layout>
@@ -249,7 +249,7 @@
         </div>
         <div>
           <Button cta disabled={loading} on:click={createManualBackup}
-            >Create new backup</Button
+            >创建新备份</Button
           >
         </div>
       </div>
@@ -262,7 +262,7 @@
           allowEditRows={false}
           data={backupData}
           {customRenderers}
-          placeholderText="No backups found"
+          placeholderText="找不到备份"
           border={false}
           on:buttonclick={handleButtonClick}
         />

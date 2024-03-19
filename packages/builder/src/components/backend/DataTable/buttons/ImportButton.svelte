@@ -10,7 +10,7 @@
 </script>
 
 <ActionButton icon="DataUpload" quiet on:click={modal.show} {disabled}>
-  Import
+  导入
 </ActionButton>
 <Modal bind:this={modal}>
   <ImportModal {tableId} {tableType} on:importrows />

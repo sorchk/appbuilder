@@ -125,19 +125,19 @@
           configs.find(
             c => c.name === form.name && c.name !== currentConfig?.name
           ) !== undefined
-            ? "Name must be unique"
+            ? "名称必须唯一"
             : null
       }
       // Name required
       else {
-        errors.name = "Name is required"
+        errors.name = "名称是必填项"
       }
       return !!errors.name
     }
 
     // TYPE
     const typeError = () => {
-      errors.type = form.type ? null : "Type is required"
+      errors.type = form.type ? null : "类型是必需的"
       return !!errors.type
     }
 
@@ -145,17 +145,17 @@
     const basicAuthErrors = () => {
       errors.basic.username = form.basic.username
         ? null
-        : "Username is required"
+        : "用户名是必需的"
       errors.basic.password = form.basic.password
         ? null
-        : "Password is required"
+        : "密码是必需的"
 
       return !!(errors.basic.username || errors.basic.password || commonError)
     }
 
     // BEARER TOKEN
     const bearerTokenErrors = () => {
-      errors.bearer.token = form.bearer.token ? null : "Token is required"
+      errors.bearer.token = form.bearer.token ? null : "需要令牌"
       return !!(errors.bearer.token || commonError)
     }
 
@@ -175,7 +175,7 @@
       form.basic[formFieldkey] = `{{ env.${data.name} }}`
       createVariableModal.hide()
     } catch (err) {
-      notifications.error(`Failed to create variable: ${err.message}`)
+      notifications.error(`未能创建变量： ${err.message}`)
     }
   }
 
@@ -200,31 +200,30 @@
 </script>
 
 <ModalContent
-  title={currentConfig ? "Update Authentication" : "Add Authentication"}
+  title={currentConfig ? "更新身份验证" : "添加身份验证"}
   onConfirm={onConfirmInternal}
-  confirmText={currentConfig ? "Update" : "Add"}
+  confirmText={currentConfig ? "更新" : "添加"}
   disabled={hasErrors || !hasChanged}
-  cancelText={"Cancel"}
+  cancelText={"取消"}
   size="M"
   showSecondaryButton={!!currentConfig}
-  secondaryButtonText={"Remove"}
+  secondaryButtonText={"删除"}
   secondaryAction={onRemove}
   secondaryButtonWarning={true}
 >
   <Layout gap="S">
     <Body size="S">
-      The authorization header will be automatically generated when you send the
-      request.
+      当您发送请求时，将自动生成授权标头。
     </Body>
     <Input
-      label="Name"
+      label="名称"
       bind:value={form.name}
       on:change={onFieldChange}
       on:blur={() => (blurred.name = true)}
       error={blurred.name ? errors.name : null}
     />
     <Select
-      label="Type"
+      label="类型"
       bind:value={form.type}
       on:change={onFieldChange}
       options={AUTH_TYPE_LABELS}
@@ -233,7 +232,7 @@
     />
     {#if form.type === AUTH_TYPES.BASIC}
       <EnvDropdown
-        label="Username"
+        label="用户名"
         bind:value={form.basic.username}
         on:change={onFieldChange}
         on:blur={() => (blurred.basic.username = true)}
@@ -244,7 +243,7 @@
         {handleUpgradePanel}
       />
       <EnvDropdown
-        label="Password"
+        label="密码"
         type="password"
         bind:value={form.basic.password}
         on:change={onFieldChange}
@@ -258,7 +257,7 @@
     {/if}
     {#if form.type === AUTH_TYPES.BEARER}
       <BindableCombobox
-        label="Token"
+        label="令牌"
         value={form.bearer.token}
         bindings={[
           ...getAuthBindings(),

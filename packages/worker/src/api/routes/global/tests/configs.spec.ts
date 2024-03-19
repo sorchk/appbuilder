@@ -287,7 +287,7 @@ describe("configs", () => {
         _id: "config_settings",
         type: "settings",
         config: {
-          company: "Budibase",
+          company: "应用工厂",
           emailBrandingEnabled: true,
           logoUrl: "",
           analyticsEnabled: false,
@@ -298,7 +298,7 @@ describe("configs", () => {
           oidc: false,
           oidcCallbackUrl: `http://localhost:10000/api/global/auth/${config.tenantId}/oidc/callback`,
           platformUrl: "http://localhost:10000",
-          testimonialsEnabled: true,
+          testimonialsEnabled: false,
         },
       }
       delete body._rev

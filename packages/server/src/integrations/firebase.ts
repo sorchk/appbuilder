@@ -17,7 +17,7 @@ interface FirebaseConfig {
 const SCHEMA: Integration = {
   docs: "https://firebase.google.com/docs/firestore/quickstart",
   friendlyName: "Firestore",
-  type: "Non-relational",
+  type: "非关系型",
   description:
     "Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud.",
   features: {

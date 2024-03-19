@@ -39,7 +39,7 @@
       isValid: true,
     },
     [Step.SET_PASSWORD]: {
-      title: "Add password to encrypt your export",
+      title: "添加密码以加密导出",
       confirmText: exportButtonText,
       onConfirm: async () => {
         await validation.check({ password })
@@ -106,23 +106,23 @@
   {#if currentStep === Step.CONFIG}
     <Body>
       <Toggle
-        text="Export rows from internal tables"
+        text="从内部表导出行"
         bind:value={includeInternalTablesRows}
       />
-      <Toggle text="Encrypt my export" bind:value={encrypt} />
+      <Toggle text="加密我的导出" bind:value={encrypt} />
     </Body>
     <InlineAlert
       header={encrypt
-        ? "Please note Budibase does not encrypt attachments during the export process to ensure efficient export of large attachments."
-        : "Do not share your Budibase application exports publicly as they may contain sensitive information such as database credentials or secret keys."}
+        ? "请注意，在导出过程中不会加密附件，以确保高效导出大型附件。"
+        : "不要公开共享您的应用程序导出，因为它们可能包含数据库凭据或密钥等敏感信息。"}
     />
   {/if}
   {#if currentStep === Step.SET_PASSWORD}
     <Input
       type="password"
-      label="Password"
+      label="密码"
       autocomplete="new-password"
-      placeholder="Type here..."
+      placeholder="在此处键入..."
       bind:value={password}
       error={$validation.errors.password}
     />

@@ -80,7 +80,7 @@ const SCHEMA: Integration = {
   description:
     "Microsoft SQL Server is a relational database management system developed by Microsoft. ",
   friendlyName: "MS SQL Server",
-  type: "Relational",
+  type: "关系型",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
     [DatasourceFeature.FETCH_TABLE_NAMES]: true,

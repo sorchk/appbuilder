@@ -66,7 +66,7 @@
 
   const getLastDeployedString = deployments => {
     return deployments?.length
-      ? processStringSync("Published {{ duration time 'millisecond' }} ago", {
+      ? processStringSync("发布在 {{ duration time 'millisecond' }} 之前", {
           time:
             new Date().getTime() - new Date(deployments[0].updatedAt).getTime(),
         })
@@ -93,7 +93,7 @@
     try {
       publishing = true
       await API.publishAppChanges($appStore.appId)
-      notifications.send("App published successfully", {
+      notifications.send("应用发布成功", {
         type: "success",
         icon: "GlobeCheck",
       })
@@ -101,7 +101,7 @@
     } catch (error) {
       console.error(error)
       analytics.captureException(error)
-      const baseMsg = "Error publishing app"
+      const baseMsg = "发布应用时出错"
       const message = error.message
       if (message) {
         notifications.error(`${baseMsg} - ${message}`)
@@ -130,12 +130,12 @@
     try {
       await API.unpublishApp(selectedApp.prodId)
       await appsStore.load()
-      notifications.send("App unpublished", {
+      notifications.send("应用程序未发布", {
         type: "success",
         icon: "GlobeStrike",
       })
     } catch (err) {
-      notifications.error("Error unpublishing app")
+      notifications.error("取消发布应用程序时出错")
     }
   }
 
@@ -144,7 +144,7 @@
       await appsStore.load()
       await deploymentStore.load()
     } catch (err) {
-      notifications.error("Error refreshing app")
+      notifications.error("刷新应用程序时出错")
     }
   }
 </script>
@@ -158,7 +158,7 @@
         <div class="app-action">
           <ActionButton quiet>
             <StatusLight notice />
-            Update
+            更新
           </ActionButton>
         </div>
       </div>
@@ -178,7 +178,7 @@
               builderStore.showBuilderSidePanel()
             }}
           >
-            Users
+            用户
           </ActionButton>
         </div>
       </div>
@@ -192,7 +192,7 @@
           icon="PlayCircle"
           on:click={previewApp}
         >
-          Preview
+          预览
         </ActionButton>
       </div>
     </div>
@@ -212,7 +212,7 @@
           <Icon name={isPublished ? "GlobeCheck" : "GlobeStrike"} />
           <TourWrap stepKeys={[TOUR_STEP_KEYS.BUILDER_APP_PUBLISH]}>
             <span class="publish-open" id="builder-app-publish-button">
-              Publish
+              发布
               <Icon
                 name={appActionPopoverOpen ? "ChevronUp" : "ChevronDown"}
                 size="M"
@@ -264,13 +264,13 @@
                     {lastDeployed}
                   </span>
                   <span class="unpublish-link">
-                    <Link quiet on:click={unpublishApp}>Unpublish</Link>
+                    <Link quiet on:click={unpublishApp}>未发布的</Link>
                   </span>
                   <span class="revert-link">
                     <AbsTooltip
                       text={$isOnlyUser
                         ? null
-                        : "Unavailable - another user is editing this app"}
+                        : "不可用-其他用户正在编辑此应用"}
                     >
                       <Link
                         disabled={!$isOnlyUser}
@@ -278,7 +278,7 @@
                         secondary
                         on:click={revertApp}
                       >
-                        Revert
+                      还原
                       </Link>
                     </AbsTooltip>
                   </span>
@@ -297,7 +297,7 @@
                     appActionPopover.hide()
                   }}
                 >
-                  Embed
+                内嵌
                 </ActionButton>
               {/if}
               <Button
@@ -306,7 +306,7 @@
                 id={"builder-app-publish-button"}
                 disabled={!canPublish}
               >
-                Publish
+                发布
               </Button>
             </div>
           </Layout>

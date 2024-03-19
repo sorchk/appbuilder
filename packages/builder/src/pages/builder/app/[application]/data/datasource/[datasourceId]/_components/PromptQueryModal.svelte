@@ -19,21 +19,21 @@
 <Modal bind:this={modal}>
   <ModalContent
     size="L"
-    cancelText="Cancel"
-    confirmText="Create new query"
+    cancelText="取消"
+    confirmText="创建新查询"
     onConfirm={() => goto(`../../query/new/${params["datasourceId"]}`)}
     showCloseIcon={false}
   >
     <div slot="header" class="header">
       <FontAwesomeIcon name="fa-solid fa-circle-check" />
-      <Heading size="M">You're ready to query your data!</Heading>
+      <Heading size="M">您已准备好查询数据！</Heading>
     </div>
     <div class="body">
-      <Body>Your database is connected and ready to use.</Body>
+      <Body>您的数据库已连接并可供使用。</Body>
       <Body
-        >Create a query using <span>Create</span>, <span>Read</span>,
-        <span>Update</span>
-        and <span>Delete</span> functions.</Body
+        >使用创建查询 <span>创建</span>, <span>读取</span>,
+        <span>更新</span>
+        和 <span>删除</span> 函数.</Body
       >
     </div>
   </ModalContent>

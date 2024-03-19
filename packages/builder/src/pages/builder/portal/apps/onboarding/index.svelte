@@ -7,7 +7,7 @@
   import { API } from "api"
   import { auth, admin } from "stores/portal"
 
-  let name = "My first app"
+  let name = "我的第一个应用程序"
   let url = "my-first-app"
   let appId = null
 
@@ -37,7 +37,7 @@
 
   const goToApp = () => {
     $goto(`/builder/app/${appId}`)
-    notifications.success(`App created successfully`)
+    notifications.success(`应用程序创建成功`)
   }
 
   const handleCreateApp = async () => {
@@ -47,7 +47,7 @@
       goToApp()
     } catch (e) {
       loading = false
-      notifications.error(e.message || "There was a problem creating your app")
+      notifications.error(e.message || "创建应用程序时出现问题")
     }
   }
 </script>

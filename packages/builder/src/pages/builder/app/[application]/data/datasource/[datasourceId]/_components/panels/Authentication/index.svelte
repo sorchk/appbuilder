@@ -17,7 +17,7 @@
   <SaveDatasourceButton slot="controls" {datasource} {updatedDatasource} />
   <Tooltip
     slot="tooltip"
-    title="REST Authentication"
+    title="REST身份验证"
     href="https://docs.budibase.com/docs/rest-authentication"
   />
   <RestAuthenticationBuilder

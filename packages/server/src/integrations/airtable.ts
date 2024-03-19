@@ -19,7 +19,7 @@ const SCHEMA: Integration = {
   description:
     "Airtable is a spreadsheet-database hybrid, with the features of a database but applied to a spreadsheet.",
   friendlyName: "Airtable",
-  type: "Spreadsheet",
+  type: "电子表格",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
   },

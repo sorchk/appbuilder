@@ -21,10 +21,10 @@
   <CreationPage
     showClose={!!onClose}
     {onClose}
-    heading={hasScreens ? "Create new screen" : "Create your first screen"}
+    heading={hasScreens ? "创建新屏幕" : "创建您的第一个屏幕"}
   >
     <div class="subHeading">
-      <Body>Start from scratch or create screens from your data</Body>
+      <Body>从头开始或根据数据创建屏幕</Body>
     </div>
 
     <div class="cards">
@@ -33,8 +33,8 @@
           <img alt="" src={blankImage} />
         </div>
         <div class="text">
-          <Body size="S">Blank screen</Body>
-          <Body size="XS">Add an empty blank screen</Body>
+          <Body size="S">空白屏幕</Body>
+          <Body size="XS">添加空白屏幕</Body>
         </div>
       </div>
 
@@ -43,8 +43,8 @@
           <img alt="" src={tableImage} />
         </div>
         <div class="text">
-          <Body size="S">Table</Body>
-          <Body size="XS">View, edit and delete rows on a table</Body>
+          <Body size="S">表</Body>
+          <Body size="XS">查看、编辑和删除表上的行</Body>
         </div>
       </div>
 
@@ -53,8 +53,8 @@
           <img alt="" src={gridImage} />
         </div>
         <div class="text">
-          <Body size="S">Grid</Body>
-          <Body size="XS">View and manipulate rows on a grid</Body>
+          <Body size="S">网格</Body>
+          <Body size="XS">查看和操作网格上的行</Body>
         </div>
       </div>
 
@@ -63,8 +63,8 @@
           <img alt="" src={formImage} />
         </div>
         <div class="text">
-          <Body size="S">Form</Body>
-          <Body size="XS">Capture data from your users</Body>
+          <Body size="S">表单</Body>
+          <Body size="XS">用户填写表单数据</Body>
         </div>
       </div>
     </div>

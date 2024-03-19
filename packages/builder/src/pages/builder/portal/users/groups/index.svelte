@@ -93,25 +93,25 @@
 <Layout noPadding gap="M">
   <Layout gap="XS" noPadding>
     <div class="title">
-      <Heading size="M">Groups</Heading>
+      <Heading size="M">组</Heading>
       {#if !$licensing.groupsEnabled}
         <Tags>
           <Tag icon="LockClosed">Enterpise</Tag>
         </Tags>
       {/if}
     </div>
-    <Body>Easily assign and manage your users' access with groups</Body>
+    <Body>通过组轻松分配和管理用户的访问权限</Body>
   </Layout>
   <Divider />
   {#if !$auth.accountPortalAccess && !$licensing.groupsEnabled && $admin.cloud}
-    <Body>Contact your account holder to upgrade your plan.</Body>
+    <Body>请与您的帐户持有人联系以升级您的计划。</Body>
   {/if}
   <div class="controls">
     <ButtonGroup>
       {#if $licensing.groupsEnabled}
         <!--Show the group create button-->
         <Button disabled={readonly} cta on:click={showCreateGroupModal}>
-          Add group
+          添加组
         </Button>
       {:else}
         <Button
@@ -128,13 +128,13 @@
             window.open("https://budibase.com/pricing/", "_blank")
           }}
         >
-          View Plans
+          查看计划
         </Button>
       {/if}
     </ButtonGroup>
     {#if $licensing.groupsEnabled}
       <div class="controls-right">
-        <Search bind:value={searchString} placeholder="Search" />
+        <Search bind:value={searchString} placeholder="搜索" />
       </div>
     {/if}
   </div>

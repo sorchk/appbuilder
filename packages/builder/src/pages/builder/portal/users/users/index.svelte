@@ -82,12 +82,12 @@
       minWidth: "200px",
     },
     role: {
-      displayName: "Access",
+      displayName: "访问",
       sortable: false,
       width: "1fr",
     },
     ...($licensing.groupsEnabled && {
-      userGroups: { sortable: false, displayName: "Groups", width: "1fr" },
+      userGroups: { sortable: false, displayName: "组", width: "1fr" },
     }),
     apps: {
       sortable: false,
@@ -123,7 +123,7 @@
       return {}
     }
     let pendingSchema = JSON.parse(JSON.stringify(tblSchema))
-    pendingSchema.email.displayName = "Pending Invites"
+    pendingSchema.email.displayName = "挂起的邀请"
     return pendingSchema
   }
 
@@ -181,7 +181,7 @@
       pendingInvites = await users.getInvites()
       inviteConfirmationModal.show()
     } catch (error) {
-      notifications.error("Error inviting user")
+      notifications.error("邀请用户时出错")
     }
   }
 
@@ -201,7 +201,7 @@
     }
 
     if (!newUsers.length) {
-      notifications.info("Duplicated! There is no new users to add.")
+      notifications.info("重复！没有要添加的新用户。")
     }
     return { ...userData, users: newUsers }
   }
@@ -230,12 +230,12 @@
   async function createUsers() {
     try {
       bulkSaveResponse = await users.create(await removingDuplicities(userData))
-      notifications.success("Successfully created user")
+      notifications.success("已成功创建用户")
       await groups.actions.init()
       passwordModal.show()
       await fetch.refresh()
     } catch (error) {
-      notifications.error("Error creating user")
+      notifications.error("创建用户时出错")
     }
   }
 
@@ -251,21 +251,21 @@
     try {
       let ids = selectedRows.map(user => user._id)
       if (ids.includes(get(auth).user._id)) {
-        notifications.error("You cannot delete yourself")
+        notifications.error("您不能删除自己")
         return
       }
 
       if (selectedRows.some(u => u.scimInfo?.isSync)) {
-        notifications.error("You cannot remove users created via your AD")
+        notifications.error("无法删除通过AD创建的用户")
         return
       }
 
       await users.bulkDelete(ids)
-      notifications.success(`Successfully deleted ${selectedRows.length} rows`)
+      notifications.success(`已成功删除 ${selectedRows.length} 行`)
       selectedRows = []
       await fetch.refresh()
     } catch (error) {
-      notifications.error("Error deleting users")
+      notifications.error("删除用户时出错")
     }
   }
 
@@ -276,7 +276,7 @@
       pendingInvites = await users.getInvites()
       invitesLoaded = true
     } catch (error) {
-      notifications.error("Error fetching user group data")
+      notifications.error("获取用户组数据时出错")
     }
   })
 </script>
@@ -300,8 +300,7 @@
       buttonText={isOwner ? "升级" : "查看计划"}
       cta
       header="Account de-activated"
-      message="Due to the free plan user limit being exceeded, your account has been de-activated.
-      Upgrade your plan to re-activate your account."
+      message="由于超出了免费计划用户限制，您的帐户已被取消激活。升级您的计划以重新激活您的帐户。"
     />
   {/if}
   <div class="controls">
@@ -314,7 +313,7 @@
             : createUserModal.show}
           cta
         >
-          Add users
+          添加用户
         </Button>
         <Button
           disabled={readonly}
@@ -323,12 +322,12 @@
             : importUsersModal.show}
           secondary
         >
-          Import
+          导入
         </Button>
       </div>
     {/if}
     <div class="controls-right">
-      <Search bind:value={searchEmail} placeholder="Search" />
+      <Search bind:value={searchEmail} placeholder="搜索" />
       {#if selectedRows.length > 0}
         <DeleteRowsButton
           item="user"

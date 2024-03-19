@@ -32,17 +32,17 @@ export const BudibaseRoleOptionsOld = [
 ]
 export const BudibaseRoleOptions = [
   {
-    label: "Account admin",
+    label: "管理员",
     value: BudibaseRoles.Admin,
     subtitle: "Has full access to all apps and settings in your account",
   },
   {
-    label: "Creator",
+    label: "创建者",
     value: BudibaseRoles.Creator,
     subtitle: "Can create and edit apps they have access to",
   },
   {
-    label: "App user",
+    label: "应用用户",
     value: BudibaseRoles.AppUser,
     subtitle: "Can only use published apps they have access to",
   },

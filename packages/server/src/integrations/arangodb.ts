@@ -20,7 +20,7 @@ interface ArangodbConfig {
 const SCHEMA: Integration = {
   docs: "https://github.com/arangodb/arangojs",
   friendlyName: "ArangoDB",
-  type: "Non-relational",
+  type: "非关系型",
   description:
     "ArangoDB is a scalable open-source multi-model database natively supporting graph, document and search. All supported data models & access patterns can be combined in queries allowing for maximal flexibility. ",
   features: {

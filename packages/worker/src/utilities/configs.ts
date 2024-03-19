@@ -4,7 +4,7 @@ export async function getLicensedConfig() {
   let licensedConfig: object = {}
   const defaults = {
     emailBrandingEnabled: true,
-    testimonialsEnabled: true,
+    testimonialsEnabled: false,
     platformTitle: undefined,
     metaDescription: undefined,
     loginHeading: undefined,

@@ -23,7 +23,7 @@
   }}
 >
   <img src={GoogleLogo} alt="google icon" />
-  <p>Sign in with Google</p>
+  <p>使用谷歌登录</p>
 </button>
 
 <style>

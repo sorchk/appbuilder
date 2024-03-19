@@ -20,17 +20,17 @@
 </script>
 
 <Button icon="Delete" warning quiet on:click={modal.show}>
-  Delete
+  删除
   {selectedRows.length}
   {text}
 </Button>
 <ConfirmDialog
   bind:this={modal}
-  okText="Delete"
+  okText="删除"
   onOk={confirmDeletion}
-  title="Confirm Deletion"
+  title="确认删除"
 >
-  Are you sure you want to delete
+您确定要删除吗
   {selectedRows.length}
   {text}?
 </ConfirmDialog>

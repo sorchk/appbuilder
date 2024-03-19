@@ -19,10 +19,10 @@
       })
 
       notifications.success(
-        `Datasource ${datasource.name} updated successfully`
+        `数据源 ${datasource.name} 更新成功`
       )
     } catch (err) {
-      notifications.error(err?.message ?? "Error saving datasource")
+      notifications.error(err?.message ?? "保存数据源时出错")
 
       return keepOpen
     }

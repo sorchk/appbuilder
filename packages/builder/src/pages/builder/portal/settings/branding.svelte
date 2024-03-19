@@ -174,10 +174,10 @@
       // Update settings
       await organisation.save(config)
       await init()
-      notifications.success("Branding settings updated")
+      notifications.success("品牌设置已更新")
     } catch (e) {
-      console.error("Branding updated failed", e)
-      notifications.error("Branding updated failed")
+      console.error("品牌更新失败", e)
+      notifications.error("品牌更新失败")
     }
     updated = false
     saving = false
@@ -211,7 +211,7 @@
   <Layout noPadding>
     <Layout gap="XS" noPadding>
       <div class="title">
-        <Heading size="M">Branding</Heading>
+        <Heading size="M">品牌</Heading>
         {#if !isCloud && !brandingEnabled}
           <Tags>
             <Tag icon="LockClosed">Premium</Tag>
@@ -223,14 +223,14 @@
           </Tags>
         {/if}
       </div>
-      <Body>Remove all Budibase branding and use your own.</Body>
+      <Body>删除所有Budibase品牌并使用您自己的品牌。</Body>
     </Layout>
     <Divider />
     <div class="branding fields">
       <div class="field">
-        <Label size="L">Logo</Label>
+        <Label size="L">Logo图</Label>
         <File
-          title="Upload image"
+          title="上传图片"
           handleFileTooLarge={() => {
             notifications.warn("File too large. 20mb limit")
           }}
@@ -254,9 +254,9 @@
       </div>
 
       <div class="field">
-        <Label size="L">Favicon</Label>
+        <Label size="L">网站图标</Label>
         <File
-          title="Upload image"
+          title="上传图标"
           handleFileTooLarge={() => {
             notifications.warn("File too large. 20mb limit")
           }}
@@ -279,7 +279,7 @@
         />
       </div>
       <div class="field">
-        <Label size="L">Title</Label>
+        <Label size="L">标题</Label>
         <Input
           on:change={e => {
             let clone = { ...config }
@@ -292,7 +292,7 @@
       </div>
       <div>
         <Toggle
-          text={"Remove Budibase brand from emails"}
+          text={"从电子邮件中删除Budibase品牌"}
           on:change={e => {
             let clone = { ...config }
             clone.emailBrandingEnabled = !e.detail
@@ -306,13 +306,13 @@
 
     <Divider />
     <Layout gap="XS" noPadding>
-      <Heading size="S">Login page</Heading>
+      <Heading size="S">登录</Heading>
       <Body />
     </Layout>
     <div class="login">
       <div class="fields">
         <div class="field">
-          <Label size="L">Header</Label>
+          <Label size="L">登录头</Label>
           <Input
             on:change={e => {
               let clone = { ...config }
@@ -325,7 +325,7 @@
         </div>
 
         <div class="field">
-          <Label size="L">Button</Label>
+          <Label size="L">按钮</Label>
           <Input
             on:change={e => {
               let clone = { ...config }
@@ -338,7 +338,7 @@
         </div>
         <div>
           <Toggle
-            text={"Remove customer testimonials"}
+            text={"删除客户推荐"}
             on:change={e => {
               let clone = { ...config }
               clone.testimonialsEnabled = !e.detail
@@ -352,13 +352,13 @@
     </div>
     <Divider />
     <Layout gap="XS" noPadding>
-      <Heading size="S">Application previews</Heading>
-      <Body>Customise the meta tags on your app preview</Body>
+      <Heading size="S">应用程序预览</Heading>
+      <Body>在应用程序预览中自定义元标签</Body>
     </Layout>
     <div class="app-previews">
       <div class="fields">
         <div class="field">
-          <Label size="L">Image URL</Label>
+          <Label size="L">图片网址</Label>
           <Input
             on:change={e => {
               let clone = { ...config }
@@ -370,7 +370,7 @@
           />
         </div>
         <div class="field">
-          <Label size="L">Title</Label>
+          <Label size="L">标题</Label>
           <Input
             on:change={e => {
               let clone = { ...config }
@@ -382,7 +382,7 @@
           />
         </div>
         <div class="field">
-          <Label size="L">Description</Label>
+          <Label size="L">描述</Label>
           <TextArea
             on:change={e => {
               let clone = { ...config }
@@ -416,7 +416,7 @@
         cta
         disabled={saving || !updated || !$organisation.loaded}
       >
-        Save
+        保存
       </Button>
     </div>
   </Layout>

@@ -67,14 +67,14 @@
     const { connected } = await API.validateDatasource(datasource)
 
     if (!connected) {
-      throw "Invalid connection"
+      throw "无效的连接"
     }
   }
 
   const afterSave = async ({ action }) => {
     await tablesStore.fetch()
     await datasourcesStore.fetch()
-    notifications.success(`Relationship ${action} successfully`)
+    notifications.success(`关系 ${action} 成功`)
   }
 
   const onError = async ({ action, err }) => {
@@ -85,7 +85,7 @@
     } else if (action === "deleted") {
       notificationVerb = "deleting"
     }
-    notifications.error(`Error ${notificationVerb} datasource: ${err}`)
+    notifications.error(`错误 ${notificationVerb} 数据源: ${err}`)
   }
 </script>
 
@@ -100,11 +100,11 @@
 
 <Panel>
   <Button slot="controls" cta on:click={modal.show}>
-    Define relationships
+    定义关系
   </Button>
   <Tooltip
     slot="tooltip"
-    title="Relationships"
+    title="关系"
     href="https://docs.budibase.com/docs/relationships"
   />
   <Table

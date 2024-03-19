@@ -18,7 +18,7 @@ interface CouchDBConfig {
 const SCHEMA: Integration = {
   docs: "https://docs.couchdb.org/en/stable/",
   friendlyName: "CouchDB",
-  type: "Non-relational",
+  type: "非关系型",
   description:
     "Apache CouchDB is an open-source document-oriented NoSQL database, implemented in Erlang.",
   features: {

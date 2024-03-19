@@ -13,7 +13,7 @@
 </script>
 
 <ActionButton {disabled} icon="DataDownload" quiet on:click={modal.show}>
-  Export
+  导出
 </ActionButton>
 <Modal bind:this={modal}>
   <ExportModal {view} {filters} {sorting} {selectedRows} {formats} />

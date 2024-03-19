@@ -11,9 +11,9 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <ModalContent
   size="M"
-  title="Choose your onboarding"
-  confirmText="Done"
-  cancelText="Cancel"
+  title="选择您的加入方式"
+  confirmText="确认"
+  cancelText="取消"
   showCloseIcon={false}
   onConfirm={() => chooseCreationType(selectedOnboardingType)}
   disabled={!selectedOnboardingType}
@@ -29,7 +29,7 @@
       <div class="content onboarding-type-wrap">
         <Icon name="WebPage" />
         <div class="onboarding-type-text">
-          <Body size="S">Send email invites</Body>
+          <Body size="S">发送电子邮件邀请</Body>
         </div>
       </div>
       <div style="color: var(--spectrum-global-color-green-600); float: right">
@@ -51,7 +51,7 @@
       <div class="content onboarding-type-wrap">
         <Icon name="Key" />
         <div class="onboarding-type-text">
-          <Body size="S">Generate passwords for each user</Body>
+          <Body size="S">为每个用户生成密码</Body>
         </div>
       </div>
       <div style="color: var(--spectrum-global-color-green-600); float: right">

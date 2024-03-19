@@ -61,7 +61,7 @@ const SCHEMA: Integration = {
   docs: "https://node-postgres.com",
   plus: true,
   friendlyName: "PostgreSQL",
-  type: "Relational",
+  type: "关系型",
   description:
     "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
   features: {

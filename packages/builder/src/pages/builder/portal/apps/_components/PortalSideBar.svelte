@@ -42,7 +42,7 @@
       >
         <NavItem
           text={app.name}
-          icon={app.icon?.name || "Apps"}
+          icon={app.icon?.name || "应用"}
           iconColor={app.icon?.color}
           selected={$params.appId === app.appId}
           highlighted={opened == app.appId}

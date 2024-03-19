@@ -9,10 +9,10 @@
 <Page>
   <Layout noPadding gap="L">
     <Breadcrumbs>
-      <Breadcrumb url={$url("./")} text="Apps" />
-      <Breadcrumb text="Templates" />
+      <Breadcrumb url={$url("./")} text="应用" />
+      <Breadcrumb text="模板" />
     </Breadcrumbs>
-    <Header title="Templates" />
+    <Header title="模板" />
     <TemplateDisplay templates={$templates} />
   </Layout>
 </Page>

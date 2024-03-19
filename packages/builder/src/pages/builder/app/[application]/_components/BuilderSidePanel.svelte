@@ -249,7 +249,7 @@
 
   const onUpdateGroup = async (group, role) => {
     if (!group) {
-      notifications.error("A group must be specified")
+      notifications.error("必须指定一个组")
       return
     }
     try {
@@ -258,7 +258,7 @@
       }
       await updateAppGroup(group, role)
     } catch {
-      notifications.error("Group update failed")
+      notifications.error("组更新失败")
     }
   }
 
@@ -361,7 +361,7 @@
 
   async function inviteUser() {
     if (!validEmail) {
-      notifications.error("Email is not valid")
+      notifications.error("电子邮件无效")
       return
     }
     const newUserEmail = email + ""
@@ -391,7 +391,7 @@
       userInviteResponse = await users.onboard(payload)
     } catch (error) {
       console.error(error.message)
-      notifications.error("Error inviting user")
+      notifications.error("邀请用户时出错")
     }
     inviting = false
     return userInviteResponse
@@ -420,8 +420,8 @@
       email = originalQuery
       notifications.success(
         userOnboardResponse.created
-          ? "User created successfully"
-          : "User invite successful"
+          ? "用户创建成功"
+          : "用户邀请成功"
       )
     } else {
       const failedUser = userOnboardResponse?.unsuccessful.find(
@@ -429,7 +429,7 @@
       )
       inviteFailureResponse =
         failedUser?.reason === "Unavailable"
-          ? "Email already in use. Please use a different email."
+          ? "电子邮件已在使用中。请使用其他电子邮件。"
           : failedUser?.reason
 
       notifications.error(inviteFailureResponse)
@@ -516,10 +516,10 @@
   const getRoleFooter = user => {
     if (user.group) {
       const role = $roles.find(role => role._id === user.role)
-      return `This user has been given ${role?.name} access from the ${user.group} group`
+      return `已向该用户提供 ${role?.name} 角色 从访问 ${user.group} 组`
     }
     if (user.isAdminOrGlobalBuilder) {
-      return "Account admins can edit all apps"
+      return "帐户管理员可以编辑所有应用程序"
     }
     return null
   }
@@ -563,11 +563,11 @@
       {#if invitingFlow}
         <Icon name="BackAndroid" />
       {/if}
-      <Heading size="S">{invitingFlow ? "Invite new user" : "用户"}</Heading>
+      <Heading size="S">{invitingFlow ? "邀请新用户" : "用户"}</Heading>
     </div>
     <div class="header">
       {#if !invitingFlow}
-        <Button on:click={openInviteFlow} size="S" cta>Invite user</Button>
+        <Button on:click={openInviteFlow} size="S" cta>邀请用户</Button>
       {/if}
       <Icon
         color="var(--spectrum-global-color-gray-600)"
@@ -583,7 +583,7 @@
     <div class="search" class:focused={searchFocus}>
       <span class="search-input">
         <Input
-          placeholder={"Add users and groups to your app"}
+          placeholder={"将用户和组添加到您的应用程序"}
           autocomplete="off"
           disabled={inviting}
           value={query}
@@ -614,11 +614,11 @@
       {#if promptInvite && !userOnboardResponse}
         <Layout gap="S" paddingX="XL">
           <div class="invite-header">
-            <Heading size="XS">No user found</Heading>
+            <Heading size="XS">未找到用户</Heading>
             <div class="invite-directions">
-              Try searching a different email or <span
+              尝试搜索其他电子邮件或 <span
                 class="underlined"
-                on:click={openInviteFlow}>invite a new user</span
+                on:click={openInviteFlow}>邀请新用户</span
               >
             </div>
           </div>
@@ -630,8 +630,8 @@
           {#if filteredInvites?.length}
             <Layout noPadding gap="XS">
               <div class="auth-entity-header">
-                <div class="auth-entity-title">Pending invites</div>
-                <div class="auth-entity-access-title">Access</div>
+                <div class="auth-entity-title">挂起的邀请</div>
+                <div class="auth-entity-access-title">访问</div>
               </div>
               {#each filteredInvites as invite}
                 {@const user = {
@@ -665,7 +665,7 @@
                       allowedRoles={user.isAdminOrGlobalBuilder
                         ? [Constants.Roles.CREATOR]
                         : null}
-                      labelPrefix="Can use as"
+                      labelPrefix="可以用作"
                     />
                   </div>
                 </div>
@@ -676,8 +676,8 @@
           {#if $licensing.groupsEnabled && filteredGroups?.length}
             <Layout noPadding gap="XS">
               <div class="auth-entity-header">
-                <div class="auth-entity-title">Groups</div>
-                <div class="auth-entity-access-title">Access</div>
+                <div class="auth-entity-title">组</div>
+                <div class="auth-entity-access-title">访问</div>
               </div>
               {#each filteredGroups as group}
                 <div
@@ -718,7 +718,7 @@
                       }}
                       autoWidth
                       align="right"
-                      labelPrefix="Can use as"
+                      labelPrefix="可以用作"
                     />
                   </div>
                 </div>
@@ -729,8 +729,8 @@
           {#if filteredUsers?.length}
             <div class="auth-entity-section">
               <div class="auth-entity-header">
-                <div class="auth-entity-title">Users</div>
-                <div class="auth-entity-access-title">Access</div>
+                <div class="auth-entity-title">用户</div>
+                <div class="auth-entity-access-title">访问</div>
               </div>
               {#each allUsers as user}
                 <div class="auth-entity">
@@ -764,7 +764,7 @@
                       allowedRoles={user.isAdminOrGlobalBuilder
                         ? [Constants.Roles.CREATOR]
                         : null}
-                      labelPrefix="Can use as"
+                      labelPrefix="可以用作"
                     />
                   </div>
                 </div>
@@ -777,10 +777,9 @@
       {#if userOnboardResponse?.created}
         <Layout gap="S" paddingX="XL">
           <div class="invite-header">
-            <Heading size="XS">User added!</Heading>
+            <Heading size="XS">用户已添加！</Heading>
             <div class="invite-directions">
-              Email invites are not available without SMTP configuration. Here
-              is the password that has been generated for this user.
+              没有SMTP配置，电子邮件邀请不可用。在这里是为此用户生成的密码。
             </div>
           </div>
           <div>
@@ -800,14 +799,14 @@
           <FancyForm bind:this={form}>
             <FancyInput
               disabled={false}
-              label="Email"
+              label="电子邮箱"
               value={email}
               on:change={e => {
                 email = e.detail
               }}
               validate={() => {
                 if (!email) {
-                  return "Please enter an email"
+                  return "请输入电子邮件"
                 }
                 return null
               }}
@@ -820,7 +819,7 @@
                 : Constants.BudibaseRoleOptions.filter(
                     option => option.value !== Constants.BudibaseRoles.Admin
                   )}
-              label="Role"
+              label="角色"
               on:change={checkAppAccess}
             />
             <span class="role-wrap">
@@ -849,7 +848,7 @@
               newStyles
               cta
               disabled={!email?.length}
-              on:click={onInviteUser}>Add user</Button
+              on:click={onInviteUser}>添加用户</Button
             >
           </span>
         </div>

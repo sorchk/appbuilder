@@ -22,7 +22,7 @@
       await admin.init()
       await auth.checkQueryString()
     } catch (error) {
-      notifications.error("Error getting checklist")
+      notifications.error("获取检查表时出错")
     }
     loaded = true
   })

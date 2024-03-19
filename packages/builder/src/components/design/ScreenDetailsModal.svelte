@@ -8,7 +8,7 @@
   export let onCancel
   export let screenUrl
   export let screenRole
-  export let confirmText = "Continue"
+  export let confirmText = "继续"
 
   const appPrefix = "/app"
   let touched = false
@@ -26,7 +26,7 @@
     touched = true
     screenUrl = sanitizeUrl(screenUrl)
     if (routeExists(screenUrl)) {
-      error = "This URL is already taken for this access role"
+      error = "此URL已用于此访问角色"
     } else {
       error = null
     }
@@ -53,16 +53,16 @@
 <ModalContent
   bind:this={modal}
   size="M"
-  title={"Screen details"}
+  title={"屏幕详细信息"}
   {confirmText}
   onConfirm={confirmScreenDetails}
   {onCancel}
-  cancelText={"Back"}
+  cancelText={"返回"}
   disabled={!screenUrl || error || !touched}
 >
   <form on:submit|preventDefault={() => modal.confirm()}>
     <Input
-      label="Enter a URL for the new screen"
+      label="输入新屏幕的URL"
       {error}
       bind:value={screenUrl}
       on:change={routeChanged}

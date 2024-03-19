@@ -34,7 +34,7 @@
       })
     } catch (error) {
       row = null
-      notifications.error("Error fetching relationship data")
+      notifications.error("获取关系数据时出错")
     }
   }
 </script>

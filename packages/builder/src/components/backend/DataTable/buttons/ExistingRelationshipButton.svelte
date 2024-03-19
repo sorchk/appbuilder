@@ -48,7 +48,7 @@
       quiet
       on:click={() => modal.show({ fromTable: table })}
     >
-      Define relationship
+    定义关系
     </ActionButton>
   </div>
   <CreateEditRelationshipModal

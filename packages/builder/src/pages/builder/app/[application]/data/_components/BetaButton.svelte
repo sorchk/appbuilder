@@ -8,7 +8,7 @@
     cta
     on:click={() => window.open("https://t.maze.co/165900794", "_blank")}
   >
-    Give Feedback
+  提供反馈
   </Button>
 </div>
 

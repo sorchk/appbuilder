@@ -47,17 +47,17 @@
       <img alt="Budibase Logo" src={"/builder/bblogo.png"} />
       <h1>{name}</h1>
     </div>
-    <div class="nav">Home</div>
+    <div class="nav">首页</div>
     <table>
       <thead>
         <tr>
-          <th>FIRST NAME</th>
-          <th>LAST NAME</th>
-          <th>EMAIL</th>
-          <th>ADDRESS</th>
-          <th>CITY</th>
-          <th>POSTCODE</th>
-          <th>PHONE</th>
+          <th>名</th>
+          <th>姓</th>
+          <th>电子邮箱</th>
+          <th>地址</th>
+          <th>省市</th>
+          <th>邮编</th>
+          <th>电话</th>
         </tr>
       </thead>
       <tbody>
@@ -73,7 +73,7 @@
     <div class="sidePanel">
       <h2>{rows[0].firstName}</h2>
       <div class="field">
-        <label for="exampleLastName">lastName</label>
+        <label for="exampleLastName">姓名</label>
         <input
           id="exampleLastName"
           tabIndex="-1"
@@ -83,12 +83,12 @@
       </div>
 
       <div class="field">
-        <label for="exampleEmail">Email</label>
+        <label for="exampleEmail">电子邮箱</label>
         <input id="exampleEmail" tabIndex="-1" readonly value={rows[0].email} />
       </div>
 
       <div class="field">
-        <label for="exampleAddress">Address</label>
+        <label for="exampleAddress">地址</label>
         <input
           id="exampleAddress"
           tabIndex="-1"
@@ -98,12 +98,12 @@
       </div>
 
       <div class="field">
-        <label for="exampleCity">City</label>
+        <label for="exampleCity">省市</label>
         <input id="exampleCity" tabIndex="-1" readonly value={rows[0].city} />
       </div>
 
       <div class="field">
-        <label for="examplePostcode">Postcode</label>
+        <label for="examplePostcode">邮编</label>
         <input
           id="examplePostcode"
           tabIndex="-1"
@@ -113,7 +113,7 @@
       </div>
 
       <div class="field">
-        <label for="examplePhone">Phone</label>
+        <label for="examplePhone">电话</label>
         <input id="examplePhone" tabIndex="-1" readonly value={rows[0].phone} />
       </div>
     </div>

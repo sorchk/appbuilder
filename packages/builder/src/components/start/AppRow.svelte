@@ -64,20 +64,20 @@
 
   <div class="updated">
     {#if editing && isBuilder}
-      Currently editing
+    当前正在编辑
       <UserAvatars users={app.sessions} />
     {:else if app.updatedAt}
       {processStringSync("Updated {{ duration time 'millisecond' }} ago", {
         time: new Date().getTime() - new Date(app.updatedAt).getTime(),
       })}
     {:else}
-      Never updated
+    从未更新
     {/if}
   </div>
 
   <div class="title app-status" class:deployed={app.deployed}>
     <Icon size="L" name={app.deployed ? "GlobeCheck" : "GlobeStrike"} />
-    <Body size="S">{app.deployed ? "Published" : "Unpublished"}</Body>
+    <Body size="S">{app.deployed ? "发布" : "未发布"}</Body>
   </div>
 
   <div class="actions-wrap">
@@ -85,7 +85,7 @@
       {#if isBuilder}
         <div class="row-action">
           <Button size="S" secondary on:click={lockedAction || goToBuilder}>
-            Edit
+            编辑
           </Button>
         </div>
         <div class="row-action">
@@ -101,7 +101,7 @@
         </div>
       {:else}
         <!-- this can happen if an app builder has app user access to an app -->
-        <Button size="S" secondary>View</Button>
+        <Button size="S" secondary>查看</Button>
       {/if}
     </div>
 

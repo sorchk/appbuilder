@@ -58,7 +58,7 @@
       loaded = true
       return pkg
     } catch (error) {
-      notifications.error(`Error initialising app: ${error?.message}`)
+      notifications.error(`初始化应用程序时出错: ${error?.message}`)
       $redirect("../../")
     }
   }
@@ -109,8 +109,10 @@
         // check if user has beta access
         // const betaResponse = await API.checkBetaAccess($auth?.user?.email)
         // betaAccess = betaResponse.access
+        console.log("application;",application)
+        console.log("$layout.children;",$layout.children)
       } catch (error) {
-        notifications.error("Failed to sync with production database")
+        notifications.error("无法与生产数据库同步")
       }
       hasSynced = true
     }
@@ -179,7 +181,7 @@
       <slot />
     </div>
   {:catch error}
-    <p>Something went wrong: {error.message}</p>
+    <p>出了问题: {error.message}</p>
   {/await}
 </div>
 

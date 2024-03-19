@@ -14,5 +14,5 @@
   quiet
   on:click={hideOrUnhide}
 >
-  Auto columns
+自动列
 </ActionButton>

@@ -33,7 +33,7 @@
       delete adminUser.confirmationPassword
       // Save the admin user
       await API.createAdminUser(adminUser)
-      notifications.success("Admin user created")
+      notifications.success("管理员用户已创建")
       await admin.init()
       $goto("../portal")
     } catch (error) {
@@ -63,7 +63,7 @@
           }}
           validate={() => {
             let fieldError = {
-              email: !formData.email ? "Please enter a valid email" : undefined,
+              email: !formData.email ? "请输入有效的电子邮件" : undefined,
             }
             errors = handleError({ ...errors, ...fieldError })
           }}
@@ -71,7 +71,7 @@
           error={errors.email}
         />
         <FancyInput
-          label="Password"
+          label="密码"
           value={formData.password}
           type="password"
           on:change={e => {
@@ -84,7 +84,7 @@
             let fieldError = {}
 
             fieldError["password"] = !formData.password
-              ? "Please enter a password"
+              ? "请输入密码"
               : undefined
 
             fieldError["confirmationPassword"] =
@@ -92,7 +92,7 @@
                 formData.password,
                 formData.confirmationPassword
               ) && formData.confirmationPassword
-                ? "Passwords must match"
+                ? "密码必须匹配"
                 : undefined
 
             errors = handleError({ ...errors, ...fieldError })
@@ -101,7 +101,7 @@
           disabled={submitted}
         />
         <FancyInput
-          label="Repeat Password"
+          label="再次输入密码"
           value={formData.confirmationPassword}
           type="password"
           on:change={e => {
@@ -117,7 +117,7 @@
                   formData.password,
                   formData.confirmationPassword
                 ) && formData.password
-                  ? "Passwords must match"
+                  ? "密码必须匹配"
                   : undefined,
             }
             errors = handleError({ ...errors, ...fieldError })
@@ -134,7 +134,7 @@
         disabled={Object.keys(errors).length > 0 || submitted}
         on:click={save}
       >
-        Create super admin user
+      创建超级管理员用户
       </Button>
     </Layout>
   </Layout>

@@ -29,19 +29,19 @@
       // Google Sheets' integration definition specifies `relationships: false` as it doesn't support relationships like other plus datasources
       panelOptions =
         $integrations[datasource.source].relationships === false
-          ? ["Tables", "Queries"]
-          : ["Tables", "Relationships", "Queries"]
+          ? ["表", "查询"]
+          : ["表", "关系", "查询"]
       selectedPanel = panelOptions.includes(selectedPanel)
         ? selectedPanel
-        : "Tables"
+        : "表"
     } else if (datasource.source === "REST") {
-      panelOptions = ["Queries", "Headers", "Authentication", "Variables"]
+      panelOptions = ["查询", "头", "认证", "变量"]
       selectedPanel = panelOptions.includes(selectedPanel)
         ? selectedPanel
-        : "Queries"
+        : "查询"
     } else {
-      panelOptions = ["Queries"]
-      selectedPanel = "Queries"
+      panelOptions = ["查询"]
+      selectedPanel = "查询"
     }
     // always the last option for SQL
     if (helpers.isSQL(datasource)) {
@@ -84,22 +84,22 @@
 
     {#if selectedPanel === null}
       <Body>loading...</Body>
-    {:else if selectedPanel === "Tables"}
+    {:else if selectedPanel === "表"}
       <TablesPanel {datasource} />
-    {:else if selectedPanel === "Relationships"}
+    {:else if selectedPanel === "关系"}
       <RelationshipsPanel {datasource} />
-    {:else if selectedPanel === "Queries"}
+    {:else if selectedPanel === "查询"}
       <QueriesPanel {datasource} />
-    {:else if selectedPanel === "Headers"}
+    {:else if selectedPanel === "头"}
       <RestHeadersPanel {datasource} />
-    {:else if selectedPanel === "Authentication"}
+    {:else if selectedPanel === "认证"}
       <RestAuthenticationPanel {datasource} />
-    {:else if selectedPanel === "Variables"}
+    {:else if selectedPanel === "变量"}
       <RestVariablesPanel {datasource} />
     {:else if selectedPanel === "设置"}
       <SettingsPanel {datasource} />
     {:else}
-      <Body>Something went wrong</Body>
+      <Body>出了问题</Body>
     {/if}
   </Layout>
 </section>

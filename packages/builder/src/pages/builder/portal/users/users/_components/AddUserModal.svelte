@@ -64,7 +64,7 @@
         userData[index].error = res
       }
     } else {
-      userData[index].error = "Please enter an email address"
+      userData[index].error = "请输入电子邮件地址"
     }
     return userData[index].error == null
   }
@@ -124,13 +124,12 @@
       <div class="user-notification">
         <Icon name="Info" />
         <span>
-          {capitalise($licensing.license.plan.type)} plan is limited to {$licensing.userLimit}
-          users. Upgrade your plan to add more users</span
+          {capitalise($licensing.license.plan.type)} 计划限 {$licensing.userLimit}个用户。升级您的计划以添加更多用户</span
         >
       </div>
     {:else}
       <div>
-        <ActionButton on:click={addNewInput} icon="Add">Add email</ActionButton>
+        <ActionButton on:click={addNewInput} icon="Add">添加电子邮箱</ActionButton>
       </div>
     {/if}
   </Layout>
@@ -138,8 +137,8 @@
   {#if $licensing.groupsEnabled && internalGroups?.length}
     <Multiselect
       bind:value={userGroups}
-      placeholder="No groups"
-      label="Groups"
+      placeholder="选择组"
+      label="组"
       options={internalGroups}
       getOptionLabel={option => option.name}
       getOptionValue={option => option._id}

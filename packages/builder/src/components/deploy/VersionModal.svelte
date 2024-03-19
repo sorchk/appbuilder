@@ -46,11 +46,11 @@
       // Don't wait for the async refresh, since this causes modal flashing
       refreshAppPackage()
       notifications.success(
-        `App updated successfully to version ${$appStore.upgradableVersion}`
+        `应用程序已成功更新到版本 ${$appStore.upgradableVersion}`
       )
       onComplete()
     } catch (err) {
-      notifications.error(`Error updating app: ${err}`)
+      notifications.error(`更新应用程序时出错: ${err}`)
     }
     updateModal.hide()
   }
@@ -62,10 +62,10 @@
       // Don't wait for the async refresh, since this causes modal flashing
       refreshAppPackage()
       notifications.success(
-        `App reverted successfully to version ${$appStore.revertableVersion}`
+        `应用程序成功恢复到版本 ${$appStore.revertableVersion}`
       )
     } catch (err) {
-      notifications.error(`Error reverting app: ${err}`)
+      notifications.error(`还原应用程序时出错: ${err}`)
     }
     updateModal.hide()
   }
@@ -76,8 +76,8 @@
 {/if}
 <Modal bind:this={updateModal}>
   <ModalContent
-    title="App version"
-    confirmText="Update"
+    title="应用程序版本"
+    confirmText="更新"
     cancelText={updateAvailable ? "Cancel" : "Close"}
     onConfirm={update}
     showConfirmButton={updateAvailable}
@@ -89,22 +89,19 @@
     </div>
     {#if updateAvailable}
       <Body size="S">
-        This app is currently using version <b>{$appStore.version}</b>, but
-        version
-        <b>{$appStore.upgradableVersion}</b> is available. Updates can contain new
-        features, performance improvements and bug fixes.
+        此应用程序当前使用的版本为 <b>{$appStore.version}</b>, 但是版本
+        <b>{$appStore.upgradableVersion}</b> 可用。更新可以包含新的功能、性能改进和错误修复。
       </Body>
     {:else}
       <Body size="S">
-        This app is currently using version <b>{$appStore.version}</b> which is the
-        latest version available.
+        此应用程序当前使用的版本是 <b>{$appStore.version}</b> 可用的最新版本。
       </Body>
     {/if}
     {#if revertAvailable}
       <Body size="S">
-        You can revert this app to version
+        您可以将此应用还原为版本
         <b>{$appStore.revertableVersion}</b>
-        if you're experiencing issues with the current version.
+        如果您遇到当前版本的问题。
       </Body>
     {/if}
   </ModalContent>

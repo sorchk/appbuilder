@@ -158,8 +158,8 @@
   let currentStep = Step.CONFIG
   $: stepConfig = {
     [Step.CONFIG]: {
-      title: "Create your app",
-      confirmText: template?.fromFile ? "Import app" : "Create app",
+      title: "创建你的应用",
+      confirmText: template?.fromFile ? "导入应用" : "创建应用",
       onConfirm: async () => {
         if (encryptedFile) {
           currentStep = Step.SET_PASSWORD
@@ -175,8 +175,8 @@
       isValid: $validation.valid,
     },
     [Step.SET_PASSWORD]: {
-      title: "Provide the export password",
-      confirmText: "Import app",
+      title: "提供导出密码",
+      confirmText: "导入应用",
       onConfirm: async () => {
         try {
           await createNewApp()
@@ -214,7 +214,7 @@
       <Dropzone
         error={$validation.touched.file && $validation.errors.file}
         gallery={false}
-        label="File to import"
+        label="要导入的文件"
         value={[$values.file]}
         on:change={e => {
           $values.file = e.detail?.[0]
@@ -229,7 +229,7 @@
       error={$validation.touched.name && $validation.errors.name}
       on:blur={() => ($validation.touched.name = true)}
       on:change={nameToUrl($values.name)}
-      label="Name"
+      label="名称"
       placeholder={defaultAppName}
     />
     <span>
@@ -254,7 +254,7 @@
   {#if currentStep === Step.SET_PASSWORD}
     <Input
       autofocus={true}
-      label="Imported file password"
+      label="导入的文件密码"
       type="password"
       bind:value={$values.encryptionPassword}
       disabled={creating}

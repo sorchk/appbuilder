@@ -28,10 +28,10 @@
     submitted = true
     try {
       await auth.forgotPassword(email)
-      notifications.success("Email sent - please check your inbox")
+      notifications.success("电子邮件已发送-请检查您的收件箱")
     } catch (err) {
       submitted = false
-      notifications.error("Unable to send reset password link")
+      notifications.error("无法发送重置密码链接")
     }
   }
 
@@ -39,7 +39,7 @@
     try {
       await organisation.init()
     } catch (error) {
-      notifications.error("Error getting org config")
+      notifications.error("获取组织配置时出错")
     }
   })
 </script>
@@ -55,28 +55,27 @@
           <span class="back-chev" on:click={() => $goto("../")}>
             <Icon name="ChevronLeft" size="XL" />
           </span>
-          Forgot your password?
+          忘记密码?
         </div>
       </Heading>
     </span>
     <Layout gap="XS" noPadding>
       <Body size="M">
-        No problem! Just enter your account's email address and we'll send you a
-        link to reset it.
+        没问题！只需输入您帐户的电子邮件地址，我们就会向您发送链接以重置它。
       </Body>
     </Layout>
 
     <Layout gap="S" noPadding>
       <FancyForm bind:this={form}>
         <FancyInput
-          label="Email"
+          label="电子邮箱"
           value={email}
           on:change={e => {
             email = e.detail
           }}
           validate={() => {
             if (!email) {
-              return "Please enter your email"
+              return "请输入您的电子邮箱"
             }
             return null
           }}
@@ -92,7 +91,7 @@
         cta
         on:click={forgot}
       >
-        Reset password
+        重置密码
       </Button>
     </div>
   </Layout>

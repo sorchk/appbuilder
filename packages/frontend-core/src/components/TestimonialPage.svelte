@@ -2,7 +2,7 @@
   import SplitPage from "./SplitPage.svelte"
   import Testimonial from "./Testimonial.svelte"
 
-  export let enabled = true
+  export let enabled = false
 </script>
 
 <SplitPage>

@@ -187,7 +187,7 @@
       autoSortColumns={!columns?.length}
       on:sort={onSort}
       on:click={handleClick}
-      placeholderText={noRowsMessage || "No rows found"}
+      placeholderText={noRowsMessage || "找不到行"}
     >
       <slot />
     </Table>

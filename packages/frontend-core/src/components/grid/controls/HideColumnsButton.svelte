@@ -45,7 +45,7 @@
 
   const getText = columns => {
     const hidden = columns.filter(col => !col.visible).length
-    return hidden ? `Hide columns (${hidden})` : "Hide columns"
+    return hidden ? `隐藏列 (${hidden})` : "隐藏列"
   }
 </script>
 
@@ -85,8 +85,8 @@
       {/each}
     </div>
     <div class="buttons">
-      <ActionButton on:click={showAll}>Show all</ActionButton>
-      <ActionButton on:click={hideAll}>Hide all</ActionButton>
+      <ActionButton on:click={showAll}>显示全部</ActionButton>
+      <ActionButton on:click={hideAll}>全部隐藏</ActionButton>
     </div>
   </div>
 </Popover>

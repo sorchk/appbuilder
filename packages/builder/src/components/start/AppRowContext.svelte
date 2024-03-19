@@ -26,7 +26,7 @@
         id: "duplicate",
         icon: "Copy",
         onClick: duplicateModal.show,
-        body: "Duplicate",
+        body: "复制",
       },
       {
         id: "exportDev",
@@ -35,7 +35,7 @@
           exportPublishedVersion = false
           exportModal.show()
         },
-        body: "Export latest edited app",
+        body: "导出最新编辑的应用",
       },
       {
         id: "exportProd",
@@ -44,13 +44,13 @@
           exportPublishedVersion = true
           exportModal.show()
         },
-        body: "Export latest published app",
+        body: "导出最新发布的应用",
       },
       {
         id: "delete",
         icon: "Delete",
         onClick: deleteModal.show,
-        body: "Delete",
+        body: "删除",
       },
     ].filter(action => {
       if (action.id === "exportProd" && app.deployed !== true) {

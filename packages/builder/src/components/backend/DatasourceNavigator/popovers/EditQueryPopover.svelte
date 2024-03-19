@@ -16,9 +16,9 @@
       }
       await queries.delete(query)
       await datasources.fetch()
-      notifications.success("Query deleted")
+      notifications.success("查询已删除")
     } catch (error) {
-      notifications.error("Error deleting query")
+      notifications.error("删除查询时出错")
     }
   }
 
@@ -27,7 +27,7 @@
       const newQuery = await queries.duplicate(query)
       $goto(`./query/${newQuery._id}`)
     } catch (error) {
-      notifications.error("Error duplicating query")
+      notifications.error("复制查询时出错")
     }
   }
 </script>
@@ -36,17 +36,17 @@
   <div slot="control" class="icon">
     <Icon size="S" hoverable name="MoreSmallList" />
   </div>
-  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>Delete</MenuItem>
-  <MenuItem icon="Duplicate" on:click={duplicateQuery}>Duplicate</MenuItem>
+  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>删除</MenuItem>
+  <MenuItem icon="Duplicate" on:click={duplicateQuery}>复制</MenuItem>
 </ActionMenu>
 
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Query"
+  okText="删除查询"
   onOk={deleteQuery}
-  title="Confirm Deletion"
+  title="确认删除"
 >
-  Are you sure you wish to delete this query? This action cannot be undone.
+您确定要删除此查询吗？此操作无法撤消。
 </ConfirmDialog>
 
 <style>

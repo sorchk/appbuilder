@@ -22,8 +22,8 @@
 </Modal>
 
 <div class="buttons">
-  <Button cta on:click={createExternalTableModal.show}>Create new table</Button>
-  <Button secondary on:click={tableSelectionModal.show}>Fetch tables</Button>
+  <Button cta on:click={createExternalTableModal.show}>创建新表</Button>
+  <Button secondary on:click={tableSelectionModal.show}>获取表格</Button>
 </div>
 
 <style>

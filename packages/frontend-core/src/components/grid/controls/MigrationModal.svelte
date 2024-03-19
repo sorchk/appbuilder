@@ -18,13 +18,13 @@
 
   const checkNewColumnName = newColumnName => {
     if (newColumnName === "") {
-      return "Column name can't be empty."
+      return "列名不能为空。"
     }
     if (newColumnName in $definition.schema) {
-      return "New column name can't be the same as an existing column name."
+      return "新列名不能与现有列名相同。"
     }
     if (newColumnName.match(ValidColumnNameRegex) === null) {
-      return "Illegal character; must be alpha-numeric."
+      return "非法字符；必须是字母数字。"
     }
   }
 
@@ -44,9 +44,9 @@
           subtype,
         },
       })
-      notifications.success("Column migrated")
+      notifications.success("已迁移列")
     } catch (e) {
-      notifications.error(`Failed to migrate: ${e.message}`)
+      notifications.error(`迁移失败: ${e.message}`)
     }
     await rows.actions.refreshData()
   }

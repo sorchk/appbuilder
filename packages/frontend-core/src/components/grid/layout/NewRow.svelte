@@ -156,7 +156,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <TempTooltip
-  text="Click here to create your first row"
+  text="单击此处创建第一行"
   condition={hasNoRows && $loaded && !$filter?.length && !$refreshing}
   type={TooltipType.Info}
 >

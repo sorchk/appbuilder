@@ -6,7 +6,7 @@
 
   $: platformTitleText = $organisation.platformTitle
   $: platformTitle =
-    !$auth.user && platformTitleText ? platformTitleText : "Budibase"
+    !$auth.user && platformTitleText ? platformTitleText : "应用工厂"
 
   $: faviconUrl = $organisation.faviconUrl || "/builder/bblogo.png"
 

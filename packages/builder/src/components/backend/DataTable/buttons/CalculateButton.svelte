@@ -13,7 +13,7 @@
   on:click={modal.show}
   active={view.field && view.calculation}
 >
-  Calculate
+计算
 </ActionButton>
 <Modal bind:this={modal}>
   <CalculateModal {view} />

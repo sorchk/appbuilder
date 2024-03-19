@@ -22,7 +22,7 @@ const SCHEMA: Integration = {
   description:
     "Snowflake is a solution for data warehousing, data lakes, data engineering, data science, data application development, and securely sharing and consuming shared data.",
   friendlyName: "Snowflake",
-  type: "Relational",
+  type: "关系型",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
   },

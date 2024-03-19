@@ -8,7 +8,7 @@
 
   async function download() {
     if (!datasource?._id) {
-      notifications.error("Datasource invalid")
+      notifications.error("数据源无效")
     }
     const response = await API.fetchExternalSchema(datasource._id)
     downloadText(`${datasource.name}-dump.sql`, response.schema)
@@ -18,10 +18,10 @@
 <Panel>
   <div class="main">
     <Layout gap="S" noPadding>
-      <Body size="L" weight="700">Troubleshooting</Body>
-      <Body>Download your schema to share with the Budibase team</Body>
+      <Body size="L" weight="700">排除故障</Body>
+      <Body>下载您的架构以与团队共享</Body>
       <div class="download-button">
-        <Button cta on:click={download}>Download</Button>
+        <Button cta on:click={download}>下载</Button>
       </div>
     </Layout>
   </div>

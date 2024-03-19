@@ -23,7 +23,7 @@ const SCHEMA: Integration = {
   description:
     "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.",
   friendlyName: "Amazon S3",
-  type: "Object store",
+  type: "对象存储",
   features: {
     [DatasourceFeature.CONNECTION_CHECKING]: true,
   },

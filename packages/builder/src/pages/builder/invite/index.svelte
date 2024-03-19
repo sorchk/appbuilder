@@ -63,10 +63,10 @@
         username: formData.email.trim(),
         password: formData.password.trim(),
       })
-      notifications.success("Logged in successfully")
+      notifications.success("已成功登录")
       $goto("../portal")
     } catch (err) {
-      notifications.error(err.message ? err.message : "Invalid credentials") //not likely, considering.
+      notifications.error(err.message ? err.message : "无效凭据") //not likely, considering.
     }
   }
 
@@ -86,20 +86,20 @@
     <Layout gap="M" noPadding>
       <img alt="logo" src={$organisation.logoUrl || Logo} />
       <Layout gap="XS" noPadding>
-        <Heading size="M">Join {company}</Heading>
-        <Body size="M">Create your account to access your budibase apps!</Body>
+        <Heading size="M">加入 {company}</Heading>
+        <Body size="M">创建您的帐户以访问您的应用！</Body>
       </Layout>
 
       <Layout gap="S" noPadding>
         <FancyForm bind:this={form}>
           <FancyInput
-            label="Email"
+            label="电子邮箱"
             value={formData.email}
             disabled={true}
             error={errors.email}
           />
           <FancyInput
-            label="First name"
+            label="名字"
             value={formData.firstName}
             on:change={e => {
               formData = {
@@ -110,7 +110,7 @@
             validate={() => {
               let fieldError = {
                 firstName: !formData.firstName
-                  ? "Please enter your first name"
+                  ? "请输入您的名字"
                   : undefined,
               }
 
@@ -120,7 +120,7 @@
             disabled={onboarding}
           />
           <FancyInput
-            label="Last name (optional)"
+            label="姓氏（可选）"
             value={formData.lastName}
             on:change={e => {
               formData = {
@@ -132,7 +132,7 @@
           />
           {#if !$organisation.isSSOEnforced}
             <FancyInput
-              label="Password"
+              label="密码"
               value={formData.password}
               type="password"
               on:change={e => {
@@ -145,7 +145,7 @@
                 let fieldError = {}
 
                 fieldError["password"] = !formData.password
-                  ? "Please enter a password"
+                  ? "请输入密码"
                   : undefined
 
                 fieldError["confirmationPassword"] =
@@ -153,7 +153,7 @@
                     formData.password,
                     formData.confirmationPassword
                   ) && formData.confirmationPassword
-                    ? "Passwords must match"
+                    ? "密码必须匹配"
                     : undefined
 
                 errors = handleError({ ...errors, ...fieldError })
@@ -162,7 +162,7 @@
               disabled={onboarding}
             />
             <FancyInput
-              label="Repeat password"
+              label="再次输入密码"
               value={formData.confirmationPassword}
               type="password"
               on:change={e => {
@@ -178,7 +178,7 @@
                       formData.password,
                       formData.confirmationPassword
                     ) && formData.password
-                      ? "Passwords must match"
+                      ? "密码必须匹配"
                       : undefined,
                 }
 
@@ -197,7 +197,7 @@
           cta
           on:click={acceptInvite}
         >
-          Create account
+          创建帐户
         </Button>
       </div>
     </Layout>

@@ -16,7 +16,7 @@
 </script>
 
 <ActionButton icon="LockClosed" quiet on:click={openModal} {disabled}>
-  Access
+  访问
 </ActionButton>
 <Modal bind:this={modal}>
   <ManageAccessModal {resourceId} permissions={resourcePermissions} />

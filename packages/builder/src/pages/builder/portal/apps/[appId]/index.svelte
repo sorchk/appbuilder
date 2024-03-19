@@ -48,7 +48,7 @@
         <Icon
           name={"Rail"}
           hoverable
-          tooltip="Expand"
+          tooltip="展开"
           tooltipPosition={TooltipPosition.Right}
           tooltipType={TooltipType.Info}
           hoverColor={"var(--ink)"}
@@ -59,7 +59,7 @@
         <Icon
           name={"RailRightOpen"}
           hoverable
-          tooltip="Collapse"
+          tooltip="收起"
           tooltipType={TooltipType.Info}
           tooltipPosition={TooltipPosition.Top}
           hoverColor={"var(--ink)"}
@@ -84,7 +84,7 @@
         name="LinkOut"
         disabled={noScreens}
         hoverable
-        tooltip="Open in new tab"
+        tooltip="新标签中打开"
         tooltipType={TooltipType.Info}
         tooltipPosition={TooltipPosition.Top}
         hoverColor={"var(--ink)"}
@@ -100,11 +100,11 @@
   {#if noScreens}
     <div class="noScreens">
       <ErrorSVG />
-      <Body>You haven't added any screens to your app yet.</Body>
+      <Body>您尚未向应用程序添加任何屏幕。</Body>
       <Body>
         <Link size="L" href={`/builder/app/${app.devId}/design`}
-          >Click here</Link
-        > to add some.
+          >单击此处</Link
+        > 添加.
       </Body>
     </div>
   {:else}

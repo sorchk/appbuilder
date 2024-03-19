@@ -40,29 +40,29 @@
 
 <Layout noPadding>
   <Layout gap="XS" noPadding>
-    <Heading>Export your app</Heading>
-    <Body>Export your latest edited or published app</Body>
+    <Heading>导出应用</Heading>
+    <Body>导出您最新编辑或发布的应用</Body>
   </Layout>
   <div class="body">
     <ActionButton secondary on:click={() => exportApp({ published: false })}>
-      Export latest edited app
+      导出最新编辑的应用
     </ActionButton>
     <ActionButton
       secondary
       disabled={!appDeployed}
       on:click={() => exportApp({ published: true })}
     >
-      Export latest published app
+    导出最新发布的应用
     </ActionButton>
   </div>
   <Divider />
   <Layout gap="XS" noPadding>
-    <Heading>Import your app</Heading>
-    <Body>Import an export to update this app</Body>
+    <Heading>导入应用</Heading>
+    <Body>导入以更新此应用</Body>
   </Layout>
   <div class="body">
     <ActionButton secondary on:click={() => importApp()}>
-      Import app
+      导入应用
     </ActionButton>
   </div>
 </Layout>

@@ -40,7 +40,7 @@ const SCHEMA: Integration = {
   docs: "https://github.com/sidorares/node-mysql2",
   plus: true,
   friendlyName: "MySQL",
-  type: "Relational",
+  type: "关系型",
   description:
     "MySQL Database Service is a fully managed database service to deploy cloud-native applications. ",
   features: {

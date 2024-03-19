@@ -17,10 +17,10 @@
       // Reset frontend state after revert
       const applicationPkg = await API.fetchAppPackage(appId)
       await initialise(applicationPkg)
-      notifications.info("Changes reverted successfully")
+      notifications.info("更改已成功恢复")
       onComplete()
     } catch (error) {
-      notifications.error(`Error reverting changes: ${error}`)
+      notifications.error(`还原更改时出错: ${error}`)
     }
   }
 
@@ -41,10 +41,9 @@
     disabled={appName !== $appStore.name}
   >
     <span
-      >The changes you have made will be deleted and the application reverted
-      back to its production state.</span
+      >您所做的更改将被删除并恢复应用程序回到生产状态。</span
     >
-    <span>Please enter your app name to continue.</span>
+    <span>请输入您的应用程序名称以继续。</span>
     <Input bind:value={appName} />
   </ModalContent>
 </Modal>

@@ -39,7 +39,7 @@
   let creatingFromTemplate = false
   let automationErrors
 
-  $: welcomeHeader = `Welcome ${$auth?.user?.firstName || "back"}`
+  $: welcomeHeader = `欢迎 ${$auth?.user?.firstName || "回来"}`
   $: filteredApps = filterApps($enrichedApps, searchTerm)
   $: automationErrors = getAutomationErrors(filteredApps || [])
   $: isOwner = $auth.accountPortalAccess && $admin.cloud
@@ -203,7 +203,7 @@
         <Layout noPadding gap="XS">
           <Heading size="L">{welcomeHeader}</Heading>
           <Body size="M">
-            Below you'll find the list of apps that you have access to
+            下面是您可以访问的应用程序列表
           </Body>
         </Layout>
       </div>
@@ -219,7 +219,7 @@
                 cta
                 on:click={usersLimitLockAction || initiateAppCreation}
               >
-                Create new app
+              创建新应用
               </Button>
               {#if $appsStore.apps?.length > 0 && !$admin.offlineMode}
                 <Button
@@ -228,7 +228,7 @@
                   on:click={usersLimitLockAction ||
                     $goto("/builder/portal/apps/templates")}
                 >
-                  View templates
+                查看模板
                 </Button>
               {/if}
               {#if !$appsStore.apps?.length}
@@ -238,7 +238,7 @@
                   secondary
                   on:click={usersLimitLockAction || initiateAppImport}
                 >
-                  Import app
+                导入应用
                 </Button>
               {/if}
             </div>
@@ -253,13 +253,13 @@
                 }}
                 placeholder={null}
                 options={[
-                  { label: "Sort by name", value: "name" },
-                  { label: "Sort by recently updated", value: "updated" },
-                  { label: "Sort by status", value: "status" },
+                  { label: "名称排序", value: "name" },
+                  { label: "最近更新排序", value: "updated" },
+                  { label: "状态排序", value: "status" },
                 ]}
               />
               <Search
-                placeholder="Search"
+                placeholder="搜索"
                 on:input={e => {
                   searchTerm = e.target.value
                 }}
@@ -282,14 +282,14 @@
     {:else}
       <div class="no-apps">
         <img class="spaceman" alt="spaceman" src={Logo} width="100px" />
-        <Body weight="700">You haven't been given access to any apps yet</Body>
+        <Body weight="700">你还没有被授予访问任何应用程序的权限</Body>
       </div>
     {/if}
 
     {#if creatingFromTemplate}
       <div class="empty-wrapper">
         <img class="img-logo img-size" alt="logo" src={Logo} />
-        <p>Creating your Budibase app from your selected template...</p>
+        <p>正在从您选择的模板创建您的Budibase应用程序...</p>
         <Spinner size="10" />
       </div>
     {/if}

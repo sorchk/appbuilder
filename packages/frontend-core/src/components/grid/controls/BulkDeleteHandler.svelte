@@ -23,13 +23,12 @@
 
 <Modal bind:this={modal}>
   <ModalContent
-    title="Delete rows"
-    confirmText="Continue"
-    cancelText="Cancel"
+    title="删除行"
+    confirmText="继续"
+    cancelText="取消"
     onConfirm={performDeletion}
     size="M"
   >
-    Are you sure you want to delete {selectedRowCount}
-    row{selectedRowCount === 1 ? "" : "s"}?
+  是否确实要删除选中的 {selectedRowCount}行?
   </ModalContent>
 </Modal>

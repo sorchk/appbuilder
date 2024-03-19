@@ -16,20 +16,20 @@
 
   const validateName = name => {
     if (name.length < 1) {
-      return "Name must be provided"
+      return "必须提供名称"
     }
     if (!nameRegex.test(name)) {
-      return "No special characters are allowed"
+      return "不允许使用特殊字符"
     }
   }
 
   const validateUrl = url => {
     if (url.length < 1) {
-      return "URL must be provided"
+      return "必须提供URL"
     }
 
     if (!APP_URL_REGEX.test(url)) {
-      return "Invalid URL"
+      return "无效的URL"
     }
   }
 

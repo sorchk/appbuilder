@@ -22,40 +22,40 @@
 
   const typeOptions = [
     {
-      label: "Text",
+      label: "文本",
       value: FIELDS.STRING.type,
     },
     {
-      label: "Number",
+      label: "数字",
       value: FIELDS.NUMBER.type,
     },
     {
-      label: "Date",
+      label: "日期",
       value: FIELDS.DATETIME.type,
     },
     {
-      label: "Options",
+      label: "选择",
       value: FIELDS.OPTIONS.type,
     },
     {
-      label: "Multi-select",
+      label: "多项选择",
       value: FIELDS.ARRAY.type,
     },
     {
-      label: "Barcode/QR",
+      label: "条形码/二维码",
       value: FIELDS.BARCODEQR.type,
     },
     {
-      label: "Long Form Text",
+      label: "长格式文本",
       value: FIELDS.LONGFORM.type,
     },
 
     {
-      label: "User",
+      label: "用户",
       value: `${FIELDS.USER.type}${FIELDS.USER.subtype}`,
     },
     {
-      label: "用户",
+      label: "多用户",
       value: `${FIELDS.USERS.type}${FIELDS.USERS.subtype}`,
     },
   ]
@@ -140,12 +140,12 @@
     {:else if fileName}
       {fileName}
     {:else}
-      Upload
+      上传
     {/if}
   </label>
 </div>
 {#if fileName && Object.keys(validation).length === 0}
-  <p>No valid fields, try another file</p>
+  <p>没有有效字段，请尝试其他文件</p>
 {:else if rows.length > 0 && !error}
   <div class="schema-fields">
     {#each Object.keys(validation) as name}
@@ -164,7 +164,7 @@
             ? "fieldStatusSuccess"
             : "fieldStatusFailure"}
         >
-          {validation[name] ? "Success" : "Failure"}
+          {validation[name] ? "成功" : "失败"}
         </span>
       </div>
     {/each}
@@ -175,11 +175,11 @@
       bind:value={updateExistingRows}
       on:change={() => (identifierFields = [])}
       thin
-      text="Update existing rows"
+      text="更新现有行"
     />
     {#if updateExistingRows}
       <Multiselect
-        label="Identifier field(s)"
+        label="标识字段"
         options={Object.keys(validation)}
         bind:value={identifierFields}
       />
@@ -187,8 +187,7 @@
   {/if}
   {#if invalidColumns.length > 0}
     <p class="spectrum-FieldLabel spectrum-FieldLabel--sizeM">
-      The following columns are present in the data you wish to import, but do
-      not match the schema of this table and will be ignored.
+      以下列存在于要导入的数据中，但确实存在与此表的架构不匹配，将被忽略。
     </p>
     <ul class="ignoredList">
       {#each invalidColumns as column}

@@ -18,10 +18,10 @@
       )
       await datasources.update({ datasource: updatedDatasource, integration })
       notifications.success(
-        `Datasource ${updatedDatasource.name} updated successfully`
+        `数据源 ${updatedDatasource.name} 更新成功`
       )
     } catch (error) {
-      notifications.error(`Error saving datasource: ${error.message}`)
+      notifications.error(`保存数据源时出错: ${error.message}`)
     }
   }
 </script>

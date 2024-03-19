@@ -76,12 +76,12 @@
 <Popover bind:open {anchor} align="left">
   <div class="content">
     <Select
-      placeholder="Default"
+      placeholder="默认"
       value={$sort.column}
       options={columnOptions}
       autoWidth
       on:change={updateSortColumn}
-      label="Column"
+      label="列"
     />
     {#if $sort.column}
       <Select
@@ -90,7 +90,7 @@
         options={orderOptions}
         autoWidth
         on:change={updateSortOrder}
-        label="Order"
+        label="排序"
       />
     {/if}
   </div>

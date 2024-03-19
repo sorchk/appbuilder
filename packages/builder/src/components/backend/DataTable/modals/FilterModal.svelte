@@ -127,7 +127,7 @@
   }
 </script>
 
-<ModalContent title="Filter" confirmText="Save" onConfirm={saveView} size="L">
+<ModalContent title="筛选器" confirmText="保存" onConfirm={saveView} size="L">
   {#if view.filters.length}
     <div class="input-group-row">
       {#each view.filters as filter, idx}
@@ -186,10 +186,10 @@
       {/each}
     </div>
   {:else}
-    <Body size="S">Add a filter to get started.</Body>
+    <Body size="S">添加筛选器以开始。</Body>
   {/if}
   <div slot="footer">
-    <Button secondary on:click={addFilter}>Add Filter</Button>
+    <Button secondary on:click={addFilter}>添加筛选器</Button>
   </div>
 </ModalContent>
 

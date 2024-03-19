@@ -24,11 +24,11 @@
 </script>
 
 <ModalContent
-  title="Webhook Endpoints"
+  title="Webhook端点"
   confirmText="OK"
   showCancelButton={false}
 >
-  <p>See below the list of deployed webhook URLs.</p>
+  <p>请参阅下面已部署的webhook URL列表。</p>
   {#each webhookUrls as webhookUrl}
     <div>
       <h5>{webhookUrl.type} - {webhookUrl.name}</h5>
@@ -36,7 +36,7 @@
     </div>
   {/each}
   {#if webhookUrls.length === 0}
-    <h5>No webhooks found.</h5>
+    <h5>未找到Webhook。</h5>
   {/if}
   <a
     slot="footer"
@@ -44,7 +44,7 @@
     href="https://docs.budibase.com/docs/trigger"
   >
     <i class="ri-information-line" />
-    <span>Learn about webhooks</span>
+    <span>了解webhook</span>
   </a>
 </ModalContent>
 

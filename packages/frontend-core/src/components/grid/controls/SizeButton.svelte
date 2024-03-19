@@ -25,15 +25,15 @@
   // Row height sizes
   const rowSizeOptions = [
     {
-      label: "Small",
+      label: "较小",
       size: SmallRowHeight,
     },
     {
-      label: "Medium",
+      label: "适中",
       size: MediumRowHeight,
     },
     {
-      label: "Large",
+      label: "较大",
       size: LargeRowHeight,
     },
   ]
@@ -49,17 +49,17 @@
   $: custom = !allSmall && !allMedium && !allLarge
   $: columnSizeOptions = [
     {
-      label: "Small",
+      label: "较小",
       size: smallColSize,
       selected: allSmall,
     },
     {
-      label: "Medium",
+      label: "适中",
       size: mediumColSize,
       selected: allMedium,
     },
     {
-      label: "Large",
+      label: "较大",
       size: largeColSize,
       selected: allLarge,
     },
@@ -89,7 +89,7 @@
 <Popover bind:open {anchor} align="left">
   <div class="content">
     <div class="size">
-      <Label>Row height</Label>
+      <Label>行高</Label>
       <div class="options">
         {#each rowSizeOptions as option}
           <ActionButton
@@ -104,7 +104,7 @@
       </div>
     </div>
     <div class="size">
-      <Label>Column width</Label>
+      <Label>列宽</Label>
       <div class="options">
         {#each columnSizeOptions as option}
           <ActionButton
@@ -116,7 +116,7 @@
           </ActionButton>
         {/each}
         {#if custom}
-          <ActionButton selected={custom} quiet>Custom</ActionButton>
+          <ActionButton selected={custom} quiet>自定义</ActionButton>
         {/if}
       </div>
     </div>

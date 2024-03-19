@@ -131,8 +131,8 @@
               Hey {helpers.getUserLabel($auth.user)}
             </Heading>
             <Body>
-              Welcome to the {$organisation.company} portal. Below you'll find the
-              list of apps that you have access to.
+              欢迎访问 {$organisation.company} 门户网站。下面是
+              您可以访问的应用程序列表。
             </Body>
           </Layout>
           <Divider />
@@ -143,7 +143,7 @@
                 <Heading size="M">
                   {"Your apps are currently offline."}
                 </Heading>
-                Please contact the account holder to get them back online.
+                请联系帐户持有人，让他们重新登录。
               </Layout>
             </div>
           {:else if userApps.length}
@@ -171,7 +171,7 @@
                             }
                           )}
                         {:else}
-                          Never updated
+                         从不更新
                         {/if}
                       </Body>
                     </div>
@@ -182,9 +182,9 @@
             </div>
           {:else}
             <Layout gap="XS" noPadding>
-              <Heading size="S">You don't have access to any apps yet.</Heading>
+              <Heading size="S">您还没有访问任何应用程序的权限。</Heading>
               <Body size="S">
-                The apps you have access to will be listed here.
+                您可以访问的应用程序将在此处列出。
               </Body>
             </Layout>
           {/if}

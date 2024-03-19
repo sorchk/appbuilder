@@ -10,16 +10,16 @@
 
 <Layout noPadding>
   <Layout gap="XS" noPadding>
-    <Heading>Version</Heading>
-    <Body>See the current version of your app and check for updates</Body>
+    <Heading>版本</Heading>
+    <Body>查看应用程序的当前版本并检查更新</Body>
   </Layout>
   <Divider />
   {#if updateAvailable}
     <Body>
-      The app is currently using version <strong>{$appStore.version}</strong>
-      but version <strong>{$appStore.upgradableVersion}</strong> is available.
+      该应用程序当前使用的版本为 <strong>{$appStore.version}</strong>
+      但版本 <strong>{$appStore.upgradableVersion}</strong> 可用.
       <br />
-      Updates can contain new features, performance improvements and bug fixes.
+      更新可以包含新功能、性能改进和错误修复。
     </Body>
     <div>
       <Button
@@ -28,16 +28,16 @@
         disabled={!$isOnlyUser}
         tooltip={$isOnlyUser
           ? null
-          : "Unavailable - another user is editing this app"}
+          : "不可用-其他用户正在编辑此应用"}
       >
-        Update app
+      更新应用
       </Button>
     </div>
   {:else}
     <Body>
-      The app is currently using version <strong>{$appStore.version}</strong>.
+      该应用程序当前使用的版本为 <strong>{$appStore.version}</strong>.
       <br />
-      You're running the latest!
+      你正在运行最新的！
     </Body>
     <div>
       <Button
@@ -45,9 +45,9 @@
         on:click={versionModal.show}
         tooltip={$isOnlyUser
           ? null
-          : "Unavailable - another user is editing this app"}
+          : "不可用-其他用户正在编辑此应用"}
       >
-        Revert app
+      还原应用
       </Button>
     </div>
   {/if}
