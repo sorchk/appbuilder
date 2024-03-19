@@ -36,11 +36,11 @@
     return [
       {
         label: type === "number" ? "Low-high" : "A-Z",
-        value: "ascending",
+        value: "升序asc",
       },
       {
         label: type === "number" ? "High-low" : "Z-A",
-        value: "descending",
+        value: "降序desc",
       },
     ]
   }
@@ -69,7 +69,7 @@
     selected={open}
     disabled={!columnOptions.length}
   >
-    Sort
+    排序
   </ActionButton>
 </div>
 

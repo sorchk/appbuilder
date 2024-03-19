@@ -32,12 +32,12 @@
   const { OperatorOptions } = Constants
   const KeyedFieldRegex = /\d[0-9]*:/g
   const behaviourOptions = [
-    { value: "and", label: "Match all filters" },
-    { value: "or", label: "Match any filter" },
+    { value: "and", label: "匹配所有筛选器" },
+    { value: "or", label: "匹配任何筛选器" },
   ]
   const onEmptyOptions = [
-    { value: "all", label: "Return all table rows" },
-    { value: "none", label: "Return no rows" },
+    { value: "all", label: "返回所有表行" },
+    { value: "none", label: "不返回行" },
   ]
 
   let rawFilters
@@ -206,11 +206,11 @@
   <div class="container">
     <Layout noPadding>
       {#if !rawFilters?.length}
-        <Body size="S">Add your first filter expression.</Body>
+        <Body size="S">添加您的第一个筛选器表达式。</Body>
       {:else}
         <div class="fields">
           <Select
-            label="Behaviour"
+            label="行为"
             value={matchAny ? "or" : "and"}
             options={behaviourOptions}
             getOptionLabel={opt => opt.label}
@@ -220,7 +220,7 @@
           />
           {#if datasource?.type === "table"}
             <Select
-              label="When filter empty"
+              label="过滤器为空时"
               value={onEmptyFilter}
               options={onEmptyOptions}
               getOptionLabel={opt => opt.label}
@@ -232,7 +232,7 @@
         </div>
         <div>
           <div class="filter-label">
-            <Label>Filters</Label>
+            <Label>过滤器</Label>
           </div>
           <div class="fields">
             {#each rawFilters as filter}
@@ -240,7 +240,7 @@
                 bind:value={filter.field}
                 options={fieldOptions}
                 on:change={() => onFieldChange(filter)}
-                placeholder="Column"
+                placeholder="字段"
               />
               <Select
                 disabled={!filter.field}
@@ -326,7 +326,7 @@
       {/if}
       <div class="bottom">
         <Button icon="AddCircle" size="M" secondary on:click={addFilter}>
-          Add filter
+          添加过滤器
         </Button>
       </div>
     </Layout>

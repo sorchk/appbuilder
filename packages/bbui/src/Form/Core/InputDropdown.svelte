@@ -10,7 +10,7 @@
   export let dropdownValue
   export let id = null
   export let inputType = "text"
-  export let placeholder = "Choose an option or type"
+  export let placeholder = "选择一个选项或类型"
   export let disabled = false
   export let readonly = false
   export let updateOnChange = true
@@ -29,7 +29,7 @@
   const getFieldText = (dropdownValue, options, placeholder) => {
     // Always use placeholder if no value
     if (dropdownValue == null || dropdownValue === "") {
-      return placeholder || "Choose an option or type"
+      return placeholder || "选择一个选项或类型"
     }
 
     // Wait for options to load if there is a value but no options

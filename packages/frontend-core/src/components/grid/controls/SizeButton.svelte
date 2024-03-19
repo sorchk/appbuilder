@@ -82,7 +82,7 @@
     selected={open}
     disabled={!allCols.length}
   >
-    Size
+    大小
   </ActionButton>
 </div>
 

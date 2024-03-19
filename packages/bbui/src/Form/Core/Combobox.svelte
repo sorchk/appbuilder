@@ -7,7 +7,7 @@
 
   export let value = null
   export let id = null
-  export let placeholder = "Choose an option or type"
+  export let placeholder = "选择一个选项或类型"
   export let disabled = false
   export let readonly = false
   export let options = []
