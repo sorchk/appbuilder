@@ -51,12 +51,12 @@
       if (table.sourceType === DB_TYPE_EXTERNAL) {
         await datasources.fetch()
       }
-      notifications.success("Table deleted")
+      notifications.success("表已删除")
       if (isSelected) {
         $goto(`./datasource/${table.datasourceId}`)
       }
     } catch (error) {
-      notifications.error("Error deleting table")
+      notifications.error("删除表时出错")
     }
   }
 
@@ -69,14 +69,14 @@
     updatedTable.name = updatedName
     await tables.save(updatedTable)
     await datasources.fetch()
-    notifications.success("Table renamed successfully")
+    notifications.success("已成功重命名表")
   }
 
   function checkValid(evt) {
     const tableName = evt.target.value
     error =
       originalName === tableName
-        ? `Table with name ${tableName} already exists. Please choose another name.`
+        ? `名为 ${tableName} 的表已存在。请选择其他名称。`
         : ""
   }
 
@@ -92,23 +92,23 @@
       <Icon s hoverable name="MoreSmallList" />
     </div>
     {#if !externalTable}
-      <MenuItem icon="Edit" on:click={editorModal.show}>Edit</MenuItem>
+      <MenuItem icon="Edit" on:click={editorModal.show}>编辑</MenuItem>
     {/if}
-    <MenuItem icon="Delete" on:click={showDeleteModal}>Delete</MenuItem>
+    <MenuItem icon="Delete" on:click={showDeleteModal}>删除</MenuItem>
   </ActionMenu>
 {/if}
 
 <Modal bind:this={editorModal} on:show={initForm}>
   <ModalContent
     bind:this={editTableNameModal}
-    title="Edit Table"
-    confirmText="Save"
+    title="编辑表"
+    confirmText="保存"
     onConfirm={save}
     disabled={updatedName === originalName || error}
   >
     <form on:submit|preventDefault={() => editTableNameModal.confirm()}>
       <Input
-        label="Table Name"
+        label="表名"
         thin
         bind:value={updatedName}
         on:input={checkValid}
@@ -119,16 +119,16 @@
 </Modal>
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Table"
+  okText="删除表"
   onOk={deleteTable}
   onCancel={hideDeleteDialog}
-  title="Confirm Deletion"
+  title="确认删除"
   disabled={deleteTableName !== table.name}
 >
   <p>
-    Are you sure you wish to delete the table
+    你确定要删除该表吗
     <b>{table.name}?</b>
-    The following will also be deleted:
+    以下内容也将被删除：
   </p>
   <b>
     <div class="delete-items">
@@ -138,8 +138,7 @@
     </div>
   </b>
   <p>
-    This action cannot be undone - to continue please enter the table name below
-    to confirm.
+    此操作无法撤消-若要继续，请在下面输入表名以确认。
   </p>
   <Input bind:value={deleteTableName} placeholder={table.name} />
 </ConfirmDialog>

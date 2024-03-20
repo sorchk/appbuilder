@@ -1,10 +1,10 @@
 <div>
-  In this section you can manage the data for your app:
+  在本节中，您可以管理应用程序的数据:
   <ul class="feature-list">
-    <li>Connect data sources</li>
-    <li>Edit data</li>
-    <li>Manage read & write access</li>
-    <li>Create views</li>
-    <li>Add bindings</li>
+    <li>连接数据源</li>
+    <li>编辑数据</li>
+    <li>管理读、写访问</li>
+    <li>创建视图</li>
+    <li>添加绑定</li>
   </ul>
 </div>

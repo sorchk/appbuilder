@@ -67,7 +67,7 @@
     当前正在编辑
       <UserAvatars users={app.sessions} />
     {:else if app.updatedAt}
-      {processStringSync("Updated {{ duration time 'millisecond' }} ago", {
+      {processStringSync("更新在 {{ duration time 'millisecond' }} 之前", {
         time: new Date().getTime() - new Date(app.updatedAt).getTime(),
       })}
     {:else}

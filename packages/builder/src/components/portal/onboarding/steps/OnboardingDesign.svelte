@@ -1,10 +1,9 @@
 <div>
-  After setting up your data, Design is where you build the screens for your
-  app:
+  设置好数据后，设计您的应用程序:
   <ul class="feature-list">
-    <li>Add screens</li>
-    <li>Add components</li>
-    <li>Choose your theme</li>
-    <li>Edit navigation</li>
+    <li>添加屏幕</li>
+    <li>添加组件</li>
+    <li>选择您的主题</li>
+    <li>编辑导航</li>
   </ul>
 </div>

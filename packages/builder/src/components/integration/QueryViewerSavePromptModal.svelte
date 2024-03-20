@@ -30,9 +30,9 @@
   }}
 >
   <ModalContent
-    title="You have unsaved changes"
-    confirmText="Save and Continue"
-    cancelText="Discard Changes"
+    title="您有未保存的更改"
+    confirmText="保存并继续"
+    cancelText="放弃更改"
     size="L"
     onConfirm={async () => {
       try {
@@ -48,6 +48,6 @@
       resumeNavigation()
     }}
   >
-    <Body>Leaving this section will mean losing any changes to your query</Body>
+    <Body>离开此部分将意味着丢失对查询的任何更改</Body>
   </ModalContent>
 </Modal>

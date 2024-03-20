@@ -37,8 +37,8 @@
       <div class="cron-error">
         <InlineAlert
           type="error"
-          header="CRON automation disabled"
-          message="Fix the error and re-publish your app to re-activate."
+          header="CRON自动化已禁用"
+          message="修复错误并重新发布您的应用程序以重新激活。"
         />
       </div>
     {/if}
@@ -50,7 +50,7 @@
             $goto(`/builder/app/${appId}/automation/${history.automationId}`)
           }}
         >
-          Edit automation
+        编辑自动化
         </Button>
       </div>
     {/if}
@@ -61,7 +61,7 @@
     {/key}
   </Layout>
 {:else}
-  <Body>No details found</Body>
+  <Body>未找到详细信息</Body>
 {/if}
 
 <style>

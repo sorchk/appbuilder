@@ -120,7 +120,7 @@
         `export.${exportFormat === "csv" ? "csv" : "json"}`
       )
     } catch (error) {
-      notifications.error(`Unable to export ${exportFormat.toUpperCase()} data`)
+      notifications.error(`无法导出 ${exportFormat.toUpperCase()} data`)
     }
   }
 
@@ -146,12 +146,12 @@
           },
         })
       } catch (e) {
-        console.error("Failed to export", e)
-        notifications.error("Export Failed")
+        console.error("无法导出", e)
+        notifications.error("导出失败")
       }
       if (response) {
         downloadWithBlob(response, `export.${exportFormat}`)
-        notifications.success("Export Successful")
+        notifications.success("导出成功")
       }
     } else {
       await exportView()
@@ -160,8 +160,8 @@
 </script>
 
 <ModalContent
-  title="Export Data"
-  confirmText="Export"
+  title="导出数据"
+  confirmText="导出"
   onConfirm={exportRows}
   size={appliedFilters?.length || sorting ? "M" : "S"}
 >
@@ -169,7 +169,7 @@
     <Body size="S">
       <span data-testid="exporting-n-rows">
         <strong>{selectedRows?.length}</strong>
-        {`row${selectedRows?.length > 1 ? "s" : ""} will be exported`}
+        {`将导出行`}
       </span>
     </Body>
   {:else if appliedFilters?.length || (sorting?.sortOrder && sorting?.sortColumn)}
@@ -179,7 +179,7 @@
           Exporting <strong>all</strong> rows
         </span>
       {:else}
-        <span data-testid="filters-applied">Filters applied</span>
+        <span data-testid="filters-applied">应用的筛选器</span>
       {/if}
     </Body>
 
@@ -201,13 +201,13 @@
   {:else}
     <Body size="S">
       <span data-testid="export-all-rows">
-        Exporting <strong>all</strong> rows
+        导出<strong>所有</strong>行
       </span>
     </Body>
   {/if}
   <span data-testid="format-select">
     <Select
-      label="Format"
+      label="格式"
       bind:value={exportFormat}
       {options}
       placeholder={null}

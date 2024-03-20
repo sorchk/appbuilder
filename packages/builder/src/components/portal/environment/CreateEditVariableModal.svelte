@@ -52,19 +52,19 @@
 <ModalContent
   disabled={HasSpacesRegex.test(name)}
   onConfirm={() => saveVariable()}
-  title={!row ? "Add new environment variable" : "Edit environment variable"}
+  title={!row ? "添加新的环境变量" : "编辑环境变量"}
 >
   <Input
     disabled={row}
-    label="Name"
+    label="名称"
     bind:value={name}
-    error={HasSpacesRegex.test(name) && "Must not include spaces"}
+    error={HasSpacesRegex.test(name) && "不得包含空格"}
   />
   <div>
-    <Heading size="XS">Production</Heading>
+    <Heading size="XS">生产环境</Heading>
     <Input
       type="password"
-      label="Value"
+      label="值"
       on:change={e => {
         productionValue = e.detail
         if (useProductionValue) {
@@ -76,23 +76,23 @@
     />
   </div>
   <div>
-    <Heading size="XS">Development</Heading>
+    <Heading size="XS">开发环境</Heading>
     <Input
       type="password"
       on:change={e => {
         developmentValue = e.detail
       }}
       disabled={useProductionValue}
-      label="Value"
+      label="值"
       value={useProductionValue ? productionValue : developmentValue}
       autocomplete="new-password"
     />
-    <Checkbox bind:value={useProductionValue} text="Use production value" />
+    <Checkbox bind:value={useProductionValue} text="使用生产环境配置的值" />
   </div>
 
   <div class="footer" slot="footer">
     {#if row}
-      <Button on:click={deleteDialog.show} warning>Delete</Button>
+      <Button on:click={deleteDialog.show} warning>删除</Button>
     {/if}
   </div>
 </ModalContent>
@@ -102,10 +102,10 @@
   onOk={() => {
     deleteVariable(row.name)
   }}
-  okText="Delete Environment Variable"
-  title="Confirm Deletion"
+  okText="删除环境变量"
+  title="确认删除"
 >
-  Are you sure you wish to delete the environment variable
+  您确定要删除环境变量吗
   <i>{row.name}?</i>
-  This action cannot be undone.
+  此操作无法撤消。
 </ConfirmDialog>

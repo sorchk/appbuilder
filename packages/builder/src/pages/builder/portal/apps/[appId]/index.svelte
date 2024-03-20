@@ -73,7 +73,7 @@
         secondary
         on:click={() => $goto(`/builder/app/${app.devId}`)}
       >
-        Edit
+        编辑
       </Button>
     {/if}
     <div class="headerButton">

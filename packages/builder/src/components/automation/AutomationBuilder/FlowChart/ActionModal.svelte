@@ -35,7 +35,7 @@
     return {
       SEND_EMAIL_SMTP: {
         disabled: !$admin.checklist.smtp.checked,
-        message: "Please configure SMTP",
+        message: "请配置SMTP",
       },
       COLLECT: {
         disabled: !lastStep || !syncAutomationsEnabled || collectBlockExists,
@@ -43,17 +43,17 @@
       },
       TRIGGER_AUTOMATION_RUN: {
         disabled: !triggerAutomationRunEnabled,
-        message: "Please upgrade to a paid plan",
+        message: "请升级到付费计划",
       },
     }
   }
 
   const collectDisabledMessage = () => {
     if (collectBlockExists) {
-      return "Only one Collect step allowed"
+      return "只允许一个Collect步骤"
     }
     if (!lastStep) {
-      return "Only available as the last step"
+      return "仅在最后一步可用"
     }
   }
 
@@ -105,7 +105,7 @@
       )
       await automationStore.actions.addBlockToAutomation(newBlock, blockIdx + 1)
     } catch (error) {
-      notifications.error("Error saving automation")
+      notifications.error("保存自动化时出错")
     }
   }
 </script>
@@ -113,8 +113,8 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <ModalContent
-  title="Add automation step"
-  confirmText="Save"
+  title="添加自动化步骤"
+  confirmText="保存"
   size="L"
   disabled={!selectedAction}
   onConfirm={addBlockToAutomation}

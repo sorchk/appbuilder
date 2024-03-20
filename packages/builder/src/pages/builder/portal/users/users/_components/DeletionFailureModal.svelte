@@ -11,7 +11,7 @@
 
   const setTitle = () => {
     if (successCount) {
-      title = `${successCount} users deleted`
+      title = `${successCount} 用户已删除`
     } else {
       title = "Oops!"
     }
@@ -19,9 +19,9 @@
 
   const setMessage = () => {
     if (successCount) {
-      message = "However there was a problem deleting some users."
+      message = "但是，删除某些用户时出现问题。"
     } else {
-      message = "There was a problem deleting some users."
+      message = "删除某些用户时出现问题。"
     }
   }
 
@@ -50,7 +50,7 @@
 <ModalContent
   size="M"
   {title}
-  confirmText="Close"
+  confirmText="关闭"
   showCloseIcon={false}
   showCancelButton={false}
 >

@@ -20,12 +20,12 @@
 <ModalContent
   warning
   onConfirm={deleteUser}
-  title="Delete User"
-  confirmText="Delete user"
-  cancelText="Cancel"
+  title="删除用户"
+  confirmText="删除用户"
+  cancelText="取消"
   showCloseIcon={false}
 >
   <Body>
-    Are you sure you want to delete <strong>{user?.email}</strong>
+    你确定要删除吗 <strong>{user?.email}</strong>
   </Body>
 </ModalContent>

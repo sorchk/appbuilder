@@ -376,14 +376,14 @@
 </script>
 
 <ModalContent
-  title="Define Relationship"
-  confirmText="Save"
+  title="定义关系"
+  confirmText="保存"
   onConfirm={saveRelationship}
   disabled={!valid}
   size="L"
 >
   <div class="headings">
-    <Detail>Tables</Detail>
+    <Detail>表</Detail>
   </div>
 
   <RelationshipSelector
@@ -433,14 +433,14 @@
     />
     {#if fromId && toId && throughId}
       <Select
-        label={`Foreign Key (${getTable(fromId)?.name})`}
+        label={`外键 (${getTable(fromId)?.name})`}
         options={Object.keys(getTable(throughId)?.schema)}
         bind:value={throughToKey}
         bind:error={errors.throughToKey}
         on:change={changed}
       />
       <Select
-        label={`Foreign Key (${getTable(toId)?.name})`}
+        label={`外键 (${getTable(toId)?.name})`}
         options={Object.keys(getTable(throughId)?.schema)}
         bind:value={throughFromKey}
         bind:error={errors.throughFromKey}
@@ -449,7 +449,7 @@
     {/if}
   {:else if isManyToOne && toId}
     <Select
-      label={`Foreign Key (${getTable(toId)?.name})`}
+      label={`外键 (${getTable(toId)?.name})`}
       options={Object.keys(getTable(toId)?.schema)}
       bind:value={fromForeign}
       bind:error={errors.fromForeign}
@@ -457,20 +457,19 @@
     />
   {/if}
   <div class="headings">
-    <Detail>Column names</Detail>
+    <Detail>列名</Detail>
   </div>
   <Body>
-    Budibase manages SQL relationships as a new column in the table, please
-    provide a name for these columns.
+    将SQL关系作为表中的新列进行管理，请提供这些列的名称。
   </Body>
   <Input
-    label="From table column"
+    label="来自表列"
     bind:value={fromColumn}
     bind:error={errors.fromColumn}
     on:change={changed}
   />
   <Input
-    label="To table column"
+    label="到表格列"
     bind:value={toColumn}
     bind:error={errors.toColumn}
     on:change={changed}

@@ -93,9 +93,9 @@
 </div>
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Automation"
+  okText="删除自动化"
   onOk={deleteAutomation}
-  title="Confirm Deletion"
+  title="确认删除"
 >
   Are you sure you wish to delete the automation
   <i>{automation.name}?</i>

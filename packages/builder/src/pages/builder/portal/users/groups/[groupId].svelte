@@ -73,10 +73,10 @@
   async function deleteGroup() {
     try {
       await groups.actions.delete(group)
-      notifications.success("User group deleted successfully")
+      notifications.success("成功删除用户组")
       $goto("./")
     } catch (error) {
-      notifications.error(`Failed to delete user group`)
+      notifications.error(`删除用户组失败`)
     }
   }
 
@@ -87,7 +87,7 @@
       if (error.message) {
         notifications.error(error.message)
       } else {
-        notifications.error(`Failed to save user group`)
+        notifications.error(`保存用户组失败`)
       }
     }
   }
@@ -105,7 +105,7 @@
       await Promise.all([groups.actions.init(), roles.fetch()])
       loaded = true
     } catch (error) {
-      notifications.error("Error fetching user group data")
+      notifications.error("获取用户组数据时出错")
     }
   })
 </script>
@@ -113,7 +113,7 @@
 {#if loaded}
   <Layout noPadding gap="L">
     <Breadcrumbs>
-      <Breadcrumb url={$url("./")} text="Groups" />
+      <Breadcrumb url={$url("./")} text="组" />
       <Breadcrumb text={group?.name} />
     </Breadcrumbs>
 
@@ -129,15 +129,15 @@
           on:click={() => editModal.show()}
           disabled={!isAdmin}
         >
-          Edit
+          编辑
         </MenuItem>
-        <div title={isScimGroup && "Group synced from your AD"}>
+        <div title={isScimGroup && "从您的AD同步的组"}>
           <MenuItem
             icon="Delete"
             on:click={() => deleteModal.show()}
             disabled={readonly}
           >
-            Delete
+            删除
           </MenuItem>
         </div>
       </ActionMenu>
@@ -148,7 +148,7 @@
     </Layout>
 
     <Layout noPadding gap="S">
-      <Heading size="S">Apps</Heading>
+      <Heading size="S">应用</Heading>
       <Table
         schema={appSchema}
         data={groupApps}
@@ -158,7 +158,7 @@
         on:click={e => $goto(`/builder/app/${e.detail.devId}`)}
       >
         <div class="placeholder" slot="placeholder">
-          <Heading size="S">This group doesn't have access to any apps</Heading>
+          <Heading size="S">此组无权访问任何应用程序</Heading>
         </div>
       </Table>
     </Layout>
@@ -171,11 +171,11 @@
 
 <ConfirmDialog
   bind:this={deleteModal}
-  title="Delete user group"
-  okText="Delete user group"
+  title="删除用户组"
+  okText="删除用户组"
   onOk={deleteGroup}
 >
-  Are you sure you wish to delete <b>{group?.name}?</b>
+你确定要删除吗 <b>{group?.name}?</b>
 </ConfirmDialog>
 
 <style>

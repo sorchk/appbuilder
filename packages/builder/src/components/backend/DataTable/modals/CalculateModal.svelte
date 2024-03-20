@@ -47,8 +47,8 @@
 </script>
 
 <ModalContent
-  title="Calculate"
-  confirmText="Save"
+  title="计算"
+  confirmText="保存"
   onConfirm={saveView}
   disabled={!view.field}
 >

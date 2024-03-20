@@ -34,14 +34,14 @@
     wide
     on:click={() => confirmResetFieldsDialog?.show()}
   >
-    Update form fields
+  更新表单字段
   </ActionButton>
 </div>
 
 <ConfirmDialog
   bind:this={confirmResetFieldsDialog}
-  body={`All components inside this group will be deleted and replaced with fields to match the schema. Are you sure you want to update this Field Group?`}
-  okText="Update"
+  body={`此组中的所有组件都将被删除，并替换为与架构匹配的字段。是否确实要更新此字段组？`}
+  okText="更新"
   onOk={resetFormFields}
-  title="Confirm Form Field Update"
+  title="确认表单字段更新"
 />

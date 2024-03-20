@@ -754,10 +754,10 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Column"
+  okText="删除列"
   onOk={deleteColumn}
   onCancel={hideDeleteDialog}
-  title="Confirm Deletion"
+  title="确认删除"
   disabled={deleteColName !== originalName}
 >
   <p>

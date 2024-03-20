@@ -40,7 +40,7 @@
   function checkValid(evt) {
     name = evt.target.value
     if (!name) {
-      error = "Name is required"
+      error = "名称是必填项"
       return
     }
     error = ""
@@ -49,20 +49,20 @@
 
 <Modal bind:this={modal} on:hide={onCancel}>
   <ModalContent
-    title="Edit Automation"
-    confirmText="Save"
+    title="编辑自动化"
+    confirmText="保存"
     size="L"
     onConfirm={saveAutomation}
     disabled={error}
   >
-    <Input bind:value={name} label="Name" on:input={checkValid} {error} />
+    <Input bind:value={name} label="名称" on:input={checkValid} {error} />
     <a
       slot="footer"
       target="_blank"
       href="https://docs.budibase.com/docs/automation-steps"
     >
       <Icon name="InfoOutline" />
-      <span>Learn about automations</span>
+      <span>了解自动化</span>
     </a>
   </ModalContent>
 </Modal>

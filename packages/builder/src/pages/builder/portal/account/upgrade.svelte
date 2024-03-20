@@ -270,7 +270,7 @@
           >
         </div>
         <Body size="XS">
-          {processStringSync("Updated {{ duration time 'millisecond' }} ago", {
+          {processStringSync("更新在 {{ duration time 'millisecond' }} 之前", {
             time:
               new Date().getTime() - new Date(license.refreshedAt).getTime(),
           })}

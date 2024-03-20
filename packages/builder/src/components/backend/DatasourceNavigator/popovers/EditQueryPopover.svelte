@@ -27,7 +27,7 @@
       const newQuery = await queries.duplicate(query)
       $goto(`./query/${newQuery._id}`)
     } catch (error) {
-      notifications.error("复制查询时出错")
+      notifications.error("建立查询副本时出错")
     }
   }
 </script>
@@ -37,7 +37,7 @@
     <Icon size="S" hoverable name="MoreSmallList" />
   </div>
   <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>删除</MenuItem>
-  <MenuItem icon="Duplicate" on:click={duplicateQuery}>复制</MenuItem>
+  <MenuItem icon="Duplicate" on:click={duplicateQuery}>副本</MenuItem>
 </ActionMenu>
 
 <ConfirmDialog

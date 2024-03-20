@@ -45,8 +45,8 @@
 <div class="screens" class:searching use:resizable>
   <div class="header" class:scrolling>
     <NavHeader
-      title="Screens"
-      placeholder="Search for screens"
+      title="屏幕"
+      placeholder="搜索屏幕"
       bind:value={searchValue}
       bind:search={searching}
       onAdd={() => $goto("../new")}
@@ -75,7 +75,7 @@
     {:else}
       <Layout paddingY="none" paddingX="L">
         <div class="no-results">
-          There aren't any screens matching that route
+          没有任何屏幕与该路由匹配
         </div>
       </Layout>
     {/if}

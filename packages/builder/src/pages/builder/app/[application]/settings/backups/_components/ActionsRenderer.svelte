@@ -72,9 +72,9 @@
 
 <ConfirmDialog
   bind:this={deleteDialog}
-  okText="Delete Backup"
+  okText="删除备份"
   onOk={onClickDelete}
-  title="Confirm Deletion"
+  title="确认删除"
 >
   Are you sure you wish to delete this backup? This action cannot be undone.
 </ConfirmDialog>

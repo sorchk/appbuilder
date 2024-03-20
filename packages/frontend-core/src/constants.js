@@ -26,7 +26,7 @@ export const BudibaseRoles = {
 
 export const BudibaseRoleOptionsOld = [
   {
-    label: "Developer",
+    label: "开发者",
     value: BudibaseRoles.Developer,
   },
 ]
@@ -34,17 +34,17 @@ export const BudibaseRoleOptions = [
   {
     label: "管理员",
     value: BudibaseRoles.Admin,
-    subtitle: "Has full access to all apps and settings in your account",
+    subtitle: "可以完全访问您帐户中的所有应用程序和设置",
   },
   {
     label: "创建者",
     value: BudibaseRoles.Creator,
-    subtitle: "Can create and edit apps they have access to",
+    subtitle: "可以创建和编辑他们有权访问的应用程序",
   },
   {
     label: "应用用户",
     value: BudibaseRoles.AppUser,
-    subtitle: "Can only use published apps they have access to",
+    subtitle: "只能使用他们有权访问的已发布应用程序",
   },
 ]
 
@@ -77,19 +77,19 @@ export const Roles = {
 export const Themes = [
   {
     class: "lightest",
-    name: "Lightest",
+    name: "最明亮的",
   },
   {
     class: "light",
-    name: "Light",
+    name: "明亮的",
   },
   {
     class: "dark",
-    name: "Dark",
+    name: "黑暗的",
   },
   {
     class: "darkest",
-    name: "Darkest",
+    name: "最黑暗的",
   },
   {
     class: "nord",
@@ -98,7 +98,7 @@ export const Themes = [
   },
   {
     class: "midnight",
-    name: "Midnight",
+    name: "物业",
     base: "darkest",
   },
 ]

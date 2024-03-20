@@ -1,3 +1,4 @@
+require('dayjs/locale/zh-cn');
 const dayjs = require("dayjs")
 dayjs.extend(require("dayjs/plugin/duration"))
 dayjs.extend(require("dayjs/plugin/advancedFormat"))
@@ -75,20 +76,18 @@ function initialConfig(str, pattern, options) {
 function setLocale(str, pattern, options) {
   // if options is null then it'll get updated here
   const config = initialConfig(str, pattern, options)
-  const defaults = { lang: "en", date: new Date(config.str) }
+  const defaults = { lang: "zh-cn", date: new Date(config.str) }
   // for now don't allow this to be configurable, don't pass in options
   const opts = getContext(this, defaults, {})
-
   // set the language to use
-  dayjs.locale(opts.lang || opts.language)
+  dayjs.locale(opts.lang || opts.language|| "zh-cn")
 }
 
 module.exports.date = (str, pattern, options) => {
   const config = initialConfig(str, pattern, options)
-
   // if no args are passed, return a formatted date
   if (config.str == null && config.pattern == null) {
-    dayjs.locale("en")
+    dayjs.locale("zh-cn")
     return dayjs().format("MMMM DD, YYYY")
   }
 

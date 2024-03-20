@@ -36,7 +36,7 @@
     icon="Duplicate"
     on:click={duplicateAutomation}
     disabled={automation.definition.trigger.name === "Webhook"}
-    >Duplicate</MenuItem
+    >副本</MenuItem
   >
   <MenuItem icon="Edit" on:click={updateAutomationDialog.show}>Edit</MenuItem>
   <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>Delete</MenuItem>
@@ -44,9 +44,9 @@
 
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  okText="Delete Automation"
+  okText="删除自动化"
   onOk={deleteAutomation}
-  title="Confirm Deletion"
+  title="确认删除"
 >
   Are you sure you wish to delete the automation
   <i>{automation.name}?</i>

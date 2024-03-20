@@ -26,14 +26,14 @@
 </script>
 
 <ModalContent
-  title="Quick Maths"
+  title="快速数学"
   bind:this={modal}
-  confirmText="Submit"
+  confirmText="提交"
   onConfirm={answerQuiz}
   on:show={resetState}
 >
   {#if error}
-    <p class="error">Wrong answer! Try again.</p>
+    <p class="error">答错了！再试一次。</p>
   {/if}
   <p>What is 4 + 4?</p>
   <Input label="Answer" bind:value={answer} />

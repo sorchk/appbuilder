@@ -14,7 +14,7 @@
 
   const setTitle = () => {
     if (hasSuccess) {
-      title = "Users invited!"
+      title = "邀请用户！"
     } else if (hasFailure) {
       title = "Oops!"
     }
@@ -22,9 +22,9 @@
 
   const setFailureMessage = () => {
     if (hasSuccess) {
-      failureMessage = "However there was a problem inviting some users."
+      failureMessage = "但是，在邀请一些用户时出现了问题。"
     } else {
-      failureMessage = "There was a problem inviting users."
+      failureMessage = "邀请用户时出现问题。"
     }
   }
 
@@ -51,11 +51,10 @@
   }
 </script>
 
-<ModalContent size="L" showCancelButton={false} {title} confirmText="Done">
+<ModalContent size="L" showCancelButton={false} {title} confirmText="完成">
   {#if hasSuccess}
     <Body size="XS">
-      Your users should now receive an email invite to get access to their
-      Budibase account
+      您的用户现在应该收到一封电子邮件邀请，以访问他们的帐户
     </Body>
   {/if}
   {#if hasFailure}

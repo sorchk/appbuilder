@@ -39,7 +39,7 @@
   const validEmails = userEmails => {
     if ($admin.cloud && userEmails.length > MAX_USERS_UPLOAD_LIMIT) {
       notifications.error(
-        `Max limit for upload is 1000 users. Please reduce file size and try again.`
+        `上传的最大限制为1000个用户。请减小文件大小，然后重试。`
       )
       return false
     }
@@ -50,7 +50,7 @@
     if (!invalidEmails.length) return true
 
     notifications.error(
-      `Error, please check the following email${
+      `错误，请检查以下电子邮件${
         invalidEmails.length > 1 ? "s" : ""
       }: ${invalidEmails.join(", ")}`
     )
@@ -62,9 +62,9 @@
     const fileArray = Array.from(evt.target.files)
     if (fileArray.some(file => file.size >= FILE_SIZE_LIMIT)) {
       notifications.error(
-        `Files cannot exceed ${
+        `文件不能超过 ${
           FILE_SIZE_LIMIT / BYTES_IN_MB
-        }MB. Please try again with smaller files.`
+        }MB. 请使用较小的文件重试。`
       )
       return
     }
@@ -83,27 +83,26 @@
 
 <ModalContent
   size="M"
-  title="Import users"
-  confirmText="Done"
-  cancelText="Cancel"
+  title="导入用户"
+  confirmText="确定"
+  cancelText="取消"
   showCloseIcon={false}
   onConfirm={() => createUsersFromCsv({ userEmails, usersRole, userGroups })}
   disabled={importDisabled}
 >
-  <Body size="S">Import your users email addresses from a CSV file</Body>
+  <Body size="S">从CSV文件导入用户的电子邮件地址</Body>
 
   <div class="dropzone">
     <input id="file-upload" accept=".csv" type="file" on:change={handleFile} />
     <label for="file-upload" class:uploaded={files[0]}>
-      {#if files[0]}{files[0].name}{:else}Upload{/if}
+      {#if files[0]}{files[0].name}{:else}上传{/if}
     </label>
   </div>
 
   {#if exceed}
     <div class="user-notification">
       <Icon name="Info" />
-      {capitalise($licensing.license.plan.type)} plan is limited to {$licensing.userLimit}
-      users. Upgrade your plan to add more users
+      {capitalise($licensing.license.plan.type)} 计划仅限于 {$licensing.userLimit}用户。升级您的计划以添加更多用户
     </div>
   {/if}
   <RadioGroup bind:value={usersRole} options={roleOptions} />
@@ -111,8 +110,8 @@
   {#if $licensing.groupsEnabled && internalGroups?.length}
     <Multiselect
       bind:value={userGroups}
-      placeholder="No groups"
-      label="Groups"
+      placeholder="没有组"
+      label="组"
       options={internalGroups}
       getOptionLabel={option => option.name}
       getOptionValue={option => option._id}

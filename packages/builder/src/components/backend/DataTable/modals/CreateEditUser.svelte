@@ -90,32 +90,31 @@
 </script>
 
 <ModalContent
-  title={creating ? "Create User" : "Edit User"}
-  confirmText={creating ? "Create User" : "Save User"}
+  title={creating ? "创建用户" : "修改用户"}
+  confirmText={creating ? "创建用户" : "保存用户"}
   onConfirm={saveRow}
 >
   <ErrorsBox {errors} />
   <!-- need to explain to the user the readonly fields -->
   {#if !creating}
     <div>
-      A user's email, role, first and last names cannot be changed from within
-      the app builder. Please go to the
-      <Link on:click={$goto("/builder/portal/users/users")}>user portal</Link>
-      to do this.
+      用户的电子邮件、角色、名字和姓氏不能从中更改用程序生成器。请转到
+      <Link on:click={$goto("/builder/portal/users/users")}>使用者入口</Link>
+      这样做。
     </div>
   {/if}
   <RowFieldControl
-    meta={{ ...tableSchema.email, name: "Email" }}
+    meta={{ ...tableSchema.email, name: "电子邮箱" }}
     bind:value={row.email}
     readonly={!creating}
   />
   <RowFieldControl
-    meta={{ ...tableSchema.firstName, name: "First Name" }}
+    meta={{ ...tableSchema.firstName, name: "名字" }}
     bind:value={row.firstName}
     readonly={!creating}
   />
   <RowFieldControl
-    meta={{ ...tableSchema.lastName, name: "Last Name" }}
+    meta={{ ...tableSchema.lastName, name: "姓氏" }}
     bind:value={row.lastName}
     readonly={!creating}
   />

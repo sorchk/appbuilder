@@ -38,7 +38,7 @@
         }
         errors = mappedErrors
       } else {
-        notifications.error(`Failed to save row - ${error.message}`)
+        notifications.error(`未能保存行 - ${error.message}`)
       }
 
       return keepOpen
@@ -48,8 +48,8 @@
 
 <span class="modal-wrap">
   <ModalContent
-    title={creating ? "Create Row" : "Edit Row"}
-    confirmText={creating ? "Create Row" : "Save Row"}
+    title={creating ? "创建行" : "编辑行"}
+    confirmText={creating ? "创建行" : "保存行"}
     onConfirm={saveRow}
     showCancelButton={creating}
     showSecondaryButton={!creating}

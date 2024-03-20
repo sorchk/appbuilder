@@ -14,10 +14,10 @@ import { features } from "@budibase/pro"
 import env from "../../environment"
 
 export const definition: AutomationStepSchema = {
-  name: "Trigger an automation",
-  tagline: "Triggers an automation synchronously",
+  name: "触发自动化",
+  tagline: "同步触发自动化",
   icon: "Sync",
-  description: "Triggers an automation synchronously",
+  description: "同步触发自动化",
   type: AutomationStepType.ACTION,
   internal: true,
   features: {},
@@ -35,12 +35,12 @@ export const definition: AutomationStepSchema = {
             },
           },
           customType: AutomationCustomIOType.AUTOMATION_FIELDS,
-          title: "automatioFields",
+          title: "自动字段",
           required: ["automationId"],
         },
         timeout: {
           type: AutomationIOType.NUMBER,
-          title: "Timeout (ms)",
+          title: "超时 (ms)",
         },
       },
       required: ["automationId"],
@@ -49,11 +49,11 @@ export const definition: AutomationStepSchema = {
       properties: {
         success: {
           type: AutomationIOType.BOOLEAN,
-          description: "Whether the automation was successful",
+          description: "自动化是否成功",
         },
         value: {
           type: AutomationIOType.OBJECT,
-          description: "Automation Result",
+          description: "自动化结果",
         },
       },
       required: ["success", "value"],

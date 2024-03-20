@@ -41,24 +41,24 @@ export function quotas(): Quotas {
     usage: {
       monthly: {
         queries: {
-          name: "Queries",
+          name: "查询",
           value: 1,
           triggers: [],
         },
         automations: {
-          name: "Queries",
+          name: "查询",
           value: 1,
           triggers: [],
         },
         dayPasses: {
-          name: "Queries",
+          name: "查询",
           value: 1,
           triggers: [],
         },
       },
       static: {
         rows: {
-          name: "Rows",
+          name: "行",
           value: 1,
           triggers: [],
         },
@@ -73,12 +73,12 @@ export function quotas(): Quotas {
           triggers: [],
         },
         creators: {
-          name: "Creators",
+          name: "创建者",
           value: 1,
           triggers: [],
         },
         userGroups: {
-          name: "User Groups",
+          name: "用户组",
           value: 1,
           triggers: [],
         },
@@ -91,12 +91,12 @@ export function quotas(): Quotas {
     },
     constant: {
       automationLogRetentionDays: {
-        name: "Automation Logs",
+        name: "自动化日志",
         value: 1,
         triggers: [],
       },
       appBackupRetentionDays: {
-        name: "Backups",
+        name: "备份",
         value: 1,
         triggers: [],
       },

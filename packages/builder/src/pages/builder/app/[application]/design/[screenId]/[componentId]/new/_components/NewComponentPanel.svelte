@@ -177,7 +177,7 @@
     try {
       await componentStore.create(component)
     } catch (error) {
-      notifications.error(error || "Error creating component")
+      notifications.error(error || "创建组件时出错")
     }
   }
 
@@ -223,7 +223,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="container" transition:fly|local={{ x: 260, duration: 300 }}>
   <Panel
-    title="Add component"
+    title="添加组件"
     showCloseButton
     onClickCloseButton={() => $goto("../")}
     borderLeft
@@ -231,7 +231,7 @@
   >
     <Layout paddingX="L" paddingY="XL" gap="S">
       <Search
-        placeholder="Search"
+        placeholder="搜索"
         value={searchString}
         on:change={e => (searchString = e.detail)}
         bind:inputRef={searchRef}
@@ -259,7 +259,7 @@
         {/each}
       {:else}
         <Body size="S">
-          There aren't any components matching the current filter
+          没有任何组件与当前筛选器匹配
         </Body>
       {/if}
     </Layout>

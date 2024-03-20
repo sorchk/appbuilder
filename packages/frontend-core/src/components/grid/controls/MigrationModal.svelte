@@ -53,21 +53,18 @@
 </script>
 
 <ModalContent
-  title="Migrate column"
-  confirmText="Continue"
-  cancelText="Cancel"
+  title="迁移列"
+  confirmText="继续"
+  cancelText="取消"
   onConfirm={migrateUserColumn}
   disabled={error !== undefined}
   size="M"
 >
-  This operation will kick off a migration of the column "{column.schema.name}"
-  to a new column, with the name provided - this operation may take a moment to
-  complete.
-
+  此操作将启动列"{column.schema.name}"的迁移到一个新列，并提供名称-此操作可能需要一些时间完成
   <InlineAlert
     type="error"
-    header="Are you sure?"
-    message="This will leave bindings which utilised the user relationship column in a state where they will need to be updated to use the new column instead."
+    header="你确定吗？"
+    message="这将使使用用户关系列的绑定处于需要更新以使用新列的状态。"
   />
-  <Input bind:value={newColumnName} label="New column name" {error} />
+  <Input bind:value={newColumnName} label="新的列名称" {error} />
 </ModalContent>

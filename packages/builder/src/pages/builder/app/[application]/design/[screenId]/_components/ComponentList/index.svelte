@@ -34,7 +34,7 @@
       await dndStore.actions.drop()
     } catch (error) {
       console.error(error)
-      notifications.error("Error saving component")
+      notifications.error("保存组件时出错")
     }
   }
 
@@ -49,7 +49,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="components">
   <div class="header" class:scrolling>
-    <Body size="S">Components</Body>
+    <Body size="S">组件</Body>
     <div on:click={toNewComponentRoute} class="addButton">
       <Icon name="Add" />
     </div>
@@ -59,7 +59,7 @@
       <ul>
         <li>
           <NavItem
-            text="Screen"
+            text="屏幕"
             indentLevel={0}
             selected={$componentStore.selectedComponentId ===
               `${$screenStore.selectedScreenId}-screen`}
@@ -79,7 +79,7 @@
             <ScreenslotDropdownMenu component={$selectedScreen?.props} />
           </NavItem>
           <NavItem
-            text="Navigation"
+            text="导航"
             indentLevel={0}
             selected={$componentStore.selectedComponentId === navComponentId}
             opened

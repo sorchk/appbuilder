@@ -42,20 +42,20 @@
 
 <div class="root">
   <Body size="S">
-    Choose the datasource that provides the row you would like to duplicate.
+    选择提供要复制的行的数据源。
     <br />
-    You can always add or override fields manually.
+    您始终可以手动添加或替代字段。
   </Body>
 
   <div class="params">
-    <Label small>Datasource</Label>
+    <Label small>数据源</Label>
     <Select
       bind:value={parameters.providerId}
       options={providerOptions}
       placeholder="None"
     />
 
-    <Label small>Duplicate to Table</Label>
+    <Label small>复制到表</Label>
     <Select
       bind:value={parameters.tableId}
       {options}
@@ -65,22 +65,22 @@
 
     <Label small />
     <Checkbox
-      text="Do not display default notification"
+      text="不显示默认通知"
       bind:value={parameters.notificationOverride}
     />
     <br />
-    <Checkbox text="Require confirmation" bind:value={parameters.confirm} />
+    <Checkbox text="需要确认" bind:value={parameters.confirm} />
 
     {#if parameters.confirm}
       <Label small>Title</Label>
       <Input
-        placeholder="Duplicate Row"
+        placeholder="复制行"
         bind:value={parameters.customTitleText}
       />
 
-      <Label small>Text</Label>
+      <Label small>文本</Label>
       <Input
-        placeholder="Are you sure you want to duplicate this row?"
+        placeholder="是否确实要复制此行？"
         bind:value={parameters.confirmText}
       />
     {/if}

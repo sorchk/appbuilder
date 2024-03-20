@@ -6,7 +6,7 @@
       "component": "SaveRow",
       "context": [
         {
-          "label": "Saved row",
+          "label": "保存的行",
           "value": "row"
         }
       ]
@@ -17,14 +17,14 @@
       "component": "DuplicateRow",
       "context": [
         {
-          "label": "Duplicated row",
+          "label": "建立行副本",
           "value": "row"
         }
       ]
     },
     {
       "name": "Delete Row",
-      "displayName": "Delete Rows",
+      "displayName": "删除行",
       "type": "data",
       "component": "DeleteRow"
     },
@@ -34,7 +34,7 @@
       "component": "FetchRow",
       "context": [
         {
-          "label": "Fetched row",
+          "label": "获取的行",
           "value": "row"
         }
       ]
@@ -50,7 +50,7 @@
       "component": "ExecuteQuery",
       "context": [
         {
-          "label": "Query result",
+          "label": "查询结果",
           "value": "result"
         }
       ]
@@ -61,7 +61,7 @@
       "component": "TriggerAutomation",
       "context": [
         {
-          "label": "Automation Result",
+          "label": "自动化结果",
           "value": "result"
         }
       ]
@@ -118,7 +118,7 @@
       "component": "S3Upload",
       "context": [
         {
-          "label": "File URL",
+          "label": "文件 URL",
           "value": "publicUrl"
         }
       ]

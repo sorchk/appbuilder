@@ -30,7 +30,7 @@
   const deleteRow = () => {
     rows.actions.deleteRows([$focusedRow])
     menu.actions.close()
-    $notifications.success("Deleted 1 row")
+    $notifications.success("删除一行")
   }
 
   const duplicate = async () => {
@@ -44,7 +44,7 @@
 
   const copyToClipboard = async value => {
     await Helpers.copyToClipboard(value)
-    $notifications.success("Copied to clipboard")
+    $notifications.success("已复制到剪贴板")
   }
 </script>
 
@@ -56,7 +56,7 @@
         on:click={clipboard.actions.copy}
         on:click={menu.actions.close}
       >
-        Copy
+        复制
       </MenuItem>
       <MenuItem
         icon="Paste"
@@ -64,7 +64,7 @@
         on:click={clipboard.actions.paste}
         on:click={menu.actions.close}
       >
-        Paste
+        粘贴
       </MenuItem>
       <MenuItem
         icon="Maximize"
@@ -72,7 +72,7 @@
         on:click={() => dispatch("edit-row", $focusedRow)}
         on:click={menu.actions.close}
       >
-        Edit row in modal
+      在模式中编辑行
       </MenuItem>
       <MenuItem
         icon="Copy"
@@ -80,7 +80,7 @@
         on:click={() => copyToClipboard($focusedRow?._id)}
         on:click={menu.actions.close}
       >
-        Copy row _id
+      复制行 _id
       </MenuItem>
       <MenuItem
         icon="Copy"
@@ -88,21 +88,21 @@
         on:click={() => copyToClipboard($focusedRow?._rev)}
         on:click={menu.actions.close}
       >
-        Copy row _rev
+      复制行 _rev
       </MenuItem>
       <MenuItem
         icon="Duplicate"
         disabled={isNewRow || !$config.canAddRows}
         on:click={duplicate}
       >
-        Duplicate row
+        复制行
       </MenuItem>
       <MenuItem
         icon="Delete"
         disabled={isNewRow || !$config.canDeleteRows}
         on:click={deleteRow}
       >
-        Delete row
+        删除行
       </MenuItem>
     </Menu>
   </div>

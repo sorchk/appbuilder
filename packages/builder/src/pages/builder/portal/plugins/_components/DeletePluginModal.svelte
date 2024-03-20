@@ -23,12 +23,12 @@
 <ModalContent
   warning
   onConfirm={deletePlugin}
-  title="Delete Plugin"
-  confirmText="Delete plugin"
-  cancelText="Cancel"
+  title="删除插件"
+  confirmText="删除插件"
+  cancelText="取消"
   showCloseIcon={false}
 >
   <Body>
-    Are you sure you want to delete <strong>{plugin?.name}</strong>?
+    你确定要删除吗 <strong>{plugin?.name}</strong>?
   </Body>
 </ModalContent>

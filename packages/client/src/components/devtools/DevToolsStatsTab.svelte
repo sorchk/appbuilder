@@ -5,24 +5,24 @@
 </script>
 
 <Layout noPadding gap="XS">
-  <DevToolsStat label="App" value={$appStore.application?.name} />
-  <DevToolsStat label="Tenant" value={$appStore.application?.tenantId} />
-  <DevToolsStat label="Version" value={$appStore.application?.version} />
+  <DevToolsStat label="应用" value={$appStore.application?.name} />
+  <DevToolsStat label="租户" value={$appStore.application?.tenantId} />
+  <DevToolsStat label="版本" value={$appStore.application?.version} />
   {#if $appStore.clientLoadTime}
     <DevToolsStat
-      label="Client load time"
+      label="客户端加载时间"
       value={`${$appStore.clientLoadTime} ms`}
     />
   {/if}
-  <DevToolsStat label="App screens" value={$screenStore.screens?.length || 0} />
+  <DevToolsStat label="应用屏幕" value={$screenStore.screens?.length || 0} />
   <DevToolsStat
-    label="Active screen"
+    label="活动屏幕"
     value={$screenStore.activeScreen?.routing.route}
   />
   <DevToolsStat
-    label="Components"
+    label="组件"
     value={$componentStore.mountedComponentCount}
   />
-  <DevToolsStat label="User" value={$authStore.email} />
-  <DevToolsStat label="Role" value={$authStore.roleId} />
+  <DevToolsStat label="用户" value={$authStore.email} />
+  <DevToolsStat label="角色" value={$authStore.roleId} />
 </Layout>

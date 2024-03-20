@@ -26,8 +26,8 @@
   onOk={async () => {
     await environment.deleteVariable(row.name)
   }}
-  okText="Delete Environment Variable"
-  title="Confirm Deletion"
+  okText="删除环境变量"
+  title="确认删除"
 >
   Are you sure you wish to delete the environment variable
   <i>{row.name}?</i>

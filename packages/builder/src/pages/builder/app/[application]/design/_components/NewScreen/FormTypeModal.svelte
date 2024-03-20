@@ -11,9 +11,9 @@
 
 <span>
   <ModalContent
-    title="Select form type"
-    confirmText="Done"
-    cancelText="Back"
+    title="选择表单类型"
+    confirmText="完成"
+    cancelText="返回"
     {onConfirm}
     {onCancel}
     disabled={!type}
@@ -31,9 +31,9 @@
       >
         <div class="form-type-wrap">
           <div class="form-type-content">
-            <Body noPadding>Create a new row</Body>
+            <Body noPadding>创建新行</Body>
             <Body size="S">
-              For capturing and storing new data from your users
+              用于捕获和存储用户的新数据
             </Body>
           </div>
           {#if type === "Create"}
@@ -52,8 +52,8 @@
       >
         <div class="form-type-wrap">
           <div class="form-type-content">
-            <Body noPadding>Update an existing row</Body>
-            <Body size="S">For viewing and updating existing data</Body>
+            <Body noPadding>更新现有行</Body>
+            <Body size="S">用于查看和更新现有数据</Body>
           </div>
           {#if type === "Update"}
             <span class="form-type-check">
@@ -71,8 +71,8 @@
       >
         <div class="form-type-wrap">
           <div class="form-type-content">
-            <Body noPadding>View an existing row</Body>
-            <Body size="S">For a read only view of your data</Body>
+            <Body noPadding>查看现有行</Body>
+            <Body size="S">用于数据的只读视图</Body>
           </div>
           {#if type === "View"}
             <span class="form-type-check">

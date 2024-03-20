@@ -14,7 +14,7 @@
 <Modal bind:this={modal}>
   <ModalContent
     size="XL"
-    title="Edit Code"
+    title="编辑代码"
     showConfirmButton={false}
     showCancelButton={false}
   >
@@ -24,7 +24,7 @@
   </ModalContent>
 </Modal>
 <div class="center">
-  <Button primary on:click={show}>Edit Code</Button>
+  <Button primary on:click={show}>编辑代码</Button>
 </div>
 
 <style>

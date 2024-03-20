@@ -319,11 +319,10 @@
 <!-- Modals -->
 <ConfirmDialog
   bind:this={unpublishModal}
-  title="Confirm unpublish"
-  okText="Unpublish app"
+  title="确认取消发布"
+  okText="取消发布应用"
   onOk={confirmUnpublishApp}
->
-  Are you sure you want to unpublish the app <b>{selectedApp?.name}</b>?
+>是否确实要取消发布应用程序 <b>{selectedApp?.name}</b>?
 </ConfirmDialog>
 
 <Modal bind:this={updateAppModal} padding={false} width="600px">

@@ -11,7 +11,7 @@
 
   const deleteRow = e => {
     rows.actions.deleteRows([e.detail])
-    notifications.success("Deleted 1 row")
+    notifications.success("删除一行")
   }
 
   onMount(() =>

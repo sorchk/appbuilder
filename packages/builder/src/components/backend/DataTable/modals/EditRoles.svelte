@@ -41,7 +41,7 @@
     try {
       basePermissions = await API.getBasePermissions()
     } catch (error) {
-      notifications.error("Error fetching base permission options")
+      notifications.error("获取基本权限选项时出错")
       basePermissions = []
     }
   }
@@ -76,10 +76,10 @@
 
     // Validation
     if (!selectedRole.name || selectedRole.name.trim() === "") {
-      errors.push({ message: "Please enter a role name" })
+      errors.push({ message: "请输入角色名称" })
     }
     if (!selectedRole.permissionId) {
-      errors.push({ message: "Please choose permissions" })
+      errors.push({ message: "请选择权限" })
     }
     if (errors.length) {
       return keepOpen
@@ -88,9 +88,9 @@
     // Save/create the role
     try {
       await roles.save(selectedRole)
-      notifications.success("Role saved successfully")
+      notifications.success("角色保存成功")
     } catch (error) {
-      notifications.error(`Error saving role - ${error.message}`)
+      notifications.error(`保存角色时出错 - ${error.message}`)
       return keepOpen
     }
   }
@@ -100,9 +100,9 @@
     try {
       await roles.delete(selectedRole)
       changeRole()
-      notifications.success("Role deleted successfully")
+      notifications.success("成功删除角色")
     } catch (error) {
-      notifications.error(`Error deleting role - ${error.message}`)
+      notifications.error(`删除角色时出错 - ${error.message}`)
       return false
     }
   }
@@ -113,9 +113,9 @@
       ?.includes(name)
     const invalidRoleName = !validRegex.test(name)
     if (!hasUniqueRoleName) {
-      return "Select a unique role name."
+      return "选择一个唯一的角色名称。"
     } else if (invalidRoleName) {
-      return "Please enter a role name consisting of only alphanumeric symbols and underscores"
+      return "请输入仅由字母数字符号和下划线组成的角色名称"
     }
   }
 
@@ -123,8 +123,8 @@
 </script>
 
 <ModalContent
-  title="Edit Roles"
-  confirmText={isCreating ? "Create" : "Save"}
+  title="编辑角色"
+  confirmText={isCreating ? "创建" : "保存"}
   onConfirm={saveRole}
   disabled={!valid || roleNameError}
 >
@@ -134,7 +134,7 @@
   <Select
     thin
     secondary
-    label="Role"
+    label="角色"
     value={selectedRoleId}
     on:change={changeRole}
     options={editableRoles}
@@ -144,13 +144,13 @@
   />
   {#if selectedRole}
     <Input
-      label="Name"
+      label="名称"
       bind:value={selectedRole.name}
       disabled={!!selectedRoleId}
       error={roleNameError}
     />
     <Select
-      label="Inherits Role"
+      label="继承角色"
       bind:value={selectedRole.inherits}
       options={selectedRole._id === "BASIC" ? $roles : otherRoles}
       getOptionValue={role => role._id}
@@ -158,7 +158,7 @@
       disabled={shouldDisableRoleInput}
     />
     <Select
-      label="Base Permissions"
+      label="基本权限"
       bind:value={selectedRole.permissionId}
       options={basePermissions}
       getOptionValue={x => x._id}
@@ -168,7 +168,7 @@
   {/if}
   <div slot="footer">
     {#if !isCreating && !builtInRoles.includes(selectedRole.name)}
-      <Button warning on:click={deleteRole}>Delete</Button>
+      <Button warning on:click={deleteRole}>删除</Button>
     {/if}
   </div>
 </ModalContent>

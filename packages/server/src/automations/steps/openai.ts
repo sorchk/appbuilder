@@ -63,14 +63,14 @@ export async function run({ inputs, context }: AutomationStepInput) {
     return {
       success: false,
       response:
-        "OpenAI API Key not configured - please add the OPENAI_API_KEY environment variable.",
+        "未配置OpenAI API密钥-请添加OpenAI_API_Key环境变量。",
     }
   }
 
   if (inputs.prompt == null) {
     return {
       success: false,
-      response: "Budibase OpenAI Automation Failed: No prompt supplied",
+      response: "OpenAI自动化失败：未提供提示",
     }
   }
 

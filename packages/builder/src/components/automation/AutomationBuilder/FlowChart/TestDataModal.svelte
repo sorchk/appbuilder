@@ -63,21 +63,21 @@
 </script>
 
 <ModalContent
-  title="Add test data"
-  confirmText="Run test"
+  title="添加测试数据"
+  confirmText="运行测试"
   size="L"
   showConfirmButton={true}
   disabled={isError}
   onConfirm={testAutomation}
-  cancelText="Cancel"
+  cancelText="取消"
 >
   <div class="size">
     <div class="options">
       <ActionButton quiet selected={selectedValues} on:click={toggle}
-        >Use values</ActionButton
+        >使用值</ActionButton
       >
       <ActionButton quiet selected={selectedJSON} on:click={toggle}
-        >Use JSON</ActionButton
+        >使用JSON</ActionButton
       >
     </div>
   </div>

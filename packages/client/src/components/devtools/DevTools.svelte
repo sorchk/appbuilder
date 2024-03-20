@@ -16,20 +16,20 @@
   {#if $devToolsStore.visible}
     <Layout noPadding gap="XS">
       <div class="header">
-        <Heading size="XS">Budibase DevTools</Heading>
+        <Heading size="XS">开发者工具</Heading>
         <Icon
           hoverable
           name="Close"
           on:click={() => devToolsStore.actions.setVisible(false)}
         />
       </div>
-      <Tabs selected="Application">
-        <Tab title="Application">
+      <Tabs selected="应用">
+        <Tab title="应用">
           <div class="tab-content">
             <DevToolsStatsTab />
           </div>
         </Tab>
-        <Tab title="Components">
+        <Tab title="组件">
           <div class="tab-content">
             <DevToolsComponentTab />
           </div>

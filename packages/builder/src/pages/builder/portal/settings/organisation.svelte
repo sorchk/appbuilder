@@ -45,7 +45,7 @@
       // Update settings
       await organisation.save(config)
     } catch (error) {
-      notifications.error("Error saving org config")
+      notifications.error("保存组织配置时出错")
     }
     loading = false
   }
@@ -54,13 +54,13 @@
 {#if sdk.users.isAdmin($auth.user)}
   <Layout noPadding>
     <Layout gap="XS" noPadding>
-      <Heading size="M">Organisation</Heading>
-      <Body>Edit and manage all of your organisation settings</Body>
+      <Heading size="M">组织</Heading>
+      <Body>编辑和管理您的所有组织设置</Body>
     </Layout>
     <Divider />
     <div class="fields">
       <div class="field">
-        <Label size="L">Org. name</Label>
+        <Label size="L">组织名</Label>
         <Input thin bind:value={$values.company} />
       </div>
 
@@ -68,22 +68,22 @@
         <div class="field">
           <Label
             size="L"
-            tooltip={"Update the Platform URL to match your Budibase web URL. This keeps email templates and authentication configs up to date."}
+            tooltip={"更新平台URL以匹配您的 web URL。这将使电子邮件模板和身份验证配置保持最新"}
           >
-            Platform URL
+          平台 URL
           </Label>
           <Input thin bind:value={$values.platformUrl} />
         </div>
       {/if}
       {#if !$admin.cloud}
         <div class="field">
-          <Label size="L">Analytics</Label>
+          <Label size="L">分析</Label>
           <Toggle text="" bind:value={$values.analyticsEnabled} />
         </div>
       {/if}
     </div>
     <div>
-      <Button disabled={loading} on:click={saveConfig} cta>Save</Button>
+      <Button disabled={loading} on:click={saveConfig} cta>保存</Button>
     </div>
   </Layout>
 {/if}

@@ -35,7 +35,7 @@
       })
     }
 
-    notifications.success("View renamed successfully")
+    notifications.success("视图重命名成功")
   }
 
   async function deleteView() {
@@ -45,9 +45,9 @@
       } else {
         await views.delete(view)
       }
-      notifications.success("View deleted")
+      notifications.success("视图已删除")
     } catch (error) {
-      notifications.error("Error deleting view")
+      notifications.error("删除视图时出错")
     }
   }
 
@@ -61,18 +61,18 @@
   <div slot="control" class="icon open-popover">
     <Icon s hoverable name="MoreSmallList" />
   </div>
-  <MenuItem icon="Edit" on:click={editorModal.show}>Edit</MenuItem>
-  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>Delete</MenuItem>
+  <MenuItem icon="Edit" on:click={editorModal.show}>编辑</MenuItem>
+  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>删除</MenuItem>
 </ActionMenu>
 <Modal bind:this={editorModal} on:show={initForm}>
-  <ModalContent title="Edit View" onConfirm={save} confirmText="Save">
-    <Input label="View Name" thin bind:value={updatedName} />
+  <ModalContent title="编辑视图" onConfirm={save} confirmText="保存">
+    <Input label="视图名" thin bind:value={updatedName} />
   </ModalContent>
 </Modal>
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  body={`Are you sure you wish to delete the view '${view.name}'? Your data will be deleted and this action cannot be undone.`}
-  okText="Delete View"
+  body={`是否确实要删除视图 '${view.name}'? 您的数据将被删除，此操作无法撤消。`}
+  okText="删除视图"
   onOk={deleteView}
-  title="Confirm Deletion"
+  title="确认删除"
 />

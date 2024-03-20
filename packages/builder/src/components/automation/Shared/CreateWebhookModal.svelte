@@ -19,7 +19,7 @@
       try {
         await automationStore.actions.save(automation)
       } catch (error) {
-        notifications.error("Error saving automation")
+        notifications.error("保存自动化时出错")
       }
     }
     interval = setInterval(async () => {
@@ -33,7 +33,7 @@
           finished = true
         }
       } catch (error) {
-        notifications.error("Error getting automations list")
+        notifications.error("获取自动化列表时出错")
       }
     }, POLL_RATE_MS)
     schemaURL = automation?.definition?.trigger?.inputs.schemaUrl
@@ -45,25 +45,22 @@
 </script>
 
 <ModalContent
-  title="Webhook Setup"
-  confirmText="Finished"
+  title="Webhook设置"
+  confirmText="完成"
   showConfirmButton={finished}
-  cancelText="Skip"
+  cancelText="跳过"
 >
   <p>
-    Webhooks are for receiving data. To make them easier please use the URL
-    shown below and send a
+    Webhook用于接收数据。为了更容易，请使用URL如下所示，并发送
     <code>POST</code>
-    request to it from your other application. If you're unable to do this now then
-    you can skip this step, however we will not be able to configure bindings for
-    your later actions!
+    从您的其他应用程序请求它。如果你现在无法做到这一点，那么您可以跳过此步骤，但是我们将无法为配置绑定你以后的行动！
   </p>
   <WebhookDisplay value={schemaURL} />
   {#if finished}
     <p class="finished-text">
-      Request received! We found
+      收到请求！我们发现
       {propCount}
-      bindable value{propCount > 1 ? "s" : ""}.
+      可绑定值 {propCount > 1 ? "s" : ""}.
     </p>
   {/if}
   <a
@@ -72,7 +69,7 @@
     href="https://docs.budibase.com/docs/trigger"
   >
     <Icon name="InfoOutline" />
-    <span>Learn about webhooks</span>
+    <span>了解webhook</span>
   </a>
 </ModalContent>
 

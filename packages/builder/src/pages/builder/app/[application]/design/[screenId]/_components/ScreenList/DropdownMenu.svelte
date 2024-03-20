@@ -25,7 +25,7 @@
     try {
       componentStore.paste(screen.props, mode, screen)
     } catch (error) {
-      notifications.error("Error saving component")
+      notifications.error("保存组件时出错")
     }
   }
 
@@ -49,16 +49,16 @@
       // Create the screen
       await screenStore.save(duplicateScreen)
     } catch (error) {
-      notifications.error("Error duplicating screen")
+      notifications.error("复制屏幕时出错")
     }
   }
 
   const deleteScreen = async () => {
     try {
       await screenStore.delete(screen)
-      notifications.success("Deleted screen successfully")
+      notifications.success("成功删除屏幕")
     } catch (err) {
-      notifications.error("Error deleting screen")
+      notifications.error("删除屏幕时出错")
     }
   }
 </script>
@@ -72,17 +72,17 @@
     on:click={() => pasteComponent("inside")}
     disabled={noPaste}
   >
-    Paste inside
+  粘贴到内部
   </MenuItem>
-  <MenuItem icon="Duplicate" on:click={duplicateScreen}>Duplicate</MenuItem>
-  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>Delete</MenuItem>
+  <MenuItem icon="Duplicate" on:click={duplicateScreen}>复制</MenuItem>
+  <MenuItem icon="Delete" on:click={confirmDeleteDialog.show}>删除</MenuItem>
 </ActionMenu>
 
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  title="Confirm Deletion"
-  body={"Are you sure you wish to delete this screen?"}
-  okText="Delete screen"
+  title="确认删除"
+  body={"您确定要删除此屏幕吗？"}
+  okText="删除屏幕"
   onOk={deleteScreen}
 />
 
@@ -91,7 +91,7 @@
     onConfirm={createDuplicateScreen}
     screenUrl={screen?.routing.route}
     screenRole={screen?.routing.roleId}
-    confirmText="Duplicate"
+    confirmText="复制"
   />
 </Modal>
 

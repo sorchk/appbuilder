@@ -7,10 +7,10 @@
 
 {#if $builderStore.inBuilder}
   <div class="placeholder">
-    <Heading size="L">Your screen is empty</Heading>
-    <Body>Bring your app to life by adding some components!</Body>
+    <Heading size="L">您的屏幕为空</Heading>
+    <Body>添加一些组件，让您的应用程序栩栩如生！</Body>
     <Button cta icon="Add" on:click={builderStore.actions.requestAddComponent}
-      >Add component</Button
+      >添加组件</Button
     >
   </div>
 {/if}

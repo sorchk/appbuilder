@@ -135,8 +135,8 @@
 
 <ConfirmDialog
   bind:this={deleteConfirmationDialog}
-  title="Delete snippet"
-  body={`Are you sure you want to delete ${snippet?.name}?`}
+  title="删除代码段"
+  body={`你确定要删除吗 ${snippet?.name}?`}
   onOk={deleteSnippet}
 />
 

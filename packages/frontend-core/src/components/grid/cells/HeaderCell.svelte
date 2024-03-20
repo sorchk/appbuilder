@@ -335,21 +335,21 @@
         on:click={editColumn}
         disabled={!$config.canEditColumns || column.schema.disabled}
       >
-        Edit column
+        编辑列
       </MenuItem>
       <MenuItem
         icon="Duplicate"
         on:click={duplicateColumn}
         disabled={!$config.canEditColumns}
       >
-        Duplicate column
+        复制列
       </MenuItem>
       <MenuItem
         icon="Label"
         on:click={makeDisplayColumn}
         disabled={idx === "sticky" || !canBeDisplayColumn(column.schema.type)}
       >
-        Use as display column
+      用作显示列
       </MenuItem>
       <MenuItem
         icon="SortOrderUp"
@@ -357,7 +357,7 @@
         disabled={!canBeSortColumn(column.schema.type) ||
           (column.name === $sort.column && $sort.order === "ascending")}
       >
-        Sort {sortingLabels.ascending}
+        排序 {sortingLabels.ascending}
       </MenuItem>
       <MenuItem
         icon="SortOrderDown"
@@ -365,28 +365,28 @@
         disabled={!canBeSortColumn(column.schema.type) ||
           (column.name === $sort.column && $sort.order === "descending")}
       >
-        Sort {sortingLabels.descending}
+      排序 {sortingLabels.descending}
       </MenuItem>
       <MenuItem disabled={!canMoveLeft} icon="ChevronLeft" on:click={moveLeft}>
-        Move left
+        左移
       </MenuItem>
       <MenuItem
         disabled={!canMoveRight}
         icon="ChevronRight"
         on:click={moveRight}
       >
-        Move right
+      右移
       </MenuItem>
       <MenuItem
         disabled={idx === "sticky" || !$config.showControls}
         icon="VisibilityOff"
         on:click={hideColumn}
       >
-        Hide column
+        隐藏列
       </MenuItem>
       {#if $config.canEditColumns && column.schema.type === "link" && column.schema.tableId === TableNames.USERS}
         <MenuItem icon="User" on:click={openMigrationModal}>
-          Migrate to user column
+          迁移到用户列
         </MenuItem>
       {/if}
     </Menu>

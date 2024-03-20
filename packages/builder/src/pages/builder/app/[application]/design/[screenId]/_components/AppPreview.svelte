@@ -109,7 +109,7 @@
     try {
       await handleBudibaseEvent(message)
     } catch (error) {
-      notifications.error(error || "Error handling event from app preview")
+      notifications.error(error || "处理应用程序预览中的事件时出错")
     }
 
     // Reply that the event has been completed
@@ -129,7 +129,7 @@
     } else if (type === MessageTypes.ERROR) {
       // Catch any app errors
       loading = false
-      error = event.error || "An unknown error occurred"
+      error = event.error || "出现未知错误"
     } else if (type === "select-component" && data.id) {
       componentStore.select(data.id)
     } else if (type === "hover-component") {
@@ -222,7 +222,7 @@
     try {
       await componentStore.delete({ _id: idToDelete })
     } catch (error) {
-      notifications.error("Error deleting component")
+      notifications.error("删除组件时出错")
     }
     idToDelete = null
   }
@@ -278,14 +278,14 @@
     class:active={isAddingComponent}
     on:click={toggleAddComponent}
   >
-    <Icon size="XL" name="Add">Component</Icon>
+    <Icon size="XL" name="Add">组件</Icon>
   </div>
 </div>
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  title="Confirm Deletion"
-  body={`Are you sure you want to delete this component?`}
-  okText="Delete component"
+  title="确认删除"
+  body={`是否确实要删除此组件？`}
+  okText="删除组件"
   onOk={deleteComponent}
   onCancel={cancelDeleteComponent}
 />

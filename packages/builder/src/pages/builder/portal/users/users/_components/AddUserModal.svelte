@@ -87,7 +87,7 @@
   title="添加新用户"
   confirmText="添加用户"
   confirmDisabled={disabled}
-  cancelText="Cancel"
+  cancelText="取消"
   showCloseIcon={false}
   disabled={hasError || !userData.length || exceeded}
 >

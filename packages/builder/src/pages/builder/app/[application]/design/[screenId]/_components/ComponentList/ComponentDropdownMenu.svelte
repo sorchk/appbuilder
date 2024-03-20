@@ -32,7 +32,7 @@
     keyBind="!BackAndroid"
     on:click={() => keyboardEvent("Delete")}
   >
-    Delete
+    删除
   </MenuItem>
   {#if isBlock && canEject}
     <MenuItem
@@ -40,7 +40,7 @@
       keyBind="Ctrl+E"
       on:click={() => keyboardEvent("e", true)}
     >
-      Eject block
+    弹出块
     </MenuItem>
   {/if}
   <MenuItem
@@ -48,35 +48,35 @@
     keyBind="Ctrl+!ArrowUp"
     on:click={() => keyboardEvent("ArrowUp", true)}
   >
-    Move up
+    上移
   </MenuItem>
   <MenuItem
     icon="ChevronDown"
     keyBind="Ctrl+!ArrowDown"
     on:click={() => keyboardEvent("ArrowDown", true)}
   >
-    Move down
+    下移
   </MenuItem>
   <MenuItem
     icon="Duplicate"
     keyBind="Ctrl+D"
     on:click={() => keyboardEvent("d", true)}
   >
-    Duplicate
+    副本
   </MenuItem>
   <MenuItem
     icon="Cut"
     keyBind="Ctrl+X"
     on:click={() => keyboardEvent("x", true)}
   >
-    Cut
+    剪切
   </MenuItem>
   <MenuItem
     icon="Copy"
     keyBind="Ctrl+C"
     on:click={() => keyboardEvent("c", true)}
   >
-    Copy
+    复制
   </MenuItem>
   <MenuItem
     icon="LayersSendToBack"
@@ -84,7 +84,7 @@
     on:click={() => keyboardEvent("v", true)}
     disabled={noPaste}
   >
-    Paste
+    粘贴
   </MenuItem>
 
   {#if component?._children?.length}
@@ -94,7 +94,7 @@
       on:click={() => keyboardEvent("ArrowRight", false)}
       disabled={opened}
     >
-      Expand
+      展开
     </MenuItem>
     <MenuItem
       icon="TreeCollapse"
@@ -102,21 +102,21 @@
       on:click={() => keyboardEvent("ArrowLeft", false)}
       disabled={!opened}
     >
-      Collapse
+      收起
     </MenuItem>
     <MenuItem
       icon="TreeExpandAll"
       keyBind="Ctrl+!ArrowRight"
       on:click={() => keyboardEvent("ArrowRight", true)}
     >
-      Expand All
+      展开所有
     </MenuItem>
     <MenuItem
       icon="TreeCollapseAll"
       keyBind="Ctrl+!ArrowLeft"
       on:click={() => keyboardEvent("ArrowLeft", true)}
     >
-      Collapse All
+      收起所有
     </MenuItem>
   {/if}
 </ActionMenu>

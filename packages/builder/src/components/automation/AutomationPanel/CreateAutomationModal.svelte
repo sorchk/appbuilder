@@ -20,7 +20,7 @@
   let triggerVal
 
   $: nameError =
-    nameTouched && !name ? "Please specify a name for the automation." : null
+    nameTouched && !name ? "请指定自动化的名称。" : null
   $: triggers = Object.entries($automationStore.blockDefinitions.TRIGGER)
 
   async function createAutomation() {
@@ -34,9 +34,9 @@
       if (triggerVal.stepId === TriggerStepID.WEBHOOK) {
         webhookModal.show()
       }
-      notifications.success(`Automation ${name} created`)
+      notifications.success(`已创建自动化 ${name}`)
     } catch (error) {
-      notifications.error("Error creating automation")
+      notifications.error("创建自动化时出错")
     }
   }
 
@@ -49,25 +49,25 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <ModalContent
-  title="Create Automation"
-  confirmText="Save"
+  title="创建自动化"
+  confirmText="保存"
   size="M"
   onConfirm={createAutomation}
   disabled={!selectedTrigger || !name}
 >
   <InlineAlert
-    header="You must publish your app to activate your automations."
-    message="To test your automation before publishing, you can use the 'Run Test' functionality on the next screen."
+    header="您必须发布应用程序才能激活自动操作。"
+    message="要在发布前测试自动化，可以使用下一屏幕上的“运行测试”功能。"
   />
   <Body size="S">
-    Please name your automation, then select a trigger.<br />
-    Every automation must start with a trigger.
+    请命名您的自动化，然后选择一个触发器<br/>
+    每一次自动化都必须从一个触发器开始。
   </Body>
   <Input
     bind:value={name}
     on:input={() => (nameTouched = true)}
     bind:error={nameError}
-    label="Name"
+    label="名称"
   />
 
   <Layout noPadding gap="XS">

@@ -172,7 +172,7 @@
             $builderStore.selectedComponentId
           )
         }}
-        title="Duplicate component"
+        title="复制组件"
       />
       <SettingsButton
         icon="Delete"
@@ -181,7 +181,7 @@
             $builderStore.selectedComponentId
           )
         }}
-        title="Delete component"
+        title="删除组件"
       />
     {/if}
   </div>

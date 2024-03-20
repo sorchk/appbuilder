@@ -13,8 +13,8 @@
     "sidePanel": true
   },
   "layout": {
-    "name": "Layout",
-    "description": "This component is specific only to layouts",
+    "name": "层",
+    "description": "此组件仅适用于布局",
     "icon": "Sandbox",
     "hasChildren": true,
     "styles": ["padding", "background"],
@@ -26,51 +26,51 @@
       },
       {
         "type": "text",
-        "label": "Title",
+        "label": "标题",
         "key": "title"
       },
       {
         "type": "select",
-        "label": "Navigation",
+        "label": "导航",
         "key": "navigation",
         "options": ["Top", "Left", "None"],
         "defaultValue": "Top"
       },
       {
         "type": "select",
-        "label": "Width",
+        "label": "宽度",
         "key": "width",
         "options": ["Small", "Medium", "Large", "Max"],
         "defaultValue": "Large"
       },
       {
         "type": "navigation",
-        "label": "Links",
+        "label": "连接",
         "key": "links"
       },
       {
         "type": "boolean",
-        "label": "Hide title",
+        "label": "隐藏标题",
         "key": "hideTitle",
         "defaultValue": false
       },
       {
         "type": "boolean",
-        "label": "Hide logo",
+        "label": "隐藏logo",
         "key": "hideLogo",
         "defaultValue": false
       },
       {
         "type": "boolean",
-        "label": "Sticky header",
+        "label": "冻结头",
         "key": "sticky",
         "defaultValue": false
       }
     ]
   },
   "container": {
-    "name": "Container",
-    "description": "This component contains things within itself",
+    "name": "容器",
+    "description": "这个组件本身包含一些东西",
     "icon": "Selection",
     "hasChildren": true,
     "size": {
@@ -81,19 +81,19 @@
     "settings": [
       {
         "type": "select",
-        "label": "Direction",
+        "label": "方形",
         "key": "direction",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Column",
+            "label": "列",
             "value": "column",
             "barIcon": "TableSelectColumn",
             "barTitle": "Column layout"
           },
           {
-            "label": "Row",
+            "label": "行",
             "value": "row",
             "barIcon": "TableSelectRow",
             "barTitle": "Row layout"
@@ -103,115 +103,115 @@
       },
       {
         "type": "select",
-        "label": "Horiz. align",
+        "label": "水平排列",
         "key": "hAlign",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Left",
+            "label": "居左",
             "value": "left",
             "barIcon": "AlignLeft",
-            "barTitle": "Align left"
+            "barTitle": "左对齐"
           },
           {
-            "label": "Center",
+            "label": "居中",
             "value": "center",
             "barIcon": "AlignCenter",
-            "barTitle": "Align center"
+            "barTitle": "居中对齐"
           },
           {
-            "label": "Right",
+            "label": "居右",
             "value": "right",
             "barIcon": "AlignRight",
-            "barTitle": "Align right"
+            "barTitle": "右对齐"
           },
           {
-            "label": "Stretch",
+            "label": "拉伸",
             "value": "stretch",
             "barIcon": "MoveLeftRight",
-            "barTitle": "Align stretched horizontally"
+            "barTitle": "水平对齐拉伸"
           }
         ],
         "defaultValue": "stretch"
       },
       {
         "type": "select",
-        "label": "Vert. align",
+        "label": "垂直排列",
         "key": "vAlign",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Top",
+            "label": "顶",
             "value": "top",
             "barIcon": "AlignTop",
-            "barTitle": "Align top"
+            "barTitle": "顶部对齐"
           },
           {
-            "label": "Middle",
+            "label": "中",
             "value": "middle",
             "barIcon": "AlignMiddle",
-            "barTitle": "Align middle"
+            "barTitle": "居中对齐"
           },
           {
-            "label": "Bottom",
+            "label": "底",
             "value": "bottom",
             "barIcon": "AlignBottom",
-            "barTitle": "Align bottom"
+            "barTitle": "底部对齐"
           },
           {
-            "label": "Stretch",
+            "label": "拉伸",
             "value": "stretch",
             "barIcon": "MoveUpDown",
-            "barTitle": "Align stretched vertically"
+            "barTitle": "垂直对齐拉伸"
           }
         ],
         "defaultValue": "top"
       },
       {
         "type": "select",
-        "label": "Size",
+        "label": "大小",
         "key": "size",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Shrink",
+            "label": "缩小",
             "value": "shrink",
             "barIcon": "Minimize",
-            "barTitle": "Shrink container"
+            "barTitle": "收缩容器"
           },
           {
-            "label": "Grow",
+            "label": "扩大",
             "value": "grow",
             "barIcon": "Maximize",
-            "barTitle": "Grow container"
+            "barTitle": "扩大容器"
           }
         ],
         "defaultValue": "shrink"
       },
       {
         "type": "select",
-        "label": "Gap",
+        "label": "间隙",
         "key": "gap",
         "showInBar": true,
         "barStyle": "picker",
         "options": [
           {
-            "label": "None",
+            "label": "无",
             "value": "N"
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ],
@@ -219,22 +219,22 @@
       },
       {
         "type": "boolean",
-        "label": "Wrap",
+        "label": "包裹",
         "key": "wrap",
         "showInBar": true,
         "barIcon": "ModernGridView",
-        "barTitle": "Wrap"
+        "barTitle": "包裹"
       },
       {
         "type": "event",
-        "label": "On click",
+        "label": "单击时",
         "key": "onClick"
       }
     ]
   },
   "section": {
-    "name": "Section",
-    "description": "Add a section to your application",
+    "name": "部件",
+    "description": "在应用程序中添加部件",
     "icon": "ColumnTwoB",
     "hasChildren": true,
     "illegalChildren": ["section"],
@@ -246,26 +246,26 @@
     "settings": [
       {
         "type": "section",
-        "label": "Type",
+        "label": "类型",
         "key": "type",
         "defaultValue": "mainSidebar"
       }
     ]
   },
   "screenslot": {
-    "name": "Screenslot",
+    "name": "屏幕截图",
     "icon": "WebPage",
-    "description": "Contains your app screens",
+    "description": "包含您的应用程序屏幕",
     "static": true
   },
   "buttongroup": {
-    "name": "Button group",
+    "name": "按钮组",
     "icon": "Button",
     "hasChildren": false,
     "settings": [
       {
         "section": true,
-        "name": "Buttons",
+        "name": "按钮",
         "settings": [
           {
             "type": "buttonConfiguration",
@@ -274,11 +274,11 @@
             "defaultValue": [
               {
                 "type": "cta",
-                "text": "Button 1"
+                "text": "按钮 1"
               },
               {
                 "type": "primary",
-                "text": "Button 2"
+                "text": "按钮 2"
               }
             ]
           }
@@ -286,141 +286,141 @@
       },
       {
         "section": true,
-        "name": "Layout",
+        "name": "布局",
         "settings": [
           {
             "type": "select",
-            "label": "Direction",
+            "label": "方向",
             "key": "direction",
             "showInBar": true,
             "barStyle": "buttons",
             "options": [
               {
-                "label": "Column",
+                "label": "列",
                 "value": "column",
                 "barIcon": "TableSelectColumn",
-                "barTitle": "Column layout"
+                "barTitle": "列布局"
               },
               {
-                "label": "Row",
+                "label": "行",
                 "value": "row",
                 "barIcon": "TableSelectRow",
-                "barTitle": "Row layout"
+                "barTitle": "行布局"
               }
             ],
             "defaultValue": "row"
           },
           {
             "type": "select",
-            "label": "Horiz. align",
+            "label": "水平排列",
             "key": "hAlign",
             "showInBar": true,
             "barStyle": "buttons",
             "options": [
               {
-                "label": "Left",
+                "label": "居左",
                 "value": "left",
                 "barIcon": "AlignLeft",
-                "barTitle": "Align left"
+                "barTitle": "左对齐"
               },
               {
-                "label": "Center",
+                "label": "居中",
                 "value": "center",
                 "barIcon": "AlignCenter",
-                "barTitle": "Align center"
+                "barTitle": "居中对齐"
               },
               {
-                "label": "Right",
+                "label": "居右",
                 "value": "right",
                 "barIcon": "AlignRight",
-                "barTitle": "Align right"
+                "barTitle": "右对齐"
               },
               {
-                "label": "Stretch",
+                "label": "拉伸",
                 "value": "stretch",
                 "barIcon": "MoveLeftRight",
-                "barTitle": "Align stretched horizontally"
+                "barTitle": "水平对齐拉伸"
               }
             ],
             "defaultValue": "left"
           },
           {
             "type": "select",
-            "label": "Vert. align",
+            "label": "垂直排列",
             "key": "vAlign",
             "showInBar": true,
             "barStyle": "buttons",
             "options": [
               {
-                "label": "Top",
+                "label": "顶",
                 "value": "top",
                 "barIcon": "AlignTop",
-                "barTitle": "Align top"
+                "barTitle": "顶部对齐"
               },
               {
-                "label": "Middle",
+                "label": "中",
                 "value": "middle",
                 "barIcon": "AlignMiddle",
-                "barTitle": "Align middle"
+                "barTitle": "居中对齐"
               },
               {
-                "label": "Bottom",
+                "label": "底",
                 "value": "bottom",
                 "barIcon": "AlignBottom",
-                "barTitle": "Align bottom"
+                "barTitle": "底部对齐"
               },
               {
-                "label": "Stretch",
+                "label": "拉伸",
                 "value": "stretch",
                 "barIcon": "MoveUpDown",
-                "barTitle": "Align stretched vertically"
+                "barTitle": "垂直对齐拉伸"
               }
             ],
             "defaultValue": "top"
           },
           {
             "type": "select",
-            "label": "Size",
+            "label": "大小",
             "key": "size",
             "showInBar": true,
             "barStyle": "buttons",
             "options": [
               {
-                "label": "Shrink",
+                "label": "收缩",
                 "value": "shrink",
                 "barIcon": "Minimize",
-                "barTitle": "Shrink container"
+                "barTitle": "缩小容器"
               },
               {
-                "label": "Grow",
+                "label": "扩大",
                 "value": "grow",
                 "barIcon": "Maximize",
-                "barTitle": "Grow container"
+                "barTitle": "扩大容器"
               }
             ],
             "defaultValue": "shrink"
           },
           {
             "type": "select",
-            "label": "Gap",
+            "label": "间距",
             "key": "gap",
             "showInBar": true,
             "barStyle": "picker",
             "options": [
               {
-                "label": "None",
+                "label": "无",
                 "value": "N"
               },
               {
-                "label": "Small",
+                "label": "小",
                 "value": "S"
               },
               {
-                "label": "Medium",
+                "label": "中等",
                 "value": "M"
               },
               {
-                "label": "Large",
+                "label": "大",
                 "value": "L"
               }
             ],
@@ -428,19 +428,19 @@
           },
           {
             "type": "boolean",
-            "label": "Wrap",
+            "label": "包裹",
             "key": "wrap",
             "showInBar": true,
             "barIcon": "ModernGridView",
-            "barTitle": "Wrap"
+            "barTitle": "包裹"
           }
         ]
       }
     ]
   },
   "button": {
-    "name": "Button",
-    "description": "A basic html button that is ready for styling",
+    "name": "按钮",
+    "description": "一个基本的html按钮，可以进行样式设置",
     "icon": "Button",
     "editable": true,
     "size": {
@@ -450,34 +450,34 @@
     "settings": [
       {
         "type": "text",
-        "label": "Text",
+        "label": "文本",
         "key": "text",
-        "defaultValue": "New Button"
+        "defaultValue": "新按钮"
       },
       {
         "type": "select",
         "showInBar": true,
-        "label": "Variant",
+        "label": "变形",
         "key": "type",
         "options": [
           {
-            "label": "Action",
+            "label": "功能",
             "value": "cta"
           },
           {
-            "label": "Primary",
+            "label": "主要",
             "value": "primary"
           },
           {
-            "label": "Secondary",
+            "label": "次要",
             "value": "secondary"
           },
           {
-            "label": "Warning",
+            "label": "警告",
             "value": "warning"
           },
           {
-            "label": "Over background",
+            "label": "背景之上",
             "value": "overBackground"
           }
         ],
@@ -485,24 +485,24 @@
       },
       {
         "type": "select",
-        "label": "Size",
+        "label": "大小",
         "showInBar": true,
         "key": "size",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           },
           {
-            "label": "Extra large",
+            "label": "特大",
             "value": "XL"
           }
         ],
@@ -510,19 +510,19 @@
       },
       {
         "type": "boolean",
-        "label": "Quiet",
+        "label": "平静",
         "key": "quiet",
         "showInBar": true,
         "barIcon": "VisibilityOff",
-        "barTitle": "Quiet variant",
+        "barTitle": "安静变体",
         "barSeparator": false
       },
       {
         "type": "boolean",
-        "label": "Disabled",
+        "label": "禁用",
         "showInBar": true,
         "barIcon": "NoEdit",
-        "barTitle": "Disable button",
+        "barTitle": "禁用按钮",
         "key": "disabled"
       },
       {
@@ -532,26 +532,26 @@
       },
       {
         "type": "select",
-        "label": "Gap",
+        "label": "间距",
         "key": "gap",
         "showInBar": true,
         "barStyle": "picker",
         "dependsOn": "icon",
         "options": [
           {
-            "label": "None",
+            "label": "无",
             "value": "N"
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ],
@@ -559,14 +559,14 @@
       },
       {
         "type": "event",
-        "label": "On click",
+        "label": "单击时",
         "key": "onClick"
       }
     ]
   },
   "divider": {
-    "name": "Divider",
-    "description": "A basic divider",
+    "name": "分割器",
+    "description": "一个基本的分割器",
     "icon": "Separator",
     "illegalChildren": ["section"],
     "size": {
@@ -576,19 +576,19 @@
     "settings": [
       {
         "type": "select",
-        "label": "Size",
+        "label": "大小",
         "key": "size",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ],
@@ -596,14 +596,14 @@
       },
       {
         "type": "boolean",
-        "label": "Vertical",
+        "label": "纵向",
         "key": "vertical"
       }
     ]
   },
   "repeater": {
     "name": "Repeater",
-    "description": "A configurable data list that attaches to your backend tables.",
+    "description": "附加到后端表的可配置数据列表。",
     "icon": "JourneyData",
     "illegalChildren": ["section"],
     "hasChildren": true,
@@ -614,75 +614,75 @@
     "settings": [
       {
         "type": "dataProvider",
-        "label": "Provider",
+        "label": "数据提供器",
         "key": "dataProvider",
         "required": true
       },
       {
         "type": "text",
-        "label": "Empty text",
+        "label": "空文本",
         "key": "noRowsMessage",
-        "defaultValue": "No rows found"
+        "defaultValue": "找不到行"
       },
       {
         "type": "select",
-        "label": "Direction",
+        "label": "方向",
         "key": "direction",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Column",
+            "label": "列",
             "value": "column",
             "barIcon": "TableSelectColumn",
-            "barTitle": "Column layout"
+            "barTitle": "列布局"
           },
           {
-            "label": "Row",
+            "label": "行",
             "value": "row",
             "barIcon": "TableSelectRow",
-            "barTitle": "Row layout"
+            "barTitle": "行布局"
           }
         ],
         "defaultValue": "column"
       },
       {
         "type": "select",
-        "label": "Horiz. align",
+        "label": "水平排列",
         "key": "hAlign",
         "showInBar": true,
         "barStyle": "buttons",
         "options": [
           {
-            "label": "Left",
+            "label": "左",
             "value": "left",
             "barIcon": "AlignLeft",
-            "barTitle": "Align left"
+            "barTitle": "左对齐"
           },
           {
-            "label": "Center",
+            "label": "居中",
             "value": "center",
             "barIcon": "AlignCenter",
-            "barTitle": "Align center"
+            "barTitle": "居中对齐"
           },
           {
-            "label": "Right",
+            "label": "右",
             "value": "right",
             "barIcon": "AlignRight",
-            "barTitle": "Align right"
+            "barTitle": "右对齐"
           },
           {
-            "label": "Stretch",
+            "label": "拉伸",
             "value": "stretch",
             "barIcon": "MoveLeftRight",
-            "barTitle": "Align stretched horizontally"
+            "barTitle": "水平对齐拉伸"
           }
         ],
         "defaultValue": "stretch"
       },
       {
         "type": "select",
-        "label": "Vert. align",
+        "label": "垂直排列",
         "key": "vAlign",
         "showInBar": true,
         "barStyle": "buttons",
@@ -691,50 +691,50 @@
             "label": "Top",
             "value": "top",
             "barIcon": "AlignTop",
-            "barTitle": "Align top"
+            "barTitle": "顶部对齐"
           },
           {
             "label": "Middle",
             "value": "middle",
             "barIcon": "AlignMiddle",
-            "barTitle": "Align middle"
+            "barTitle": "居中对齐"
           },
           {
             "label": "Bottom",
             "value": "bottom",
             "barIcon": "AlignBottom",
-            "barTitle": "Align bottom"
+            "barTitle": "底部对齐"
           },
           {
             "label": "Stretch",
             "value": "stretch",
             "barIcon": "MoveUpDown",
-            "barTitle": "Align stretched vertically"
+            "barTitle": "垂直对齐拉伸"
           }
         ],
         "defaultValue": "top"
       },
       {
         "type": "select",
-        "label": "Gap",
+        "label": "间隔",
         "key": "gap",
         "showInBar": true,
         "barStyle": "picker",
         "options": [
           {
-            "label": "None",
+            "label": "无",
             "value": "N"
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ],
@@ -879,15 +879,15 @@
             "value": "XS"
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           },
           {
@@ -1002,15 +1002,15 @@
             "value": "XS"
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           },
           {
@@ -1118,15 +1118,15 @@
         "barStyle": "picker",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ]
@@ -1388,15 +1388,15 @@
         "barStyle": "picker",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           }
         ]
@@ -2606,11 +2606,11 @@
         "key": "size",
         "options": [
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "spectrum--medium"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "spectrum--large"
           }
         ],
@@ -3612,15 +3612,15 @@
         "key": "size",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           },
           {
@@ -4704,11 +4704,11 @@
         "defaultValue": "spectrum--medium",
         "options": [
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "spectrum--medium"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "spectrum--large"
           }
         ]
@@ -4902,20 +4902,20 @@
       },
       {
         "type": "select",
-        "label": "Button size",
+        "label": "按钮大小",
         "showInBar": true,
         "key": "size",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": "S"
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "M"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "L"
           },
           {
@@ -5471,11 +5471,11 @@
             "defaultValue": "spectrum--medium",
             "options": [
               {
-                "label": "Medium",
+                "label": "中等",
                 "value": "spectrum--medium"
               },
               {
-                "label": "Large",
+                "label": "大",
                 "value": "spectrum--large"
               }
             ]
@@ -5996,14 +5996,14 @@
                 "label": "Stretch",
                 "value": "stretch",
                 "barIcon": "MoveLeftRight",
-                "barTitle": "Align stretched horizontally"
+                "barTitle": "水平对齐拉伸"
               }
             ],
             "defaultValue": "stretch"
           },
           {
             "type": "select",
-            "label": "Vert. align",
+            "label": "垂直排列",
             "key": "vAlign",
             "showInBar": true,
             "barStyle": "buttons",
@@ -6012,50 +6012,50 @@
                 "label": "Top",
                 "value": "top",
                 "barIcon": "AlignTop",
-                "barTitle": "Align top"
+                "barTitle": "顶部对齐"
               },
               {
                 "label": "Middle",
                 "value": "middle",
                 "barIcon": "AlignMiddle",
-                "barTitle": "Align middle"
+                "barTitle": "居中对齐"
               },
               {
                 "label": "Bottom",
                 "value": "bottom",
                 "barIcon": "AlignBottom",
-                "barTitle": "Align bottom"
+                "barTitle": "底部对齐"
               },
               {
                 "label": "Stretch",
                 "value": "stretch",
                 "barIcon": "MoveUpDown",
-                "barTitle": "Align stretched vertically"
+                "barTitle": "垂直对齐拉伸"
               }
             ],
             "defaultValue": "top"
           },
           {
             "type": "select",
-            "label": "Gap",
+            "label": "间隔",
             "key": "gap",
             "showInBar": true,
             "barStyle": "picker",
             "options": [
               {
-                "label": "None",
+                "label": "无",
                 "value": "N"
               },
               {
-                "label": "Small",
+                "label": "小",
                 "value": "S"
               },
               {
-                "label": "Medium",
+                "label": "中等",
                 "value": "M"
               },
               {
-                "label": "Large",
+                "label": "大",
                 "value": "L"
               }
             ],
@@ -6218,11 +6218,11 @@
         "key": "size",
         "options": [
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "spectrum--medium"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "spectrum--large"
           }
         ],
@@ -6437,11 +6437,11 @@
         "key": "size",
         "options": [
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "spectrum--medium"
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "spectrum--large"
           }
         ],
@@ -6645,15 +6645,15 @@
         "placeholder": "Default",
         "options": [
           {
-            "label": "Small",
+            "label": "小",
             "value": 36
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": 64
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": 92
           }
         ]

@@ -45,25 +45,25 @@
       const value = readableToRuntimeBinding(bindings, tempValue)
       await componentStore.updateCustomStyle(value)
     } catch (error) {
-      notifications.error("Error updating custom style")
+      notifications.error("更新自定义样式时出错")
     }
     drawer.hide()
   }
 </script>
 
 <DetailSummary
-  name={`Custom CSS${componentInstance?._styles?.custom ? " *" : ""}`}
+  name={`自定义CSS${componentInstance?._styles?.custom ? " *" : ""}`}
   collapsible={false}
 >
   <div>
-    <ActionButton on:click={openDrawer}>Edit custom CSS</ActionButton>
+    <ActionButton on:click={openDrawer}>编辑自定义CSS</ActionButton>
   </div>
 </DetailSummary>
 {#key componentInstance?._id}
-  <Drawer bind:this={drawer} title="Custom CSS">
+  <Drawer bind:this={drawer} title="自定义CSS">
     <svelte:fragment slot="description">
       <div class="header">
-        Your CSS will overwrite styles for:
+        您的CSS将覆盖以下项的样式：
         {#if icon}
           <AbsTooltip type="info" text={iconTooltip}>
             <Icon

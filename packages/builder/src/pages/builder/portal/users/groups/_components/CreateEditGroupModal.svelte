@@ -19,18 +19,18 @@
 <ModalContent
   onConfirm={() => {
     if (!group.name?.trim()) {
-      nameError = "Group name cannot be empty"
+      nameError = "组名称不能为空"
       return keepOpen
     }
     saveGroup(group)
   }}
   size="M"
-  title={group?._rev ? "Edit group" : "Create group"}
-  confirmText="Save"
+  title={group?._rev ? "编辑组" : "创建组"}
+  confirmText="保存"
 >
   <Input
     bind:value={group.name}
-    label="Name"
+    label="名称"
     error={nameError}
     disabled={readonlyTitle}
   />

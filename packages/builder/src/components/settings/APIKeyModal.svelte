@@ -14,9 +14,9 @@
   async function generateAPIKey() {
     try {
       apiKey = await auth.generateAPIKey()
-      notifications.success("New API key generated")
+      notifications.success("生成了新的API密钥")
     } catch (err) {
-      notifications.error("Unable to generate new API key")
+      notifications.error("无法生成新的API密钥")
     }
 
     return keepOpen
@@ -26,19 +26,19 @@
     try {
       apiKey = await auth.fetchAPIKey()
     } catch (err) {
-      notifications.error("Unable to fetch API key")
+      notifications.error("无法获取API密钥")
     }
   })
 </script>
 
 <ModalContent
-  title="API Key"
+  title="API密钥"
   showSecondaryButton
-  secondaryButtonText="Regenerate key"
+  secondaryButtonText="重新生成密钥"
   secondaryAction={generateAPIKey}
   showCancelButton={false}
-  confirmText="Close"
+  confirmText="关闭"
 >
-  <Body size="S">Your API key for accessing the Budibase public API:</Body>
+  <Body size="S">用于访问公共API的API密钥：</Body>
   <CopyInput bind:value={apiKey} />
 </ModalContent>

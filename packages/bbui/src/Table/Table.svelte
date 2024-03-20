@@ -337,7 +337,7 @@
                     on:change={toggleSelectAll}
                   />
                 {:else}
-                  Edit
+                  编辑
                 {/if}
               </div>
             {/if}

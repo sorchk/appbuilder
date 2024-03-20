@@ -191,9 +191,9 @@
 
 <ConfirmDialog
   bind:this={confirmDeleteDialog}
-  title="Confirm Deletion"
-  body={`Are you sure you want to delete "${componentToDelete?._instanceName}"?`}
-  okText="Delete Component"
+  title="确认删除"
+  body={`你确定要删除吗 "${componentToDelete?._instanceName}"?`}
+  okText="删除组件"
   onOk={() => componentStore.delete(componentToDelete)}
 />
 <ConfirmDialog

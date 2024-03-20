@@ -27,9 +27,9 @@
         rows,
         identifierFields,
       })
-      notifications.success("Rows successfully imported")
+      notifications.success("已成功导入行")
     } catch (error) {
-      notifications.error("Unable to import data")
+      notifications.error("无法导入数据")
     }
 
     // Always refresh rows just to be sure
@@ -38,17 +38,16 @@
 </script>
 
 <ModalContent
-  title="Import Data"
-  confirmText="Import"
+  title="导入数据"
+  confirmText="导入"
   onConfirm={importData}
   disabled={!allValid}
 >
   <Body size="S">
-    Import rows to an existing table from a CSV or JSON file. Only columns from
-    the file which exist in the table will be imported.
+    将行从CSV或JSON文件导入到现有表中。仅列来自将导入表中存在的文件。
   </Body>
   <Layout gap="XS" noPadding>
-    <Label grey extraSmall>CSV or JSON file to import</Label>
+    <Label grey extraSmall>要导入的CSV或JSON文件</Label>
     <TableDataImport
       {tableId}
       {tableType}
