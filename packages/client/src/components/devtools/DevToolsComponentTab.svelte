@@ -15,17 +15,16 @@
 
 {#if !$builderStore.selectedComponentId}
   <Layout noPadding gap="S">
-    <Heading size="XS">Please choose a component</Heading>
+    <Heading size="XS">请选择一个组件</Heading>
     <Body size="S">
-      Press the button below to enable component selection, then click a
-      component in your app to view its settings and available data bindings.
+      按下下面的按钮以启用组件选择，然后单击组件，以查看其设置和可用的数据绑定。
     </Body>
     <div>
       <Button
         cta
         on:click={() => devToolsStore.actions.setAllowSelection(true)}
       >
-        Choose component
+      选择组件
       </Button>
     </div>
   </Layout>

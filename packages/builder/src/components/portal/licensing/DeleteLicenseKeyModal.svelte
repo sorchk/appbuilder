@@ -27,5 +27,3 @@
   </ModalContent>
 </Modal>
 
-<style>
-</style>

@@ -132,6 +132,8 @@ router
   .use(pro.licensing())
   // for now no public access is allowed to worker (bar health check)
   .use((ctx, next) => {
+
+  console.log('-------------:',ctx)
     if (ctx.publicEndpoint) {
       return next()
     }
