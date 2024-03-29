@@ -3,8 +3,6 @@
     "name": "块",
     "icon": "Article",
     "children": [
-      "gridblock",
-      "tableblock",
       "cardsblock",
       "repeaterblock",
       "formblock",
@@ -16,7 +14,7 @@
   {
     "name": "布局",
     "icon": "ClassicGridView",
-    "children": ["container", "section", "grid", "sidepanel"]
+    "children": ["container", "section", "sidepanel"]
   },
   {
     "name": "数据",
@@ -24,7 +22,7 @@
     "children": [
       "dataprovider",
       "repeater",
-      "table",
+      "gridblock",
       "spreadsheet",
       "dynamicfilter",
       "daterangepicker"

@@ -191,8 +191,10 @@
     // don't make field IDs for auto types
     if (type === AUTO_TYPE || autocolumn) {
       return type.toUpperCase()
-    } else {
+    } else if (type === FieldType.BB_REFERENCE) {
       return `${type}${subtype || ""}`.toUpperCase()
+    } else {
+      return type.toUpperCase()
     }
   }
 
@@ -470,7 +472,7 @@
       newError.name = `Column name already in use.`
     }
 
-    if (fieldInfo.type === "auto" && !fieldInfo.subtype) {
+    if (fieldInfo.type === FieldType.AUTO && !fieldInfo.subtype) {
       newError.subtype = `Auto Column requires a type`
     }
 
@@ -531,18 +533,18 @@
     }}
   />
 
-  {#if editableColumn.type === "string"}
+  {#if editableColumn.type === FieldType.STRING}
     <Input
       type="number"
       label="Max Length"
       bind:value={editableColumn.constraints.length.maximum}
     />
-  {:else if editableColumn.type === "options"}
+  {:else if editableColumn.type === FieldType.OPTIONS}
     <OptionSelectDnD
       bind:constraints={editableColumn.constraints}
       bind:optionColors={editableColumn.optionColors}
     />
-  {:else if editableColumn.type === "longform"}
+  {:else if editableColumn.type === FieldType.LONGFORM}
     <div>
       <div class="tooltip-alignment">
         <Label size="M">Formatting</Label>
@@ -560,12 +562,12 @@
         text="Enable rich text support (markdown)"
       />
     </div>
-  {:else if editableColumn.type === "array"}
+  {:else if editableColumn.type === FieldType.ARRAY}
     <OptionSelectDnD
       bind:constraints={editableColumn.constraints}
       bind:optionColors={editableColumn.optionColors}
     />
-  {:else if editableColumn.type === "datetime" && !editableColumn.autocolumn}
+  {:else if editableColumn.type === FieldType.DATETIME && !editableColumn.autocolumn}
     <div class="split-label">
       <div class="label-length">
         <Label size="M">Earliest</Label>
@@ -604,7 +606,7 @@
       </div>
     {/if}
     <Toggle bind:value={editableColumn.dateOnly} text="Date only" />
-  {:else if editableColumn.type === "number" && !editableColumn.autocolumn}
+  {:else if editableColumn.type === FieldType.NUMBER && !editableColumn.autocolumn}
     <div class="split-label">
       <div class="label-length">
         <Label size="M">Min Value</Label>
@@ -629,7 +631,7 @@
         />
       </div>
     </div>
-  {:else if editableColumn.type === "link"}
+  {:else if editableColumn.type === FieldType.LINK}
     <RelationshipSelector
       bind:relationshipPart1
       bind:relationshipPart2

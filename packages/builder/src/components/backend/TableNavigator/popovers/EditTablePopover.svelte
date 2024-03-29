@@ -28,7 +28,6 @@
   let deleteTableName
 
   $: externalTable = table?.sourceType === DB_TYPE_EXTERNAL
-  $: allowDeletion = !externalTable || table?.created
 
   function showDeleteModal() {
     templateScreens = $screenStore.screens.filter(
@@ -56,7 +55,7 @@
         $goto(`./datasource/${table.datasourceId}`)
       }
     } catch (error) {
-      notifications.error("删除表时出错")
+      notifications.error(`删除表时出错 - ${error.message}`)
     }
   }
 
@@ -86,17 +85,15 @@
   }
 </script>
 
-{#if allowDeletion}
-  <ActionMenu>
-    <div slot="control" class="icon">
-      <Icon s hoverable name="MoreSmallList" />
-    </div>
-    {#if !externalTable}
-      <MenuItem icon="Edit" on:click={editorModal.show}>编辑</MenuItem>
-    {/if}
-    <MenuItem icon="Delete" on:click={showDeleteModal}>删除</MenuItem>
-  </ActionMenu>
-{/if}
+<ActionMenu>
+  <div slot="control" class="icon">
+    <Icon s hoverable name="MoreSmallList" />
+  </div>
+  {#if !externalTable}
+    <MenuItem icon="Edit" on:click={editorModal.show}>编辑</MenuItem>
+  {/if}
+  <MenuItem icon="Delete" on:click={showDeleteModal}>删除</MenuItem>
+</ActionMenu>
 
 <Modal bind:this={editorModal} on:show={initForm}>
   <ModalContent
@@ -137,9 +134,7 @@
       {/each}
     </div>
   </b>
-  <p>
-    此操作无法撤消-若要继续，请在下面输入表名以确认。
-  </p>
+  <p>此操作无法撤消-若要继续，请在下面输入表名以确认。</p>
   <Input bind:value={deleteTableName} placeholder={table.name} />
 </ConfirmDialog>
 

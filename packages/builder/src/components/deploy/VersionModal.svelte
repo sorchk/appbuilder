@@ -1,4 +1,5 @@
 <script>
+  import { admin } from "stores/portal"
   import {
     Modal,
     notifications,
@@ -9,6 +10,7 @@
   } from "@budibase/bbui"
   import { appStore, initialise } from "stores/builder"
   import { API } from "api"
+  import RevertModalVersionSelect from "./RevertModalVersionSelect.svelte"
 
   export function show() {
     updateModal.show()
@@ -28,7 +30,9 @@
     $appStore.upgradableVersion &&
     $appStore.version &&
     $appStore.upgradableVersion !== $appStore.version
-  $: revertAvailable = $appStore.revertableVersion != null
+  $: revertAvailable =
+    $appStore.revertableVersion != null ||
+    ($admin.isDev && $appStore.version === "0.0.0")
 
   const refreshAppPackage = async () => {
     try {
@@ -62,7 +66,9 @@
       // Don't wait for the async refresh, since this causes modal flashing
       refreshAppPackage()
       notifications.success(
-        `应用程序成功恢复到版本 ${$appStore.revertableVersion}`
+        $appStore.revertableVersion
+          ? `应用程序成功，恢复到版本 to version ${$appStore.revertableVersion}`
+          : "应用程序成功"
       )
     } catch (err) {
       notifications.error(`还原应用程序时出错: ${err}`)
@@ -100,7 +106,13 @@
     {#if revertAvailable}
       <Body size="S">
         您可以将此应用还原为版本
-        <b>{$appStore.revertableVersion}</b>
+        {#if $admin.isDev}
+          <RevertModalVersionSelect
+            revertableVersion={$appStore.revertableVersion}
+          />
+        {:else}
+          <b>{$appStore.revertableVersion}</b>
+        {/if}
         如果您遇到当前版本的问题。
       </Body>
     {/if}
