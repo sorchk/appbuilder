@@ -47,13 +47,13 @@
   <Layout gap="M" noPadding>
     <Layout justifyItems="center" noPadding>
       <img alt="logo" src={Logo} />
-      <Heading size="M">Create an admin user</Heading>
-      <Body>The admin user has access to everything in Budibase.</Body>
+      <Heading size="M">创建超级管理员用户</Heading>
+      <Body>管理员用户可以访问所有内容。</Body>
     </Layout>
     <Layout gap="S" noPadding>
       <FancyForm bind:this={form}>
         <FancyInput
-          label="Email"
+          label="电子邮箱"
           value={formData.email}
           on:change={e => {
             formData = {
